@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://hignw2ps5jlc"]
+
+[ext_resource type="PackedScene" uid="uid://bggtt6a36gih4" path="res://touch_controls.tscn" id="1_x4av3"]
+[ext_resource type="PackedScene" uid="uid://1ck2rw23skm7" path="res://mouse.tscn" id="2_rpqi1"]
+
+[node name="World" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TouchControls" parent="Control" instance=ExtResource("1_x4av3")]
+
+[node name="Mouse" parent="." instance=ExtResource("2_rpqi1")]
+position = Vector2(405, 211)
