@@ -11,12 +11,13 @@ counterLabel = NodePath("HBoxContainer/Label")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -54.0
-offset_bottom = 40.0
+offset_left = -129.0
+offset_bottom = 81.0
 grow_horizontal = 0
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"HeaderLarge"
 text = "0"
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
