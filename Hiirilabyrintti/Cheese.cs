@@ -12,6 +12,8 @@ public partial class Cheese : Area2D
     {
         if (body is CharacterBody2D)
         {
+            var counter = GetTree().Root.GetNode<CheeseCounter>("/root/World/CheeseCounter");
+            counter.AddCollectible();
             QueueFree();
         }
     }
