@@ -22,9 +22,9 @@ position = Vector2(452, 185)
 position = Vector2(149, 268)
 
 [node name="Cheese2" parent="." instance=ExtResource("3_rpqi1")]
-position = Vector2(771, 315)
+position = Vector2(195, 653)
 
 [node name="Cheese3" parent="." instance=ExtResource("3_rpqi1")]
-position = Vector2(564, 586)
+position = Vector2(345, 447)
 
 [node name="CheeseCounter" parent="." instance=ExtResource("4_uxrcv")]

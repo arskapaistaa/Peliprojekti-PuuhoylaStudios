@@ -15,6 +15,11 @@ run/main_scene="uid://hignw2ps5jlc"
 config/features=PackedStringArray("4.5", "C#", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=540
+window/size/viewport_height=960
+
 [dotnet]
 
 project/assembly_name="peliprojekti_test"
