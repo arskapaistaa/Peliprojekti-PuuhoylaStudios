@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://hignw2ps5jlc"]
+[gd_scene load_steps=4 format=3 uid="uid://hignw2ps5jlc"]
 
 [ext_resource type="PackedScene" uid="uid://bggtt6a36gih4" path="res://touch_controls.tscn" id="1_x4av3"]
 [ext_resource type="PackedScene" uid="uid://1ck2rw23skm7" path="res://mouse.tscn" id="2_rpqi1"]
+[ext_resource type="PackedScene" uid="uid://84ar5dqmbht4" path="res://cheese.tscn" id="3_rpqi1"]
 
 [node name="World" type="Node2D"]
 
@@ -14,4 +15,13 @@ offset_bottom = 40.0
 [node name="TouchControls" parent="Control" instance=ExtResource("1_x4av3")]
 
 [node name="Mouse" parent="." instance=ExtResource("2_rpqi1")]
-position = Vector2(405, 211)
+position = Vector2(452, 185)
+
+[node name="Cheese" parent="." instance=ExtResource("3_rpqi1")]
+position = Vector2(149, 268)
+
+[node name="Cheese2" parent="." instance=ExtResource("3_rpqi1")]
+position = Vector2(771, 315)
+
+[node name="Cheese3" parent="." instance=ExtResource("3_rpqi1")]
+position = Vector2(564, 586)
