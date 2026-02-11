@@ -13,5 +13,9 @@ public partial class Mouse : CharacterBody2D
         inputDirection = inputDirection.Normalized();
         Velocity = inputDirection * speed;
         MoveAndSlide();
+        if (Velocity.Length() > 0)
+        {
+            Rotation = Velocity.Angle() + Mathf.Pi / 2f;
+        }
     }
 }
