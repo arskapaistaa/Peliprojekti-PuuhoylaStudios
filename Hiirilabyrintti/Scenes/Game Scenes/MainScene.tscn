@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://hignw2ps5jlc"]
+
+[ext_resource type="PackedScene" uid="uid://bggtt6a36gih4" path="res://Scenes/Utility/touch_controls.tscn" id="1_6hmk7"]
+[ext_resource type="PackedScene" uid="uid://1ck2rw23skm7" path="res://Scenes/mouse.tscn" id="2_acspe"]
+[ext_resource type="PackedScene" uid="uid://84ar5dqmbht4" path="res://Scenes/Objects/cheese.tscn" id="3_16f24"]
+[ext_resource type="PackedScene" uid="uid://cggpma0qvjowe" path="res://Scenes/Utility/cheese_counter.tscn" id="4_m74ok"]
+
+[node name="World" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TouchControls" parent="Control" instance=ExtResource("1_6hmk7")]
+
+[node name="Mouse" parent="." instance=ExtResource("2_acspe")]
+position = Vector2(452, 185)
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="Objects" type="Node" parent="."]
+
+[node name="Cheese" parent="Objects" instance=ExtResource("3_16f24")]
+position = Vector2(149, 268)
+
+[node name="Cheese2" parent="Objects" instance=ExtResource("3_16f24")]
+position = Vector2(195, 653)
+
+[node name="Cheese3" parent="Objects" instance=ExtResource("3_16f24")]
+position = Vector2(345, 447)
+
+[node name="Managers" type="Node" parent="."]
+
+[node name="CheeseCounter" parent="Managers" instance=ExtResource("4_m74ok")]
