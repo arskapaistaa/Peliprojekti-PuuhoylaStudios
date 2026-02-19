@@ -1,0 +1,235 @@
+[gd_scene load_steps=10 format=3 uid="uid://dk6qpcovi0a0d"]
+
+[ext_resource type="Script" uid="uid://dddsqiekytqba" path="res://Scripts/QuestionsManager.cs" id="1_kfxey"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kfxey"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_burp6"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.14901961, 0.18039216, 0.3647059, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqv6m"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.31884953, 0.3763372, 0.7140773, 1)
+
+[sub_resource type="Animation" id="Animation_7txxy"]
+resource_name = "fadeOut"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Etsija:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Etenija:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Edistaja:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/MarginContainer/DialogLabel:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.06666667, 0.5, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_burp6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/MarginContainer/DialogLabel:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_kfxey"]
+resource_name = "fadeOutIn"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Etsija:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Etenija:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Edistaja:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 3, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/MarginContainer/DialogLabel:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.06666667, 0.5, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_oqv6m"]
+resource_name = "fadeResult"
+length = 2.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oqv6m"]
+_data = {
+&"RESET": SubResource("Animation_burp6"),
+&"fadeOut": SubResource("Animation_7txxy"),
+&"fadeOutIn": SubResource("Animation_kfxey"),
+&"fadeResult": SubResource("Animation_oqv6m")
+}
+
+[node name="EndGameScene" type="Node2D"]
+
+[node name="QuestionsUI" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = 217.00002
+offset_right = 464.0
+offset_bottom = 472.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0025443, 1.0144056)
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kfxey")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestionsUI"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestionsUI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="DialogLabel" type="Label" parent="QuestionsUI/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Jos olisit vitun rotta ni mitä oisit tehny?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Etsija" type="Button" parent="QuestionsUI/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_burp6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oqv6m")
+text = "En tiiä"
+
+[node name="Etenija" type="Button" parent="QuestionsUI/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_burp6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oqv6m")
+text = "Tyylii haslannu juustot"
+
+[node name="Edistaja" type="Button" parent="QuestionsUI/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_burp6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oqv6m")
+text = "Töihin"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="QuestionsUI"]
+libraries = {
+&"": SubResource("AnimationLibrary_oqv6m")
+}
+
+[node name="QuestionsManager" type="Node2D" parent="." node_paths=PackedStringArray("_etsijaButton", "_etenijaButton", "_edistajaButton", "_dialogLabel", "_animations", "_animationTimer")]
+script = ExtResource("1_kfxey")
+_maxQuestionIndex = 3
+_etsijaButton = NodePath("../QuestionsUI/VBoxContainer/Etsija")
+_etenijaButton = NodePath("../QuestionsUI/VBoxContainer/Etenija")
+_edistajaButton = NodePath("../QuestionsUI/VBoxContainer/Edistaja")
+_dialogLabel = NodePath("../QuestionsUI/VBoxContainer/MarginContainer/DialogLabel")
+_animations = NodePath("../QuestionsUI/AnimationPlayer")
+_animationTimer = NodePath("../Timer")
+_questionTexts = PackedStringArray("Jos olisit rotta?", "Jos olisit hiiri?", "Jos olis töissä?")
+_etsijaTexts = PackedStringArray("00000", "11111", "22222")
+_etenijaTexts = PackedStringArray("00000", "11111", "22222")
+_edistajaTexts = PackedStringArray("00000", "11111", "22222")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="animation_finished" from="QuestionsUI/AnimationPlayer" to="QuestionsManager" method="_on_animation_player_animation_finished"]
