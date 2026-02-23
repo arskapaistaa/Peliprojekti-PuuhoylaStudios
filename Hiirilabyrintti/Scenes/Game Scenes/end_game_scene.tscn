@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dk6qpcovi0a0d"]
 
-[ext_resource type="Script" uid="uid://dddsqiekytqba" path="res://Scripts/QuestionsManager.cs" id="1_kfxey"]
+[ext_resource type="Script" uid="uid://dddsqiekytqba" path="res://Scripts/QuestionsManager.cs" id="1_xmqa1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kfxey"]
 
@@ -21,6 +21,21 @@ content_margin_top = 16.0
 content_margin_right = 16.0
 content_margin_bottom = 16.0
 bg_color = Color(0.31884953, 0.3763372, 0.7140773, 1)
+
+[sub_resource type="Animation" id="Animation_burp6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/MarginContainer/DialogLabel:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_7txxy"]
 resource_name = "fadeOut"
@@ -72,21 +87,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [1.0, 0.0, 0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_burp6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/MarginContainer/DialogLabel:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1.0]
 }
 
 [sub_resource type="Animation" id="Animation_kfxey"]
@@ -216,7 +216,7 @@ libraries = {
 }
 
 [node name="QuestionsManager" type="Node2D" parent="." node_paths=PackedStringArray("_etsijaButton", "_etenijaButton", "_edistajaButton", "_dialogLabel", "_animations", "_animationTimer")]
-script = ExtResource("1_kfxey")
+script = ExtResource("1_xmqa1")
 _maxQuestionIndex = 3
 _etsijaButton = NodePath("../QuestionsUI/VBoxContainer/Etsija")
 _etenijaButton = NodePath("../QuestionsUI/VBoxContainer/Etenija")
