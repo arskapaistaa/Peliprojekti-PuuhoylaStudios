@@ -41,6 +41,8 @@ texture = ExtResource("5_acspe")
 27:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_m74ok"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_16f24")
 
 [node name="World" type="Node2D"]
