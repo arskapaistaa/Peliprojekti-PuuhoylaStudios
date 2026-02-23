@@ -4,6 +4,9 @@ using System;
 public partial class Mouse : CharacterBody2D
 {
     [Export] public float speed = 200f;
+
+    // For animations
+    [Export] private AnimatedSprite2D _sprite;
     public override void _PhysicsProcess(double delta)
     {
         Vector2 inputDirection = new Vector2(
@@ -13,9 +16,18 @@ public partial class Mouse : CharacterBody2D
         inputDirection = inputDirection.Normalized();
         Velocity = inputDirection * speed;
         MoveAndSlide();
+
         if (Velocity.Length() > 0)
         {
             Rotation = Velocity.Angle() + Mathf.Pi / 2f;
+
+            // Play Move when moving
+            _sprite.Play("Move");
+        }
+        else
+        {
+            // Play idle when Idle state
+            _sprite.Play("Idle");
         }
     }
 }
