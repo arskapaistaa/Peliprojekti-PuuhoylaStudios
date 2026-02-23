@@ -18,24 +18,24 @@ texture = ExtResource("5_acspe")
 1:6/0/physics_layer_0/polygon_1/points = PackedVector2Array(-20.885532, 32, -32, 32, -32, -32, -20.885532, -32)
 1:11/size_in_atlas = Vector2i(4, 4)
 1:11/0 = 0
-1:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(20.681824, -32, 20.37082, 32, 32, 32, 32, -32)
-1:11/0/physics_layer_0/polygon_1/points = PackedVector2Array(20.885529, 19.568424, 20.509216, 32, -32, 32, -32, -32, -20.885532, -32, -20.885532, 19.568424)
+1:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(20.681824, -32, 21.261848, -22.955269, 32, -22.202637, 32, -32)
+1:11/0/physics_layer_0/polygon_1/points = PackedVector2Array(32, 18.439476, 32, 32, -32, 32, -32, -32, -20.885532, -32, -22.014477, 18.815796)
 6:11/size_in_atlas = Vector2i(4, 4)
 6:11/0 = 0
 6:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, -20.52632, -32, -20.526321)
 6:11/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, 19.593307, 32, 18.971298, 32, 32, -32, 32)
 11:11/size_in_atlas = Vector2i(4, 4)
 11:11/0 = 0
-11:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(20.681824, -32, 20.37082, 32, 32, 32, 32, -32)
-11:11/0/physics_layer_0/polygon_1/points = PackedVector2Array(20.885529, 19.568424, 20.509216, 32, -32, 32, -32, -32, -20.885532, -32, -20.885532, 19.568424)
+11:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(20.681824, -32, 19.756592, 18.439476, -32, 18.815796, -32, 32, 32, 32, 32, -32)
+11:11/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, -20.697372, -32, -32, -20.885532, -32, -20.509212, -20.32106)
 11:6/size_in_atlas = Vector2i(4, 4)
 11:6/0 = 0
 11:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(20.681824, -32, 20.37082, 32, 32, 32, 32, -32)
 11:6/0/physics_layer_0/polygon_1/points = PackedVector2Array(-20.885532, 32, -32, 32, -32, -32, -20.885532, -32)
 11:1/size_in_atlas = Vector2i(4, 4)
 11:1/0 = 0
-11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(20.681824, -32, -20.509216, -32, -22.390797, -21.450005, 19.380264, -21.073689, 20.37082, 32, 32, 32, 32, -32)
-11:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(-20.885532, 32, -32, 32, -32, -32, -20.885532, -32)
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(20.681824, -32, -32, -32, -32, -21.073689, 19.380264, -21.073689, 20.37082, 32, 32, 32, 32, -32)
+11:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(-20.885532, 32, -32, 32, -32, 21.826324, -21.261845, 21.450005)
 6:1/size_in_atlas = Vector2i(4, 4)
 6:1/0 = 0
 6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, -20.52632, -32, -20.526321)
@@ -81,7 +81,7 @@ offset_bottom = 40.0
 
 [node name="Mouse" parent="." instance=ExtResource("2_acspe")]
 z_index = 2
-position = Vector2(30, 81)
+position = Vector2(-43, 107)
 
 [node name="Environment" type="Node" parent="."]
 
@@ -101,6 +101,7 @@ position = Vector2(345, 447)
 [node name="CheeseCounter" parent="Managers" instance=ExtResource("4_m74ok")]
 
 [node name="TileMap" type="Node2D" parent="."]
+position = Vector2(-1, 1)
 
 [node name="Walls" type="TileMapLayer" parent="TileMap"]
 z_index = 1
