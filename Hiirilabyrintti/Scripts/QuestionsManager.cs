@@ -11,6 +11,7 @@ public partial class QuestionsManager : Node2D
 
 	// First question is 0.
 	public int question = 0;
+	private bool _lastQuestion = false;
 
 	// Can be replaces by using _questionTexts.Lenght()
 	[Export] private int _maxQuestionIndex;
@@ -46,8 +47,8 @@ public partial class QuestionsManager : Node2D
 		// Show first question.
 		NextQuestion();
 
-		// When time reaches 0, call timerTimeout method.
-		_animationTimer.Timeout += timerTimeout;
+		// When time reaches 0, call TimerTimeout method.
+		_animationTimer.Timeout += TimerTimeout;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame
@@ -81,8 +82,8 @@ public partial class QuestionsManager : Node2D
 
 		if (question == _maxQuestionIndex)
 		{
-		// Play this if player has answered to all the questions.
-		_animations.Play("fadeOut");
+			_lastQuestion = true;
+			LastQuestion();
 		}
 		else
 		{
@@ -100,23 +101,23 @@ public partial class QuestionsManager : Node2D
 	}
 	private void NextQuestion()
 	{
+		// Basic operation
 		_dialogLabel.Text = _questionTexts[question];
-		if (question == _maxQuestionIndex)
-		{
-			_dialogLabel.Text = "Onneksi olkoon, olet työtön rotta!";
-		}
 
 		_etsijaButton.Text = _etsijaTexts[question];
 		_etenijaButton.Text = _etenijaTexts[question];
 		_edistajaButton.Text = _edistajaTexts[question];
 	}
+	private void LastQuestion()
+	{
+		// Play this if player has answered to all the questions.
+		_animations.Play("fadeOut");
+		GetTree().ChangeSceneToFile("res://Scenes/Game Scenes/Final_game_scene.tscn");
+	}
 
 	// Simple method, what happens after timer timeout. -> Next question.
-	public void timerTimeout()
+	public void TimerTimeout()
 	{
-		if (question < _maxQuestionIndex)
-		{
 		NextQuestion();
-		}
 	}
 }
