@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dk6qpcovi0a0d"]
 
-[ext_resource type="Script" uid="uid://dddsqiekytqba" path="res://Scripts/QuestionsManager.cs" id="1_kfxey"]
+[ext_resource type="Script" uid="uid://dddsqiekytqba" path="res://Scripts/QuestionsManager.cs" id="1_xmqa1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kfxey"]
 
@@ -216,7 +216,7 @@ libraries = {
 }
 
 [node name="QuestionsManager" type="Node2D" parent="." node_paths=PackedStringArray("_etsijaButton", "_etenijaButton", "_edistajaButton", "_dialogLabel", "_animations", "_animationTimer")]
-script = ExtResource("1_kfxey")
+script = ExtResource("1_xmqa1")
 _maxQuestionIndex = 3
 _etsijaButton = NodePath("../QuestionsUI/VBoxContainer/Etsija")
 _etenijaButton = NodePath("../QuestionsUI/VBoxContainer/Etenija")
