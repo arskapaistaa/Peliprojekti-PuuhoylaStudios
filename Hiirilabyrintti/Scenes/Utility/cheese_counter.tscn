@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cggpma0qvjowe"]
 
 [ext_resource type="Script" uid="uid://co0jhdcdsulun" path="res://Scripts/CheeseCounter.cs" id="1_kwa86"]
-[ext_resource type="Texture2D" uid="uid://ny2a83sunsdk" path="res://icon.svg" id="1_tn74m"]
+[ext_resource type="Texture2D" uid="uid://cunwtmrlplbe6" path="res://Sprites/juusto.png" id="2_jtyqr"]
 
 [node name="CheeseCounter" type="CanvasLayer" node_paths=PackedStringArray("counterLabel")]
 script = ExtResource("1_kwa86")
@@ -25,5 +25,5 @@ text = "0"
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_tn74m")
+texture = ExtResource("2_jtyqr")
 expand_mode = 2
