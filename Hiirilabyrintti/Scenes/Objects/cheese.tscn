@@ -1,10 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://84ar5dqmbht4"]
+[gd_scene load_steps=6 format=3 uid="uid://84ar5dqmbht4"]
 
 [ext_resource type="Script" uid="uid://btsmb8m3rco72" path="res://Scripts/Cheese.cs" id="1_s0ldm"]
 [ext_resource type="Texture2D" uid="uid://cunwtmrlplbe6" path="res://Sprites/juusto.png" id="2_7bhg4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ma2yl"]
-size = Vector2(14, 13)
+size = Vector2(14, 12)
+
+[sub_resource type="Gradient" id="Gradient_kxv04"]
+offsets = PackedFloat32Array(0, 0.7346939)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7bhg4"]
+gradient = SubResource("Gradient_kxv04")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Cheese" type="Area2D"]
 collision_layer = 4
@@ -17,5 +28,12 @@ scale = Vector2(0.484375, 0.48437503)
 texture = ExtResource("2_7bhg4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+visible = false
 shape = SubResource("RectangleShape2D_ma2yl")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(2.8125005, 2.9062502)
+color = Color(1, 1, 0.5568628, 1)
+energy = 0.3
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_7bhg4")

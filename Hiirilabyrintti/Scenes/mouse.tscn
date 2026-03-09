@@ -177,4 +177,5 @@ editor_draw_drag_margin = true
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -11)
 scale = Vector2(2.8125005, 2.9062502)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_2q34x")

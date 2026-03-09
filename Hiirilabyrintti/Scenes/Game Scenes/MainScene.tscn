@@ -116,13 +116,16 @@ position = Vector2(0, 16)
 [node name="Objects" type="Node" parent="."]
 
 [node name="Cheese" parent="Objects" instance=ExtResource("3_16f24")]
-position = Vector2(-470, -224)
+position = Vector2(-147, 0)
 
 [node name="Cheese2" parent="Objects" instance=ExtResource("3_16f24")]
-position = Vector2(195, 653)
+position = Vector2(0, 128)
 
 [node name="Cheese3" parent="Objects" instance=ExtResource("3_16f24")]
-position = Vector2(345, 447)
+position = Vector2(153, 0)
+
+[node name="Cheese4" parent="Objects" instance=ExtResource("3_16f24")]
+position = Vector2(-473, -223)
 
 [node name="Managers" type="Node" parent="."]
 
