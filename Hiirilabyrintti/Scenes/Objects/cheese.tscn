@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://84ar5dqmbht4"]
 
 [ext_resource type="Script" uid="uid://btsmb8m3rco72" path="res://Scripts/Cheese.cs" id="1_s0ldm"]
-[ext_resource type="Texture2D" uid="uid://ny2a83sunsdk" path="res://icon.svg" id="2_d3rdx"]
+[ext_resource type="Texture2D" uid="uid://cunwtmrlplbe6" path="res://Sprites/juusto.png" id="2_7bhg4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ma2yl"]
-size = Vector2(58, 58)
+size = Vector2(14, 13)
 
 [node name="Cheese" type="Area2D"]
 collision_layer = 4
@@ -14,7 +14,8 @@ script = ExtResource("1_s0ldm")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3.5762787e-07, 1.1920929e-06)
 scale = Vector2(0.484375, 0.48437503)
-texture = ExtResource("2_d3rdx")
+texture = ExtResource("2_7bhg4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_ma2yl")
