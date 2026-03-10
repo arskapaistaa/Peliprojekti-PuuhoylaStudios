@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dalqxy27wsqdj"]
+
+[node name="Welcome" type="CanvasLayer" unique_id=133097397]
+
+[node name="Label2" type="Label" parent="." unique_id=859201507]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -214.0
+offset_right = 103.0
+offset_bottom = -186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.1882353, 0.09019608, 0.3372549, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
+text = "FIND YOUR WAY OUT"
+horizontal_alignment = 1
+vertical_alignment = 1

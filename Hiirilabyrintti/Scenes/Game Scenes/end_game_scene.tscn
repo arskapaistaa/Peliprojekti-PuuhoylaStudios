@@ -188,7 +188,7 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 20
-text = "Jos olisit vitun rotta ni mitä oisit tehny?"
+text = "Jos olisit...?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
