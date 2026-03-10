@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cggpma0qvjowe" path="res://Scenes/Utility/cheese_counter.tscn" id="4_m74ok"]
 [ext_resource type="Texture2D" uid="uid://gwi5qdfswy6m" path="res://Sprites/tileset2.png" id="5_acspe"]
 [ext_resource type="Texture2D" uid="uid://0njcw21tcs28" path="res://Sprites/tileset3.png" id="6_16f24"]
+[ext_resource type="Script" uid="uid://ctlleouhimdnx" path="res://Scripts/Exit.cs" id="7_m74ok"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_16f24"]
 resource_name = "TileSet"
@@ -113,6 +114,21 @@ tracks/0/keys = {
 "values": [0.0, 1.0]
 }
 
+[sub_resource type="Animation" id="Animation_j0wll"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
 [sub_resource type="Animation" id="Animation_m74ok"]
 length = 0.001
 tracks/0/type = "value"
@@ -131,8 +147,12 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j0wll"]
 _data = {
 &"FadeIn": SubResource("Animation_16f24"),
+&"FadeOut": SubResource("Animation_j0wll"),
 &"RESET": SubResource("Animation_m74ok")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0wll"]
+size = Vector2(20, 64)
 
 [node name="World" type="Node2D" unique_id=71007616]
 
@@ -188,3 +208,13 @@ color = Color(0.0757469, 0.087625034, 0.21558893, 1)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1696038060]
 libraries/ = SubResource("AnimationLibrary_j0wll")
 autoplay = &"FadeIn"
+
+[node name="Exit" type="Area2D" parent="." unique_id=154487]
+position = Vector2(-58, -166)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("7_m74ok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1871817842]
+position = Vector2(-2, 8)
+shape = SubResource("RectangleShape2D_j0wll")
