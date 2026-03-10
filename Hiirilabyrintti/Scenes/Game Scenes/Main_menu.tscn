@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqltr75osi442"]
+[gd_scene format=3 uid="uid://bqltr75osi442"]
 
 [ext_resource type="Script" uid="uid://bvbw6d2uh7a17" path="res://Scripts/MainMenu.cs" id="1_rsx4f"]
 [ext_resource type="Texture2D" uid="uid://dls1wyypfxboc" path="res://Sprites/menupohja.png" id="1_uxyw0"]
@@ -6,13 +6,41 @@
 
 [sub_resource type="Animation" id="Animation_8l1vk"]
 resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hwbvm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hwbvm"]
 _data = {
-&"FadeOut": SubResource("Animation_8l1vk")
+&"FadeOut": SubResource("Animation_8l1vk"),
+&"RESET": SubResource("Animation_hwbvm")
 }
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("_playButton", "_animations", "_animationTimer")]
+[node name="MainMenu" type="Control" unique_id=1849334859 node_paths=PackedStringArray("_playButton", "_animations", "_animationTimer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +52,7 @@ _playButton = NodePath("Button")
 _animations = NodePath("AnimationPlayer")
 _animationTimer = NodePath("Timer")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=229411852]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -38,22 +66,20 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=55659186]
 position = Vector2(268, 480)
 texture = ExtResource("1_uxyw0")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=2069074776]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 icon = ExtResource("3_8l1vk")
 flat = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1152679823]
 wait_time = 1.2
 one_shot = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_hwbvm")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=251821347]
+libraries/ = SubResource("AnimationLibrary_hwbvm")
