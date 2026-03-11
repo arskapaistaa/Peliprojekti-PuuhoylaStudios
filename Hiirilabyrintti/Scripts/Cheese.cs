@@ -1,20 +1,13 @@
 using Godot;
 using System;
 
-public partial class Cheese : Area2D
+public partial class Cheese : Collectable
 {
-    public override void _Ready()
-    {
-        BodyEntered += OnBodyEntered;
-    }
+	private int _cheeseScore = 1;
 
-    private void OnBodyEntered(Node2D body)
-    {
-        if (body is CharacterBody2D)
-        {
-            var counter = GetTree().Root.GetNode<CheeseCounter>("/root/World/Managers/CheeseCounter");
-            counter.AddCollectible();
-            QueueFree();
-        }
-    }
+	protected override void Collect(Mouse mouse)
+	{
+		GD.Print("Cheese collected");
+		GameManager.Instance.AddCheese(_cheeseScore);
+	}
 }

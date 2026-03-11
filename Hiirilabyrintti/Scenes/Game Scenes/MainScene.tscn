@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://84ar5dqmbht4" path="res://Scenes/Objects/cheese.tscn" id="3_16f24"]
 [ext_resource type="PackedScene" uid="uid://cggpma0qvjowe" path="res://Scenes/Utility/cheese_counter.tscn" id="4_m74ok"]
 [ext_resource type="Texture2D" uid="uid://gwi5qdfswy6m" path="res://Sprites/tileset2.png" id="5_acspe"]
+[ext_resource type="PackedScene" uid="uid://i1fnrld18ulw" path="res://Scenes/Managers/game_manager.tscn" id="5_j0wll"]
 [ext_resource type="Texture2D" uid="uid://0njcw21tcs28" path="res://Sprites/tileset3.png" id="6_16f24"]
 [ext_resource type="Script" uid="uid://ctlleouhimdnx" path="res://Scripts/Exit.cs" id="7_m74ok"]
 
@@ -187,6 +188,8 @@ position = Vector2(-473, -223)
 [node name="Managers" type="Node" parent="." unique_id=1022473391]
 
 [node name="CheeseCounter" parent="Managers" unique_id=1597700936 instance=ExtResource("4_m74ok")]
+
+[node name="GameManager" parent="Managers" unique_id=1156478741 instance=ExtResource("5_j0wll")]
 
 [node name="TileMap" type="Node2D" parent="." unique_id=313359339]
 position = Vector2(-1, 1)

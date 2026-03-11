@@ -4,11 +4,9 @@ using System;
 public partial class CheeseCounter : CanvasLayer
 {
 	[Export] public Label counterLabel;
-	private int collectedCount = 0;
 
-	public void AddCollectible()
+	public void UpdateScore(int CheeseScore)
 	{
-		collectedCount++;
-		counterLabel.Text = collectedCount.ToString();
+		counterLabel.Text = CheeseScore.ToString();
 	}
 }
