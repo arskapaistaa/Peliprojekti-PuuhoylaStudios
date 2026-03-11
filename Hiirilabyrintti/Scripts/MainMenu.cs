@@ -16,10 +16,13 @@ public partial class MainMenu : Node
 	{
 		// Disable the button to prevent multiple presses.
 		_playButton.Disabled = true;
+
 		// Play fade out animation and after it load the main scene.
 		_animations.Play("FadeOut");
+		// Start timer
 		_animationTimer.Start();
-		// Load after Timeout
+
+		// Load new scene after Timeout
 		_animationTimer.Timeout += LoadMainScene;
 	}
 	private void LoadMainScene()
