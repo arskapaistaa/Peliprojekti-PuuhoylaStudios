@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dxyrlpqny8xd2"]
 
+[ext_resource type="Script" uid="uid://35vp66usebh1" path="res://Scripts/Rock.cs" id="1_8gfo0"]
 [ext_resource type="Texture2D" uid="uid://dcdbw7fjn8oio" path="res://Sprites/kivi2.png" id="1_c7qrd"]
+[ext_resource type="Texture2D" uid="uid://bhsh1x6aiy4dt" path="res://Sprites/kivi1.png" id="2_l0sgq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0sgq"]
 atlas = ExtResource("1_c7qrd")
@@ -13,6 +15,10 @@ region = Rect2(176, 0, 176, 96)
 [sub_resource type="AtlasTexture" id="AtlasTexture_brjug"]
 atlas = ExtResource("1_c7qrd")
 region = Rect2(352, 0, 176, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk1ij"]
+atlas = ExtResource("2_l0sgq")
+region = Rect2(0, 0, 176, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bk1ij"]
 animations = [{
@@ -27,18 +33,96 @@ animations = [{
 "texture": SubResource("AtlasTexture_brjug")
 }],
 "loop": false,
-"name": &"default",
+"name": &"Cracking",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk1ij")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
 }]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_nqguc"]
-points = PackedVector2Array(63, -3, 69, -21, -85, -21, -87, -6, -76, 3, -60, 16, -12, 15, 23, 11, 53, 8)
+points = PackedVector2Array(63, -3, 69, -21, -85, -21, -87, -6, -76, 3, -62, 14, -12, 15, 23, 11, 53, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7qrd"]
-size = Vector2(154, 62)
+size = Vector2(182, 83)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c7qrd"]
 polygon = PackedVector2Array(-77, 1, -79, 11, -76, 18, -71, 22, -68, 22, -66, 26, -62, 28, -61, 32, -56, 34, -51, 35, -46, 36, -4, 36, 1, 36, 2, 34, 11, 34, 21, 33, 27, 33, 32, 32, 39, 30, 45, 29, 61, 29, 68, 22, 71, 13, 75, 6, 76, -5, 64, -14, 55, -21, 50, -28, 49, -31, 38, -37, 33, -41, 21, -41, 10, -37, 3, -35, -19, -35, -26, -37, -41, -37, -46, -33, -50, -31, -55, -26, -60, -23, -67, -19, -71, -16, -72, -11)
+
+[sub_resource type="Animation" id="Animation_8gfo0"]
+resource_name = "PopOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_brjug"]
+resource_name = "PopUp"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_bk1ij"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_nqguc"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fsbm5"]
+_data = {
+&"PopOut": SubResource("Animation_8gfo0"),
+&"PopUp": SubResource("Animation_brjug"),
+&"RESET": SubResource("Animation_bk1ij"),
+&"start": SubResource("Animation_nqguc")
+}
 
 [node name="Rock" type="StaticBody2D" unique_id=2114008508]
 z_index = 4
@@ -46,18 +130,72 @@ collision_mask = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=905202901]
 sprite_frames = SubResource("SpriteFrames_bk1ij")
-frame = 2
-frame_progress = 1.0
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2093208692]
 position = Vector2(8, 21)
 shape = SubResource("ConvexPolygonShape2D_nqguc")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=735239142]
+[node name="Area2D" type="Area2D" parent="." unique_id=735239142 node_paths=PackedStringArray("_animations")]
+collision_mask = 2
+script = ExtResource("1_8gfo0")
+_animations = NodePath("../Canvas/AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=722016869]
-position = Vector2(0, 31)
+position = Vector2(0, 41.5)
 shape = SubResource("RectangleShape2D_c7qrd")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1622714118]
 occluder = SubResource("OccluderPolygon2D_c7qrd")
+
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=826497661]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Canvas" unique_id=796330984]
+libraries/ = SubResource("AnimationLibrary_fsbm5")
+autoplay = &"start"
+
+[node name="Control" type="Control" parent="Canvas" unique_id=74299882]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -342.0
+offset_right = 20.0
+offset_bottom = -302.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Canvas/Control" unique_id=2102695625]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -42.0
+offset_right = 141.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Canvas/Control" unique_id=69572931]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.5
+offset_top = -36.5
+offset_right = 135.5
+offset_bottom = 36.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Brada you need to find some
+drill parts to get trough"
+vertical_alignment = 1
