@@ -133,8 +133,8 @@ animations = [{
 }]
 
 [sub_resource type="Gradient" id="Gradient_kxv04"]
-offsets = PackedFloat32Array(0, 0.7346939)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.007518797, 0.62030077)
+colors = PackedColorArray(1, 1, 1, 1, 0.90789473, 0.90789473, 0.90789473, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2q34x"]
 gradient = SubResource("Gradient_kxv04")
@@ -171,14 +171,21 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.1
-drag_top_margin = 0.35
 drag_right_margin = 0.1
-drag_bottom_margin = 0.35
+drag_bottom_margin = 0.1
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1020046336]
 position = Vector2(0, -11)
 scale = Vector2(2.8125005, 2.9062502)
+energy = 0.25
 shadow_enabled = true
+texture = SubResource("GradientTexture2D_2q34x")
+
+[node name="CommonLight" type="PointLight2D" parent="." unique_id=651750929]
+position = Vector2(0, -11)
+scale = Vector2(2.8125005, 2.9062502)
+energy = 0.5
+shadow_filter = 1
 texture = SubResource("GradientTexture2D_2q34x")
