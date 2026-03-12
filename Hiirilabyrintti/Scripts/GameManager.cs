@@ -39,23 +39,6 @@ public partial class GameManager : Node
 		}
 	}
 
-	// Drill part
-	private int _drillScore = 0;
-	public int DrillScore
-	{
-		get {return _drillScore; }
-		set
-		{
-			// Min and Max drill score
-			_cheeseScore = Mathf.Clamp(value, 0, 999);
-			// For Debugging
-			GD.Print("Drill Score:" + _drillScore);
-
-			var cheeseCounter = GetNode("CheeseCounter");
-			cheeseCounter.Call("UpdateScore");
-		}
-	}
-
 	// Method to call from cheese class
 	public bool AddCheese(int amount)
 	{
@@ -66,6 +49,20 @@ public partial class GameManager : Node
 
 		CheeseScore += amount;
 		return true;
+	}
+
+	// Drill part
+	private int _drillScore = 0;
+	public int DrillScore
+	{
+		get {return _drillScore; }
+		set
+		{
+			// Min and Max drill score
+			_drillScore = Mathf.Clamp(value, 0, 999);
+			// For Debugging
+			GD.Print("Drill Score:" + _drillScore);
+		}
 	}
 
 	// Method to call from drill class

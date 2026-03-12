@@ -1,48 +1,98 @@
 [gd_scene format=3 uid="uid://bjjh8q5ys7jf7"]
 
 [ext_resource type="Script" uid="uid://dddsqiekytqba" path="res://Scripts/QuestionsManager.cs" id="1_xmqa1"]
+[ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="2_7txxy"]
+[ext_resource type="Texture2D" uid="uid://bbfv38hdvc0e6" path="res://Sprites/labrat.png" id="3_burp6"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kfxey"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_burp6"]
-content_margin_left = 16.0
-content_margin_top = 16.0
-content_margin_right = 16.0
-content_margin_bottom = 16.0
-bg_color = Color(0.14901961, 0.18039216, 0.3647059, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqv6m"]
-content_margin_left = 16.0
-content_margin_top = 16.0
-content_margin_right = 16.0
-content_margin_bottom = 16.0
-bg_color = Color(0.31884953, 0.3763372, 0.7140773, 1)
-
-[sub_resource type="Animation" id="Animation_oqv6m"]
+[sub_resource type="Animation" id="Animation_7txxy"]
 resource_name = "FadeIn"
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:modulate:a")
+tracks/0/path = NodePath("Player:modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(4, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LabraRotta/DialogLabel:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LabraRotta/Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(712, 357), Vector2(201, 357)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LabraRotta/Sprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.08726646259971647, 0.0, -0.08726646259971647, 0.0, 0.08726646259971647, 0.0, -0.08726646259971647, 0.0, 0.08726646259971647, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_burp6"]
+resource_name = "FadeOut"
+
+[sub_resource type="Animation" id="Animation_oqv6m"]
+resource_name = "FadeOutIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.3666667, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LabraRotta/DialogLabel:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_r6a8p"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/MarginContainer/DialogLabel:modulate:a")
+tracks/0/path = NodePath("Player:modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -54,7 +104,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("..:modulate:a")
+tracks/1/path = NodePath("LabraRotta/DialogLabel:modulate:a")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -63,188 +113,61 @@ tracks/1/keys = {
 "update": 1,
 "values": [1.0]
 }
-
-[sub_resource type="Animation" id="Animation_7txxy"]
-resource_name = "fadeOut"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/Etsija:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [1.0, 0.0, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer/Etenija:modulate:a")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [1.0, 0.0, 0.0]
-}
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("VBoxContainer/Edistaja:modulate:a")
+tracks/2/path = NodePath("LabraRotta/Sprite2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0, 0.0, 0.0]
+"values": [Vector2(-177, 357)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("VBoxContainer/MarginContainer/DialogLabel:modulate:a")
+tracks/3/path = NodePath("LabraRotta/Sprite2D:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.06666667, 0.5, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0, 0.0, 0.0, 1.0]
+"values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_kfxey"]
-resource_name = "fadeOutIn"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/Etsija:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 3, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [1.0, 0.0, 0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer/Etenija:modulate:a")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 3, 3.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [1.0, 0.0, 0.0, 1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("VBoxContainer/Edistaja:modulate:a")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 3, 3.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [1.0, 0.0, 0.0, 1.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("VBoxContainer/MarginContainer/DialogLabel:modulate:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.06666667, 0.5, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [1.0, 0.0, 0.0, 1.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oqv6m"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i2nwt"]
 _data = {
-&"FadeIn": SubResource("Animation_oqv6m"),
-&"RESET": SubResource("Animation_burp6"),
-&"fadeOut": SubResource("Animation_7txxy"),
-&"fadeOutIn": SubResource("Animation_kfxey")
+&"FadeIn": SubResource("Animation_7txxy"),
+&"FadeOut": SubResource("Animation_burp6"),
+&"FadeOutIn": SubResource("Animation_oqv6m"),
+&"RESET": SubResource("Animation_r6a8p")
 }
+
+[sub_resource type="Gradient" id="Gradient_burp6"]
+offsets = PackedFloat32Array(0, 0.9511278)
+colors = PackedColorArray(0.26146042, 0.31132343, 0.6147243, 1, 0.11764706, 0.14509805, 0.32156864, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oqv6m"]
+gradient = SubResource("Gradient_burp6")
+width = 540
+height = 960
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
 
 [node name="EndGameScene" type="Node2D" unique_id=1687565749]
-
-[node name="QuestionsUI" type="PanelContainer" parent="." unique_id=995163519]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 55.0
-offset_top = 217.00002
-offset_right = 464.0
-offset_bottom = 472.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.0025443, 1.0144056)
-size_flags_horizontal = 4
-theme_override_styles/panel = SubResource("StyleBoxEmpty_kfxey")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="QuestionsUI" unique_id=1670383427]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 10
-
-[node name="MarginContainer" type="MarginContainer" parent="QuestionsUI/VBoxContainer" unique_id=1436388121]
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="DialogLabel" type="Label" parent="QuestionsUI/VBoxContainer/MarginContainer" unique_id=1495228429]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 20
-text = "Jos olisit...?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Etsija" type="Button" parent="QuestionsUI/VBoxContainer" unique_id=733026879]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_burp6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_oqv6m")
-text = "En tiiä"
-
-[node name="Etenija" type="Button" parent="QuestionsUI/VBoxContainer" unique_id=474056125]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_burp6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_oqv6m")
-text = "Tyylii haslannu juustot"
-
-[node name="Edistaja" type="Button" parent="QuestionsUI/VBoxContainer" unique_id=1004077760]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_burp6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_oqv6m")
-text = "Töihin"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="QuestionsUI" unique_id=786772307]
-libraries/ = SubResource("AnimationLibrary_oqv6m")
-autoplay = &"FadeIn"
 
 [node name="QuestionsManager" type="Node2D" parent="." unique_id=2116300117 node_paths=PackedStringArray("_etsijaButton", "_etenijaButton", "_edistajaButton", "_dialogLabel", "_animations", "_animationTimer")]
 script = ExtResource("1_xmqa1")
 _maxQuestionIndex = 3
-_etsijaButton = NodePath("../QuestionsUI/VBoxContainer/Etsija")
-_etenijaButton = NodePath("../QuestionsUI/VBoxContainer/Etenija")
-_edistajaButton = NodePath("../QuestionsUI/VBoxContainer/Edistaja")
-_dialogLabel = NodePath("../QuestionsUI/VBoxContainer/MarginContainer/DialogLabel")
-_animations = NodePath("../QuestionsUI/AnimationPlayer")
+_etsijaButton = NodePath("../Player/Etsija")
+_etenijaButton = NodePath("../Player/Etenija")
+_edistajaButton = NodePath("../Player/Edistaja")
+_dialogLabel = NodePath("../LabraRotta/DialogLabel")
+_animations = NodePath("../AnimationPlayer")
 _animationTimer = NodePath("../Timer")
 _questionTexts = PackedStringArray("Jos olisit rotta?", "Jos olisit hiiri?", "Jos olis töissä?")
 _etsijaTexts = PackedStringArray("00000", "11111", "22222")
@@ -254,4 +177,99 @@ _edistajaTexts = PackedStringArray("00000", "11111", "22222")
 [node name="Timer" type="Timer" parent="." unique_id=663026272]
 one_shot = true
 
-[connection signal="animation_finished" from="QuestionsUI/AnimationPlayer" to="QuestionsManager" method="_on_animation_player_animation_finished"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=510938091]
+libraries/ = SubResource("AnimationLibrary_i2nwt")
+autoplay = &"FadeIn"
+
+[node name="Background" type="Control" parent="." unique_id=1619513916]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 540.0
+offset_bottom = 960.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1141093688]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_oqv6m")
+
+[node name="LabraRotta" type="Control" parent="." unique_id=1422423987]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 540.0
+offset_bottom = 960.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogLabel" type="Label" parent="LabraRotta" unique_id=144864616]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6112593
+anchor_top = 0.13020833
+anchor_right = 0.8072593
+anchor_bottom = 0.15916666
+offset_left = -0.08000183
+offset_right = 0.07998657
+offset_bottom = 0.19999695
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Jos olisit...?"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="LabraRotta" unique_id=734145337]
+position = Vector2(-177, 357)
+scale = Vector2(0.2715219, 0.27152187)
+texture = ExtResource("3_burp6")
+
+[node name="Player" type="Control" parent="." unique_id=490532306]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 540.0
+offset_bottom = 960.0
+theme = ExtResource("2_7txxy")
+
+[node name="Etsija" type="Button" parent="Player" unique_id=1889609452]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17592593
+anchor_top = 0.625
+anchor_right = 0.8240741
+anchor_bottom = 0.6875
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_7txxy")
+text = "En tiiä"
+
+[node name="Etenija" type="Button" parent="Player" unique_id=770756962]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17592593
+anchor_top = 0.7083333
+anchor_right = 0.8240741
+anchor_bottom = 0.7708333
+text = "Tyylii haslannu juustot"
+metadata/_edit_use_anchors_ = true
+
+[node name="Edistaja" type="Button" parent="Player" unique_id=535673844]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17592593
+anchor_top = 0.7916667
+anchor_right = 0.8252686
+anchor_bottom = 0.8541667
+offset_right = -0.64505005
+scale = Vector2(1.001843, 1)
+text = "Töihin"
+metadata/_edit_use_anchors_ = true
