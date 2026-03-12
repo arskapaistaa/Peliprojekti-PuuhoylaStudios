@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://i1fnrld18ulw" path="res://Scenes/Managers/game_manager.tscn" id="5_j0wll"]
 [ext_resource type="Texture2D" uid="uid://0njcw21tcs28" path="res://Sprites/tileset3.png" id="6_16f24"]
 [ext_resource type="Script" uid="uid://ctlleouhimdnx" path="res://Scripts/Exit.cs" id="7_m74ok"]
+[ext_resource type="PackedScene" uid="uid://dxyrlpqny8xd2" path="res://Scenes/Objects/rock.tscn" id="9_l6byj"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j0wll"]
 polygon = PackedVector2Array(-32, -28.703102, -15.536541, -29.229763, -12.376568, -27.649776, -8.158632, -29.003323, -1.5799866, -28.176437, 5.529953, -29.756426, 20.013168, -29.493093, 25.806458, -26.333118, 28.439766, -22.11982, 28.439766, -14.483215, 27.386444, -7.899933, 26.59645, 5.003292, 26.596447, 14.219885, 28.43977, 21.329828, 28.703098, 27.123114, 28.703098, 32, -27.913109, 32, -32, 27.649776)
@@ -232,7 +233,7 @@ offset_bottom = 40.0
 
 [node name="Mouse" parent="." unique_id=557865975 instance=ExtResource("2_acspe")]
 z_index = 2
-position = Vector2(0, 16)
+position = Vector2(0, 142)
 
 [node name="Environment" type="Node" parent="." unique_id=2055302965]
 
@@ -240,15 +241,6 @@ position = Vector2(0, 16)
 
 [node name="Cheese" parent="Objects" unique_id=764867206 instance=ExtResource("3_16f24")]
 position = Vector2(-147, 0)
-
-[node name="Cheese2" parent="Objects" unique_id=748695725 instance=ExtResource("3_16f24")]
-position = Vector2(0, 128)
-
-[node name="Cheese3" parent="Objects" unique_id=1760096432 instance=ExtResource("3_16f24")]
-position = Vector2(153, 0)
-
-[node name="Cheese4" parent="Objects" unique_id=1621827517 instance=ExtResource("3_16f24")]
-position = Vector2(-473, -223)
 
 [node name="Managers" type="Node" parent="." unique_id=1022473391]
 
@@ -262,7 +254,7 @@ position = Vector2(-1, 1)
 [node name="Walls" type="TileMapLayer" parent="TileMap" unique_id=323017575]
 z_index = 2
 use_parent_material = true
-tile_map_data = PackedByteArray("AAD///7/AAAGAAEAAAAAAP7/AAAGAAEAAAABAP7/AAAGAAEAAAACAP7/AAAGAAEAAAD+//7/AAAGAAEAAAD9//7/AAAGAAEAAAADAP7/AAALAAEAAAD8////AAALAAYAAAADAP//AAALAAYAAAADAAAAAAARAAsAAAD8/wAAAAARAAsAAAADAAIAAAARAAYAAAD8/wMAAAABAAsAAAADAAMAAAALAAsAAAD9/wMAAAAGAAsAAAD+/wMAAAAGAAsAAAD//wMAAAAGAAsAAAAAAAMAAAAGAAsAAAABAAMAAAAGAAsAAAACAAMAAAAGAAsAAAD6/wIAAAALAAYAAAD6/wMAAAALAAYAAAD6/wQAAAALAAYAAAD6/wEAAAALAAYAAAD6/wAAAAALAAYAAAD8/wIAAAARAAYAAAD6////AAABAAYAAAD6//7/AAABAAYAAAD8//3/AAALAAYAAAD6//3/AAALAAEAAAD6//v/AAALAAsAAAD5//v/AAAGAAEAAAD5//3/AAAGAAEAAAD4//3/AAAGAAEAAAD4//v/AAAGAAEAAAD3//3/AAABAAsAAAD3//v/AAABAAEAAAD3//z/AAALAAYAAAD8//z/AAALAAYAAAD8//v/AAALAAYAAAD6//r/AAALAAYAAAD6//n/AAABAAEAAAD7//n/AAAGAAEAAAD8//n/AAAGAAEAAAD9//n/AAAGAAEAAAD+//n/AAALAAEAAAD+//r/AAALAAYAAAD+//v/AAALAAYAAAD+//z/AAALAAYAAAA=")
+tile_map_data = PackedByteArray("AAACAP7/AAAGAAEAAAD9//7/AAAGAAEAAAADAP7/AAALAAEAAAD8////AAALAAYAAAADAP//AAALAAYAAAADAAAAAAARAAsAAAD8/wAAAAARAAsAAAADAAIAAAARAAYAAAD8/wMAAAABAAsAAAADAAMAAAALAAsAAAD9/wMAAAAGAAsAAAD+/wMAAAAGAAsAAAD//wMAAAAGAAsAAAAAAAMAAAAGAAsAAAABAAMAAAAGAAsAAAACAAMAAAAGAAsAAAD6/wIAAAALAAYAAAD6/wMAAAALAAYAAAD6/wQAAAALAAYAAAD6/wEAAAALAAYAAAD6/wAAAAALAAYAAAD8/wIAAAARAAYAAAD6////AAABAAYAAAD6//7/AAABAAYAAAD8//3/AAALAAYAAAD6//3/AAALAAEAAAD6//v/AAALAAsAAAD5//v/AAAGAAEAAAD5//3/AAAGAAEAAAD4//3/AAAGAAEAAAD4//v/AAAGAAEAAAD3//3/AAABAAsAAAD3//v/AAABAAEAAAD3//z/AAALAAYAAAD8//z/AAALAAYAAAD8//v/AAALAAYAAAD6//r/AAALAAYAAAD6//n/AAABAAEAAAD7//n/AAAGAAEAAAD8//n/AAAGAAEAAAD9//n/AAAGAAEAAAD+//n/AAALAAEAAAD+//r/AAALAAYAAAD+//v/AAALAAYAAAD+//z/AAALAAYAAAD+//7/AAAWAAEAAAABAP7/AAARAAEAAAA=")
 tile_set = SubResource("TileSet_m74ok")
 
 [node name="Walls2" type="TileMapLayer" parent="TileMap" unique_id=1405516613]
@@ -292,3 +284,6 @@ script = ExtResource("7_m74ok")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1871817842]
 position = Vector2(-2, 8)
 shape = SubResource("RectangleShape2D_j0wll")
+
+[node name="Rock" parent="." unique_id=2114008508 instance=ExtResource("9_l6byj")]
+position = Vector2(0, -87)
