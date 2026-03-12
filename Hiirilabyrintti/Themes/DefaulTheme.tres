@@ -1,0 +1,31 @@
+[gd_resource type="Theme" format=3 uid="uid://cam30uwftlpxs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfxey"]
+bg_color = Color(0.27450982, 0.3137255, 0.5882353, 1)
+border_width_bottom = 5
+border_color = Color(0.18852991, 0.2176696, 0.43071294, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1rpc"]
+bg_color = Color(0.27450982, 0.3137255, 0.5882353, 1)
+border_color = Color(0.18852991, 0.2176696, 0.43071294, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gaak"]
+bg_color = Color(0.11764706, 0.14509805, 0.32156864, 1)
+
+[resource]
+Button/constants/align_to_largest_stylebox = 1
+Button/constants/h_separation = 8
+Button/font_sizes/font_size = 16
+Button/styles/focus = SubResource("StyleBoxFlat_kfxey")
+Button/styles/hover = SubResource("StyleBoxFlat_kfxey")
+Button/styles/normal = SubResource("StyleBoxFlat_kfxey")
+Button/styles/pressed = SubResource("StyleBoxFlat_k1rpc")
+Panel/styles/panel = SubResource("StyleBoxFlat_3gaak")

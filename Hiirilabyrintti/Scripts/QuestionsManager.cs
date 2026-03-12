@@ -88,7 +88,7 @@ public partial class QuestionsManager : Node2D
 		else
 		{
 		// Play normal fade animation.
-		_animations.Play("fadeOutIn");
+		_animations.Play("FadeOutIn");
 		// Start timer.
 		_animationTimer.Start();
 		}
@@ -111,7 +111,7 @@ public partial class QuestionsManager : Node2D
 	private void LastQuestion()
 	{
 		// Play this if player has answered to all the questions.
-		_animations.Play("fadeOut");
+		_animations.Play("FadeOut");
 		GetTree().ChangeSceneToFile("res://Scenes/Game Scenes/Final_game_scene.tscn");
 	}
 
