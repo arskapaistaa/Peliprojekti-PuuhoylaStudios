@@ -168,17 +168,17 @@ grow_vertical = 2
 
 [node name="QuestionsManager" type="Node2D" parent="." unique_id=2116300117 node_paths=PackedStringArray("_etsijaButton", "_etenijaButton", "_edistajaButton", "_dialogLabel", "_animations", "_animationTimer")]
 script = ExtResource("1_xmqa1")
-_maxQuestionIndex = 3
+_maxQuestionIndex = 10
 _etsijaButton = NodePath("../Player/Etsija")
 _etenijaButton = NodePath("../Player/Etenija")
 _edistajaButton = NodePath("../Player/Edistaja")
 _dialogLabel = NodePath("../LabraRotta/DialogLabel")
 _animations = NodePath("../AnimationPlayer")
 _animationTimer = NodePath("../Timer")
-_questionTexts = PackedStringArray("Jos olisit rotta?", "Jos olisit hiiri?", "Jos olis töissä?")
-_etsijaTexts = PackedStringArray("00000", "11111", "22222")
-_etenijaTexts = PackedStringArray("00000", "11111", "22222")
-_edistajaTexts = PackedStringArray("00000", "11111", "22222")
+_questionTexts = PackedStringArray("Jos juusto olisi valuuttaa, miten käyttäisit sitä?", "Jos olisit hiiri?", "Jos olis töissä?", "JOTAI JOTAI", "KHYL KHYL", "BUM BUM", "LILLERILII", "TEST TEST TEST TEST TEST TEST", "DKJFGSHBFGDJHFGBJD", "VITHUVITHUVITHUVITHU")
+_etsijaTexts = PackedStringArray("Minulla ei luultavasti olisi juustoa mitä käyttää...", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
+_etenijaTexts = PackedStringArray("Tuhlaisin sitä.", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
+_edistajaTexts = PackedStringArray("Palkkaisin muita tekemään minulle lisää juustoa.", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
 
 [node name="Timer" type="Timer" parent="." unique_id=663026272]
 one_shot = true
@@ -241,6 +241,9 @@ grow_horizontal = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 20
 text = "Jos olisit...?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" type="Control" parent="." unique_id=490532306]
@@ -265,6 +268,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_7txxy")
 text = "En tiiä"
+text_overrun_behavior = 2
+autowrap_mode = 2
 
 [node name="Etenija" type="Button" parent="Player" unique_id=770756962]
 layout_mode = 1
@@ -274,6 +279,7 @@ anchor_top = 0.7083333
 anchor_right = 0.8240741
 anchor_bottom = 0.7708333
 text = "Tyylii haslannu juustot"
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Edistaja" type="Button" parent="Player" unique_id=535673844]
@@ -286,4 +292,5 @@ anchor_bottom = 0.8541667
 offset_right = -0.64505005
 scale = Vector2(1.001843, 1)
 text = "Töihin"
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
