@@ -4,10 +4,6 @@ using System;
 
 public partial class QuestionsManager : Node2D
 {
-	// Int for keeping record.
-	public int etsija = 0;
-	public int etenija = 0;
-	public int edistaja = 0;
 
 	// First question is 0.
 	public int question = 0;
@@ -62,18 +58,15 @@ public partial class QuestionsManager : Node2D
 		switch (buttonNumber)
 		{
 			case 1:
-			etsija++;
-			GD.Print("Etsijä button pressed");
+			GameManager.Instance.AddEtsija(10);
 			break;
 
 			case 2:
-			etenija++;
-			GD.Print("Etenijä button pressed");
+			GameManager.Instance.AddEtenija(10);
 			break;
 
 			case 3:
-			edistaja++;
-			GD.Print("Edistaja button pressed");
+			GameManager.Instance.AddEdistaja(10);
 			break;
 		}
 
@@ -93,11 +86,8 @@ public partial class QuestionsManager : Node2D
 		_animationTimer.Start();
 		}
 
-		// Only for Debuggin
-		GD.Print("Etsijä: " + etsija);
-		GD.Print("Etenijä: " + etenija);
-		GD.Print("Edistjä: " + edistaja);
-		GD.Print(question);
+		// Debugging
+		GD.Print("Question: " + question);
 	}
 	private void NextQuestion()
 	{

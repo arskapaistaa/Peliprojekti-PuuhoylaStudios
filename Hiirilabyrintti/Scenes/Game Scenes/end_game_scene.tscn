@@ -34,19 +34,19 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("LabraRotta/Sprite2D:position")
+tracks/2/path = NodePath("LabraRotta/Labrarotta:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(712, 357), Vector2(201, 357)]
+"values": [Vector2(712, 357), Vector2(39, 115)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("LabraRotta/Sprite2D:rotation")
+tracks/3/path = NodePath("LabraRotta/Labrarotta:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -116,7 +116,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("LabraRotta/Sprite2D:position")
+tracks/2/path = NodePath("LabraRotta/Labrarotta:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -128,7 +128,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("LabraRotta/Sprite2D:rotation")
+tracks/3/path = NodePath("LabraRotta/Labrarotta:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -158,21 +158,27 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 1)
 
-[node name="EndGameScene" type="Node2D" unique_id=1687565749]
+[node name="EndGameScene" type="Control" unique_id=1891730385]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="QuestionsManager" type="Node2D" parent="." unique_id=2116300117 node_paths=PackedStringArray("_etsijaButton", "_etenijaButton", "_edistajaButton", "_dialogLabel", "_animations", "_animationTimer")]
 script = ExtResource("1_xmqa1")
-_maxQuestionIndex = 3
+_maxQuestionIndex = 10
 _etsijaButton = NodePath("../Player/Etsija")
 _etenijaButton = NodePath("../Player/Etenija")
 _edistajaButton = NodePath("../Player/Edistaja")
 _dialogLabel = NodePath("../LabraRotta/DialogLabel")
 _animations = NodePath("../AnimationPlayer")
 _animationTimer = NodePath("../Timer")
-_questionTexts = PackedStringArray("Jos olisit rotta?", "Jos olisit hiiri?", "Jos olis töissä?")
-_etsijaTexts = PackedStringArray("00000", "11111", "22222")
-_etenijaTexts = PackedStringArray("00000", "11111", "22222")
-_edistajaTexts = PackedStringArray("00000", "11111", "22222")
+_questionTexts = PackedStringArray("Jos juusto olisi valuuttaa, miten käyttäisit sitä?", "Jos olisit hiiri?", "Jos olis töissä?", "JOTAI JOTAI", "KHYL KHYL", "BUM BUM", "LILLERILII", "TEST TEST TEST TEST TEST TEST", "DKJFGSHBFGDJHFGBJD", "VITHUVITHUVITHUVITHU")
+_etsijaTexts = PackedStringArray("Minulla ei luultavasti olisi juustoa mitä käyttää...", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
+_etenijaTexts = PackedStringArray("Tuhlaisin sitä.", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
+_edistajaTexts = PackedStringArray("Palkkaisin muita tekemään minulle lisää juustoa.", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
 
 [node name="Timer" type="Timer" parent="." unique_id=663026272]
 one_shot = true
@@ -182,12 +188,10 @@ libraries/ = SubResource("AnimationLibrary_i2nwt")
 autoplay = &"FadeIn"
 
 [node name="Background" type="Control" parent="." unique_id=1619513916]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 540.0
-offset_bottom = 960.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -201,22 +205,35 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_oqv6m")
 
 [node name="LabraRotta" type="Control" parent="." unique_id=1422423987]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 540.0
-offset_bottom = 960.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Labrarotta" type="TextureRect" parent="LabraRotta" unique_id=922338601]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.072222225
+anchor_top = 0.119791664
+anchor_right = 0.7263889
+anchor_bottom = 0.5799647
+offset_left = -216.0
+offset_top = 242.0
+offset_right = 731.75
+offset_bottom = 1427.2339
+scale = Vector2(0.2715219, 0.27152187)
+texture = ExtResource("3_burp6")
+metadata/_edit_use_anchors_ = true
 
 [node name="DialogLabel" type="Label" parent="LabraRotta" unique_id=144864616]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.6112593
+anchor_left = 0.52422225
 anchor_top = 0.13020833
-anchor_right = 0.8072593
-anchor_bottom = 0.15916666
+anchor_right = 0.9517038
+anchor_bottom = 0.29770833
 offset_left = -0.08000183
 offset_right = 0.07998657
 offset_bottom = 0.19999695
@@ -226,31 +243,33 @@ theme_override_font_sizes/font_size = 20
 text = "Jos olisit...?"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="LabraRotta" unique_id=734145337]
-position = Vector2(-177, 357)
-scale = Vector2(0.2715219, 0.27152187)
-texture = ExtResource("3_burp6")
-
 [node name="Player" type="Control" parent="." unique_id=490532306]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 540.0
-offset_bottom = 960.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_7txxy")
 
 [node name="Etsija" type="Button" parent="Player" unique_id=1889609452]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.17592593
+anchor_left = 0.17600001
 anchor_top = 0.625
-anchor_right = 0.8240741
+anchor_right = 0.82400006
 anchor_bottom = 0.6875
+offset_left = -0.040008545
+offset_right = 0.039978027
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_7txxy")
 text = "En tiiä"
+text_overrun_behavior = 2
+autowrap_mode = 2
 
 [node name="Etenija" type="Button" parent="Player" unique_id=770756962]
 layout_mode = 1
@@ -260,6 +279,7 @@ anchor_top = 0.7083333
 anchor_right = 0.8240741
 anchor_bottom = 0.7708333
 text = "Tyylii haslannu juustot"
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Edistaja" type="Button" parent="Player" unique_id=535673844]
@@ -272,4 +292,5 @@ anchor_bottom = 0.8541667
 offset_right = -0.64505005
 scale = Vector2(1.001843, 1)
 text = "Töihin"
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true

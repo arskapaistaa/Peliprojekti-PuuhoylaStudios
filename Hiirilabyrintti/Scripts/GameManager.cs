@@ -34,6 +34,7 @@ public partial class GameManager : Node
 		{
 			// Min and Max cheese score
 			_cheeseScore = Mathf.Clamp(value, 0, 999);
+
 			// For Debugging
 			GD.Print("Cheese Score:" + _cheeseScore);
 		}
@@ -60,6 +61,7 @@ public partial class GameManager : Node
 		{
 			// Min and Max drill score
 			_drillScore = Mathf.Clamp(value, 0, 999);
+
 			// For Debugging
 			GD.Print("Drill Score:" + _drillScore);
 		}
@@ -77,4 +79,76 @@ public partial class GameManager : Node
 		return true;
 	}
 
+	// Etsijä part
+	private int _etsijaScore = 0;
+	public int EtsijaScore
+	{
+		get { return _etsijaScore; }
+		set
+		{
+			// Min and max. Max now 100 = 10 questions?
+			_etsijaScore = Mathf.Clamp(value, 0 , 100);
+
+			// For debugging
+			GD.Print("Etsijä score:" + _etsijaScore);
+		}
+	}
+
+	public bool AddEtsija(int amount)
+	{
+		if (amount < 0 )
+		{
+			return false;
+		}
+		EtsijaScore += amount;
+		return true;
+	}
+
+	private int _etenijaScore = 0;
+	public int EtenijaScore
+	{
+		get { return _etenijaScore; }
+		set
+		{
+			// Min and max. Max now 100 = 10 questions?
+			_etenijaScore = Mathf.Clamp(value, 0 , 100);
+
+			// For debugging
+			GD.Print("Etenijä score:" + _etenijaScore);
+		}
+	}
+
+	public bool AddEtenija(int amount)
+	{
+		if (amount < 0 )
+		{
+			return false;
+		}
+		EtenijaScore += amount;
+		return true;
+	}
+
+	private int _edistajaScore = 0;
+	public int EdistajaScore
+	{
+		get { return _edistajaScore; }
+		set
+		{
+			// Min and max. Max now 100 = 10 questions?
+			_edistajaScore = Mathf.Clamp(value, 0 , 100);
+
+			// For debugging
+			GD.Print("Edistäjä score:" + _edistajaScore);
+		}
+	}
+
+	public bool AddEdistaja(int amount)
+	{
+		if (amount < 0 )
+		{
+			return false;
+		}
+		EdistajaScore += amount;
+		return true;
+	}
 }
