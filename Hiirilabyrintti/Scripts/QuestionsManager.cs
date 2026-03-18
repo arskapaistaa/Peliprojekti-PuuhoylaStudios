@@ -58,15 +58,15 @@ public partial class QuestionsManager : Node2D
 		switch (buttonNumber)
 		{
 			case 1:
-			GameManager.Instance.AddEtsija(1);
+			GameManager.Instance.AddEtsija(10);
 			break;
 
 			case 2:
-			GameManager.Instance.AddEtenija(1);
+			GameManager.Instance.AddEtenija(10);
 			break;
 
 			case 3:
-			GameManager.Instance.AddEdistaja(1);
+			GameManager.Instance.AddEdistaja(10);
 			break;
 		}
 

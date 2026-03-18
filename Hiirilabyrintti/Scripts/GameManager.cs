@@ -86,8 +86,8 @@ public partial class GameManager : Node
 		get { return _etsijaScore; }
 		set
 		{
-			// Min and max. Max now 10 = 10 questions?
-			_etsijaScore = Mathf.Clamp(value, 0 , 10);
+			// Min and max. Max now 100 = 10 questions?
+			_etsijaScore = Mathf.Clamp(value, 0 , 100);
 
 			// For debugging
 			GD.Print("Etsijä score:" + _etsijaScore);
@@ -110,8 +110,8 @@ public partial class GameManager : Node
 		get { return _etenijaScore; }
 		set
 		{
-			// Min and max. Max now 10 = 10 questions?
-			_etenijaScore = Mathf.Clamp(value, 0 , 10);
+			// Min and max. Max now 100 = 10 questions?
+			_etenijaScore = Mathf.Clamp(value, 0 , 100);
 
 			// For debugging
 			GD.Print("Etenijä score:" + _etenijaScore);
@@ -134,8 +134,8 @@ public partial class GameManager : Node
 		get { return _edistajaScore; }
 		set
 		{
-			// Min and max. Max now 10 = 10 questions?
-			_edistajaScore = Mathf.Clamp(value, 0 , 10);
+			// Min and max. Max now 100 = 10 questions?
+			_edistajaScore = Mathf.Clamp(value, 0 , 100);
 
 			// For debugging
 			GD.Print("Edistäjä score:" + _edistajaScore);
