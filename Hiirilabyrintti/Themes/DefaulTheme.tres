@@ -28,6 +28,7 @@ Button/styles/focus = SubResource("StyleBoxFlat_kfxey")
 Button/styles/hover = SubResource("StyleBoxFlat_kfxey")
 Button/styles/normal = SubResource("StyleBoxFlat_kfxey")
 Button/styles/pressed = SubResource("StyleBoxFlat_k1rpc")
+HBoxContainer/constants/separation = 30
 Label/font_sizes/font_size = 30
 Label/fonts/font = null
 Panel/styles/panel = SubResource("StyleBoxFlat_3gaak")

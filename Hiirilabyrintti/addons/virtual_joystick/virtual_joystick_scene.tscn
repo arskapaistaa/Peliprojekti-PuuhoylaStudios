@@ -10,8 +10,10 @@ anchor_left = 0.36574075
 anchor_top = 0.7963542
 anchor_right = 0.6435185
 anchor_bottom = 0.9526042
-grow_vertical = 0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_8x4dy")
+joystick_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Base" type="TextureRect" parent="." unique_id=608815124]
@@ -26,6 +28,7 @@ grow_vertical = 2
 pivot_offset = Vector2(100, 100)
 mouse_force_pass_scroll_events = false
 texture = ExtResource("2_jhjs2")
+expand_mode = 3
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
@@ -40,5 +43,6 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(50, 50)
 texture = ExtResource("3_3etdg")
+expand_mode = 3
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true

@@ -102,6 +102,8 @@ public partial class QuestionsManager : Node2D
 	{
 		// Play this if player has answered to all the questions.
 		_animations.Play("FadeOut");
+
+		// Load new scene.
 		GetTree().ChangeSceneToFile("res://Scenes/Game Scenes/Final_game_scene.tscn");
 	}
 

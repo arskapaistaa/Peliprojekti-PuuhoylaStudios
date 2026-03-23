@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cggpma0qvjowe"]
+
+[ext_resource type="Script" uid="uid://dm5b2wjbaogtk" path="res://Scripts/Counters.cs" id="1_vwuvs"]
+[ext_resource type="Texture2D" uid="uid://cunwtmrlplbe6" path="res://Sprites/juusto.png" id="2_86tgr"]
+[ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="2_gninf"]
+[ext_resource type="Texture2D" uid="uid://cpp0t3yur1ih4" path="res://Sprites/poranosa.png" id="4_gninf"]
+
+[node name="Counters" type="CanvasLayer" unique_id=74711613 node_paths=PackedStringArray("cheeseCounterLabel", "drillCounterLabel")]
+script = ExtResource("1_vwuvs")
+cheeseCounterLabel = NodePath("HBoxContainer/CheeseLabel")
+drillCounterLabel = NodePath("HBoxContainer/DrillLabel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=774755094]
+anchors_preset = -1
+anchor_left = 0.75277776
+anchor_top = 0.022916667
+anchor_right = 0.9435185
+anchor_bottom = 0.065104164
+grow_horizontal = 0
+theme = ExtResource("2_gninf")
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CheeseLabel" type="Label" parent="HBoxContainer" unique_id=1826787991]
+layout_mode = 2
+theme = ExtResource("2_gninf")
+theme_type_variation = &"HeaderLarge"
+text = "0"
+
+[node name="CheeseRectRect" type="TextureRect" parent="HBoxContainer" unique_id=725582566]
+layout_mode = 2
+texture = ExtResource("2_86tgr")
+expand_mode = 2
+
+[node name="DrillLabel" type="Label" parent="HBoxContainer" unique_id=1900705713]
+layout_mode = 2
+theme = ExtResource("2_gninf")
+theme_type_variation = &"HeaderLarge"
+text = "0"
+
+[node name="DrillRect" type="TextureRect" parent="HBoxContainer" unique_id=68719560]
+layout_mode = 2
+texture = ExtResource("4_gninf")
+expand_mode = 2
