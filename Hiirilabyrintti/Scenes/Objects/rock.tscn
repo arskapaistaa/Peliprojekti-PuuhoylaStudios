@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://35vp66usebh1" path="res://Scripts/Rock.cs" id="1_8gfo0"]
 [ext_resource type="Texture2D" uid="uid://dcdbw7fjn8oio" path="res://Sprites/kivi2.png" id="1_c7qrd"]
 [ext_resource type="Texture2D" uid="uid://bhsh1x6aiy4dt" path="res://Sprites/kivi1.png" id="2_l0sgq"]
+[ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="4_brjug"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0sgq"]
 atlas = ExtResource("1_c7qrd")
@@ -171,31 +172,30 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="Canvas/Control" unique_id=2102695625]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -141.0
-offset_top = -42.0
-offset_right = 141.0
-offset_bottom = 42.0
+anchors_preset = -1
+anchor_left = -5.0
+anchor_top = -0.675
+anchor_right = 6.0
+anchor_bottom = 1.675
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Canvas/Control" unique_id=69572931]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -135.5
-offset_top = -36.5
-offset_right = 135.5
-offset_bottom = 36.5
+anchors_preset = -1
+anchor_left = -4.7125
+anchor_top = -0.5875
+anchor_right = 5.7125
+anchor_bottom = 1.5875
+offset_left = 73.0
+offset_top = 7.0
+offset_right = -73.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_brjug")
 text = "Brada you need to find some
 drill parts to get trough"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

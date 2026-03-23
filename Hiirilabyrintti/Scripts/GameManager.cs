@@ -40,6 +40,9 @@ public partial class GameManager : Node
 		}
 	}
 
+	// To update GUI
+	[Export] public Counters counters;
+
 	// Method to call from cheese class
 	public bool AddCheese(int amount)
 	{
@@ -49,6 +52,18 @@ public partial class GameManager : Node
 		}
 
 		CheeseScore += amount;
+
+		// Update UI
+		if (counters != null)
+		{
+			counters.UpdateCheeseScore(CheeseScore);
+
+		}
+		else
+		{
+			GD.Print("Counter missing!");
+		}
+
 		return true;
 	}
 
@@ -76,6 +91,17 @@ public partial class GameManager : Node
 		}
 
 		DrillScore += amount;
+
+		// Update UI
+		if (counters != null)
+		{
+			counters.UpdateDrillScore(DrillScore);
+
+		}
+		else
+		{
+			GD.Print("Counter missing!");
+		}
 		return true;
 	}
 

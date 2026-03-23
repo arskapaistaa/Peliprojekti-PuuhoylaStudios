@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cunwtmrlplbe6" path="res://Sprites/juusto.png" id="2_7bhg4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ma2yl"]
-size = Vector2(14, 12)
+size = Vector2(16, 14)
 
 [sub_resource type="Gradient" id="Gradient_kxv04"]
 offsets = PackedFloat32Array(0, 0.7346939)
