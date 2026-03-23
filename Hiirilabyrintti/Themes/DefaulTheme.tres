@@ -23,9 +23,11 @@ bg_color = Color(0.11764706, 0.14509805, 0.32156864, 1)
 [resource]
 Button/constants/align_to_largest_stylebox = 1
 Button/constants/h_separation = 8
-Button/font_sizes/font_size = 16
+Button/font_sizes/font_size = 30
 Button/styles/focus = SubResource("StyleBoxFlat_kfxey")
 Button/styles/hover = SubResource("StyleBoxFlat_kfxey")
 Button/styles/normal = SubResource("StyleBoxFlat_kfxey")
 Button/styles/pressed = SubResource("StyleBoxFlat_k1rpc")
+Label/font_sizes/font_size = 30
+Label/fonts/font = null
 Panel/styles/panel = SubResource("StyleBoxFlat_3gaak")

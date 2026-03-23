@@ -11,8 +11,8 @@ public partial class Cheese : Collectable
 		GD.Print("Cheese collected");
 		GameManager.Instance.AddCheese(_cheeseScore);
 
-		//var label = GetNode<Label>(root/World/CheeseCounter/HBoxContainer/Container);
-		// label.Text = GameManager.Instance.CheeseScore.ToString();
+		//var label = GetNode<Label>(World/CheeseCounter/HBoxContainer/Label);
+		//label.Text = GameManager.Instance.CheeseScore.ToString();
 		// TODO loppuun!
 	}
 }
