@@ -24,12 +24,16 @@ public partial class Mouse : CharacterBody2D
 
             // Play Move when moving
             _sprite.Play("Move");
+
+            // Start emiting when moving.
             _particles.Emitting = true;
         }
         else
         {
             // Play idle when Idle state
             _sprite.Play("Idle");
+
+            // Sttop emiting when Idle state.
             _particles.Emitting = false;
         }
     }

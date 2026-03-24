@@ -148,7 +148,7 @@ collision_layer = 2
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_tewyd")
-speed = 180.0
+speed = 160.0
 _particles = NodePath("CPUParticles2D")
 _sprite = NodePath("Sprite2D")
 
@@ -177,7 +177,7 @@ frame = 7
 frame_progress = 0.76432276
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1018125281]
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(3.2, 3.2)
 process_callback = 0
 limit_left = -960
 limit_top = -258
