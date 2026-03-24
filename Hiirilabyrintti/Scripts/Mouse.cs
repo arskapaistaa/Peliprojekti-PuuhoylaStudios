@@ -8,6 +8,9 @@ public partial class Mouse : CharacterBody2D
 
     // For animations
     [Export] private AnimatedSprite2D _sprite;
+
+    [Export] private CameraShake _camera;
+    private bool wasOnWall = false;
     public override void _PhysicsProcess(double delta)
     {
         Vector2 inputDirection = new Vector2(
@@ -36,5 +39,18 @@ public partial class Mouse : CharacterBody2D
             // Sttop emiting when Idle state.
             _particles.Emitting = false;
         }
+
+        // Camera shake when colliding with wall.
+        // Only on impact.
+
+        bool isOnWall = IsOnWall();
+        if (isOnWall && !wasOnWall)
+        {
+            _camera.Shake(2.0f);
+
+            // Also vibration 100ms.
+            Input.VibrateHandheld(100);
+        }
+        wasOnWall = isOnWall;
     }
 }
