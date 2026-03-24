@@ -14,8 +14,7 @@ public partial class Exit : Area2D
 		// Load end game scene when enter area2D
 		if (body is CharacterBody2D)
 		{
-
-			GetTree().ChangeSceneToFile("res://Scenes/Game Scenes/end_game_scene.tscn");
+			GetTree().CallDeferred("change_scene_to_file", "res://Scenes/Game Scenes/end_game_scene.tscn");
 		}
 	}
 }

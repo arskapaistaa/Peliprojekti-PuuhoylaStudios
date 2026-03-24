@@ -1,5 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://cam30uwftlpxs"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dfxa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfxey"]
 bg_color = Color(0.27450982, 0.3137255, 0.5882353, 1)
 border_width_bottom = 15
@@ -24,6 +27,7 @@ bg_color = Color(0.11764706, 0.14509805, 0.32156864, 1)
 Button/constants/align_to_largest_stylebox = 1
 Button/constants/h_separation = 8
 Button/font_sizes/font_size = 30
+Button/styles/disabled = SubResource("StyleBoxFlat_1dfxa")
 Button/styles/focus = SubResource("StyleBoxFlat_kfxey")
 Button/styles/hover = SubResource("StyleBoxFlat_kfxey")
 Button/styles/normal = SubResource("StyleBoxFlat_kfxey")
