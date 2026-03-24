@@ -4,6 +4,7 @@ using System;
 public partial class Mouse : CharacterBody2D
 {
     [Export] public float speed = 200f;
+    [Export] private CpuParticles2D _particles;
 
     // For animations
     [Export] private AnimatedSprite2D _sprite;
@@ -23,11 +24,13 @@ public partial class Mouse : CharacterBody2D
 
             // Play Move when moving
             _sprite.Play("Move");
+            _particles.Emitting = true;
         }
         else
         {
             // Play idle when Idle state
             _sprite.Play("Idle");
+            _particles.Emitting = false;
         }
     }
 }
