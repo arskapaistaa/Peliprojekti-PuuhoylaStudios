@@ -169,16 +169,16 @@ grow_vertical = 2
 [node name="QuestionsManager" type="Node2D" parent="." unique_id=2116300117 node_paths=PackedStringArray("_etsijaButton", "_etenijaButton", "_edistajaButton", "_dialogLabel", "_animations", "_animationTimer")]
 script = ExtResource("1_xmqa1")
 _maxQuestionIndex = 10
+_questionTexts = PackedStringArray("Jos juusto olisi valuuttaa, miten käyttäisit sitä?", "Jos olisit hiiri?", "Jos olis töissä?", "JOTAI JOTAI", "KHYL KHYL", "BUM BUM", "LILLERILII", "TEST TEST TEST TEST TEST TEST", "DKJFGSHBFGDJHFGBJD", "VITHUVITHUVITHUVITHU")
+_etsijaTexts = PackedStringArray("Minulla ei luultavasti olisi juustoa mitä käyttää...", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
+_etenijaTexts = PackedStringArray("Tuhlaisin sitä.", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
+_edistajaTexts = PackedStringArray("Palkkaisin muita tekemään minulle lisää juustoa.", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
 _etsijaButton = NodePath("../Player/Etsija")
 _etenijaButton = NodePath("../Player/Etenija")
 _edistajaButton = NodePath("../Player/Edistaja")
 _dialogLabel = NodePath("../LabraRotta/DialogLabel")
 _animations = NodePath("../AnimationPlayer")
 _animationTimer = NodePath("../Timer")
-_questionTexts = PackedStringArray("Jos juusto olisi valuuttaa, miten käyttäisit sitä?", "Jos olisit hiiri?", "Jos olis töissä?", "JOTAI JOTAI", "KHYL KHYL", "BUM BUM", "LILLERILII", "TEST TEST TEST TEST TEST TEST", "DKJFGSHBFGDJHFGBJD", "VITHUVITHUVITHUVITHU")
-_etsijaTexts = PackedStringArray("Minulla ei luultavasti olisi juustoa mitä käyttää...", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
-_etenijaTexts = PackedStringArray("Tuhlaisin sitä.", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
-_edistajaTexts = PackedStringArray("Palkkaisin muita tekemään minulle lisää juustoa.", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
 
 [node name="Timer" type="Timer" parent="." unique_id=663026272]
 one_shot = true
