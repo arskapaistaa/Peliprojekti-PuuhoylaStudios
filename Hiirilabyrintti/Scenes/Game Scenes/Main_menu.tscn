@@ -74,7 +74,6 @@ grow_vertical = 2
 color = Color(0.27450982, 0.3137255, 0.5882353, 1)
 
 [node name="Button" type="Button" parent="." unique_id=576446134]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -109,6 +108,7 @@ theme_override_font_sizes/font_size = 63
 text = "ASETUKSET"
 
 [node name="Settings menu" type="Control" parent="." unique_id=1750706813]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
