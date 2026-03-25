@@ -163,8 +163,7 @@ position = Vector2(475, -31)
 [node name="Managers" type="Node" parent="." unique_id=1022473391]
 script = ExtResource("5_8rmvd")
 
-[node name="GameManager" parent="Managers" unique_id=1156478741 node_paths=PackedStringArray("counters") instance=ExtResource("5_j0wll")]
-counters = NodePath("../../Counters")
+[node name="GameManager" parent="Managers" unique_id=1156478741 instance=ExtResource("5_j0wll")]
 
 [node name="TileMap" type="Node2D" parent="." unique_id=313359339]
 position = Vector2(-1, 1)
