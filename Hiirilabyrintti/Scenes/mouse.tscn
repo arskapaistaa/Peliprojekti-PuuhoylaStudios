@@ -144,18 +144,49 @@ height = 96
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_2q34x"]
+
+[sub_resource type="Curve" id="Curve_5rgqy"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.01886797), 0.0, 0.0, 0, 0, Vector2(1, -0.025728941), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_uwmpi"]
+curve = SubResource("Curve_5rgqy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ffywo"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(200, 400, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -556.5
+angle_max = 360.00003
+direction = Vector3(1, 1, 0)
+spread = 180.0
+initial_velocity_min = 5.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+damping_max = 20.0
+scale_min = 0.19999999
+scale_max = 2.0
+color = Color(0.5529556, 0.55295557, 0.55295557, 1)
+hue_variation_min = -0.100000024
+hue_variation_max = 0.99999994
+hue_variation_curve = SubResource("CurveTexture_uwmpi")
+
 [node name="Mouse" type="CharacterBody2D" unique_id=1410733989 node_paths=PackedStringArray("_particles", "_sprite", "_camera")]
 collision_layer = 2
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_tewyd")
 speed = 160.0
-_particles = NodePath("CPUParticles2D")
+_particles = NodePath("WalkParticles")
 _sprite = NodePath("Sprite2D")
 _camera = NodePath("Camera2D")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1578853426]
+[node name="WalkParticles" type="CPUParticles2D" parent="." unique_id=1578853426]
 emitting = false
+amount = 6
 lifetime = 0.5
 direction = Vector2(0, 1)
 spread = 180.0
@@ -208,3 +239,14 @@ scale = Vector2(2.8125005, 2.9062502)
 energy = 0.5
 shadow_filter = 1
 texture = SubResource("GradientTexture2D_2q34x")
+
+[node name="Particles" type="Node" parent="." unique_id=1653252680]
+
+[node name="Dust" type="GPUParticles2D" parent="Particles" unique_id=446508865]
+position = Vector2(-1, -1)
+amount = 400
+texture = SubResource("CanvasTexture_2q34x")
+lifetime = 3.0
+randomness = 0.5
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_ffywo")
