@@ -67,6 +67,32 @@ public partial class GameManager : Node
 		return true;
 	}
 
+	public bool RemoveCheese(int amount)
+	{
+		if (amount < 0 || amount > CheeseScore)
+		{
+			return false;
+		}
+
+		CheeseScore -= amount;
+		if (CheeseScore < 0)
+		{
+			CheeseScore = 0;
+		}
+
+		// Update UI
+		if (counters != null)
+		{
+			counters.UpdateCheeseScore(CheeseScore);
+		}
+		else
+		{
+			GD.Print("Counter missing!");
+		}
+
+		return true;
+	}
+
 	// Drill part
 	private int _drillScore = 0;
 	public int DrillScore
