@@ -85,6 +85,9 @@ _data = {
 &"RESET": SubResource("Animation_m74ok")
 }
 
+[sub_resource type="Curve" id="Curve_8rmvd"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+
 [node name="World" type="Node2D" unique_id=71007616]
 
 [node name="Control" type="Control" parent="." unique_id=338017573]
@@ -187,6 +190,7 @@ tile_map_data = PackedByteArray("AAD//wAAAAAbAAYAAAD/////AAAbAAYAAAAAAP//AAAbAAY
 tile_set = ExtResource("7_8rmvd")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
+visible = false
 color = Color(0.09329758, 0.10229925, 0.2502737, 1)
 
 [node name="Exit" type="Area2D" parent="." unique_id=154487]
@@ -228,3 +232,22 @@ libraries/ = SubResource("AnimationLibrary_j0wll")
 autoplay = &"FadeIn"
 
 [node name="Counters" parent="." unique_id=74711613 instance=ExtResource("12_8rmvd")]
+
+[node name="Dust" type="CPUParticles2D" parent="." unique_id=1878008653]
+z_index = 1
+position = Vector2(0, 342)
+scale = Vector2(1.6799984, 1.3199995)
+amount = 1000
+lifetime = 3.0
+emission_shape = 3
+emission_rect_extents = Vector2(600, 600)
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_curve = SubResource("Curve_8rmvd")
+damping_max = 20.0
+scale_amount_min = 0.5
+scale_amount_max = 3.0
+color = Color(0.41215247, 0.41215247, 0.41215247, 1)
