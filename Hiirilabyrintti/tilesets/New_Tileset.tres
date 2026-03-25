@@ -2,9 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://b1supvki2xjbh" path="res://Sprites/tileset-blue.png" id="1_dhdo8"]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dhdo8"]
-polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2srfw"]
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
@@ -33,9 +30,6 @@ polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c7tpy"]
-polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_k6f3u"]
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f6mc2"]
@@ -135,7 +129,6 @@ polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 texture = ExtResource("1_dhdo8")
 1:1/size_in_atlas = Vector2i(4, 4)
 1:1/0 = 0
-1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_k6f3u")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 6:1/size_in_atlas = Vector2i(4, 4)
 6:1/0 = 0
@@ -143,7 +136,6 @@ texture = ExtResource("1_dhdo8")
 6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 11:1/size_in_atlas = Vector2i(4, 4)
 11:1/0 = 0
-11:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dhdo8")
 11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 17:1/size_in_atlas = Vector2i(4, 4)
 17:1/0 = 0
