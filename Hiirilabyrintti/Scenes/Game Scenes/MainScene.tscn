@@ -12,12 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://b1supvki2xjbh" path="res://Sprites/tileset-blue.png" id="11_lh3xx"]
 [ext_resource type="PackedScene" uid="uid://cggpma0qvjowe" path="res://Scenes/UI/Counters.tscn" id="12_8rmvd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6byj"]
-size = Vector2(150, 64)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fg7yv"]
-size = Vector2(150, 64)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0bv1"]
 texture = ExtResource("11_lh3xx")
 22:6/size_in_atlas = Vector2i(4, 4)
@@ -30,6 +24,12 @@ texture = ExtResource("11_lh3xx")
 [sub_resource type="TileSet" id="TileSet_b6wki"]
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_e0bv1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6byj"]
+size = Vector2(150, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fg7yv"]
+size = Vector2(150, 64)
 
 [sub_resource type="Animation" id="Animation_16f24"]
 resource_name = "FadeIn"
@@ -109,83 +109,59 @@ z_index = 2
 position = Vector2(-147, 0)
 
 [node name="Cheese2" parent="Objects/Cheeses" unique_id=128622770 instance=ExtResource("3_16f24")]
-position = Vector2(-289, -87)
+position = Vector2(-282, 182)
 
 [node name="Cheese3" parent="Objects/Cheeses" unique_id=2136132247 instance=ExtResource("3_16f24")]
-position = Vector2(-289, 355)
+position = Vector2(-162, 325)
 
 [node name="Cheese4" parent="Objects/Cheeses" unique_id=1831432107 instance=ExtResource("3_16f24")]
-position = Vector2(-96, 480)
+position = Vector2(-27, 439)
 
 [node name="Cheese5" parent="Objects/Cheeses" unique_id=1919720209 instance=ExtResource("3_16f24")]
-position = Vector2(158, 415)
+position = Vector2(154, 881)
 
 [node name="Cheese6" parent="Objects/Cheeses" unique_id=1975133337 instance=ExtResource("3_16f24")]
-position = Vector2(168, 678)
+position = Vector2(414, 573)
 
 [node name="Cheese7" parent="Objects/Cheeses" unique_id=281171500 instance=ExtResource("3_16f24")]
-position = Vector2(-367, 673)
+position = Vector2(-544, 438)
 
 [node name="Cheese8" parent="Objects/Cheeses" unique_id=2053464442 instance=ExtResource("3_16f24")]
-position = Vector2(-865, 485)
+position = Vector2(-987, 438)
 
 [node name="Cheese9" parent="Objects/Cheeses" unique_id=2012204585 instance=ExtResource("3_16f24")]
-position = Vector2(-740, 94)
+position = Vector2(-734, 162)
 
 [node name="Cheese10" parent="Objects/Cheeses" unique_id=1626524096 instance=ExtResource("3_16f24")]
-position = Vector2(-429, -32)
+position = Vector2(-508, 190)
 
 [node name="Cheese11" parent="Objects/Cheeses" unique_id=406486531 instance=ExtResource("3_16f24")]
-position = Vector2(856, -161)
+position = Vector2(295, 435)
 
 [node name="Cheese12" parent="Objects/Cheeses" unique_id=1313041739 instance=ExtResource("3_16f24")]
-position = Vector2(830, 295)
+position = Vector2(546, 326)
 
 [node name="Cheese13" parent="Objects/Cheeses" unique_id=1875197126 instance=ExtResource("3_16f24")]
-position = Vector2(830, 295)
+position = Vector2(554, -5)
 
 [node name="Drills" type="Node" parent="Objects" unique_id=989159191]
 
 [node name="Drill" parent="Objects/Drills" unique_id=1849715523 instance=ExtResource("4_fg7yv")]
-position = Vector2(-455, 159)
+position = Vector2(-862, 194)
 
 [node name="Drill2" parent="Objects/Drills" unique_id=979599616 instance=ExtResource("4_fg7yv")]
-position = Vector2(-863, 672)
+position = Vector2(420, -9)
 
 [node name="Drill3" parent="Objects/Drills" unique_id=2133603589 instance=ExtResource("4_fg7yv")]
-position = Vector2(613, 809)
+position = Vector2(-987, 1470)
 
 [node name="Drill4" parent="Objects/Drills" unique_id=993517289 instance=ExtResource("4_fg7yv")]
-position = Vector2(475, -31)
+position = Vector2(-600, 1466)
 
 [node name="Managers" type="Node" parent="." unique_id=1022473391]
 script = ExtResource("5_8rmvd")
 
 [node name="GameManager" parent="Managers" unique_id=1156478741 instance=ExtResource("5_j0wll")]
-
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
-visible = false
-color = Color(0.09329758, 0.10229925, 0.2502737, 1)
-
-[node name="Exit" type="Area2D" parent="." unique_id=154487]
-position = Vector2(485, 1109)
-collision_layer = 8
-collision_mask = 2
-script = ExtResource("7_m74ok")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1871817842]
-position = Vector2(-2, 8)
-shape = SubResource("RectangleShape2D_l6byj")
-
-[node name="ExitRock" type="Area2D" parent="." unique_id=223876225]
-position = Vector2(0, -40)
-collision_layer = 8
-collision_mask = 2
-script = ExtResource("7_m74ok")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitRock" unique_id=1259531565]
-position = Vector2(-2, 8)
-shape = SubResource("RectangleShape2D_fg7yv")
 
 [node name="Maze" type="Node2D" parent="." unique_id=2137428445]
 position = Vector2(0, -166)
@@ -203,6 +179,29 @@ tile_set = SubResource("TileSet_b6wki")
 
 [node name="Rock" parent="Maze" unique_id=2114008508 instance=ExtResource("9_l6byj")]
 position = Vector2(0, 33)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
+color = Color(0.09329758, 0.10229925, 0.2502737, 1)
+
+[node name="Exit" type="Area2D" parent="." unique_id=154487]
+position = Vector2(1143, 1458)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("7_m74ok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1871817842]
+position = Vector2(-2, 8)
+shape = SubResource("RectangleShape2D_l6byj")
+
+[node name="ExitRock" type="Area2D" parent="." unique_id=223876225]
+position = Vector2(0, -205)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("7_m74ok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitRock" unique_id=1259531565]
+position = Vector2(-2, 8)
+shape = SubResource("RectangleShape2D_fg7yv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1696038060]
 libraries/ = SubResource("AnimationLibrary_j0wll")
