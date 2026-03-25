@@ -216,6 +216,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Drill particles" type="GPUParticles2D" parent="." unique_id=776610269]
 position = Vector2(0, 18)
+emitting = false
 amount = 20
 lifetime = 0.3
 fixed_fps = 60
