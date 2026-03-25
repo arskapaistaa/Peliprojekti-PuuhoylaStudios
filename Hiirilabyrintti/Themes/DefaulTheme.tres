@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://cam30uwftlpxs"]
 
+[ext_resource type="FontFile" uid="uid://co0xc4n8i42sj" path="res://fontit/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="1_3gaak"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dfxa"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -27,6 +29,7 @@ bg_color = Color(0.11764706, 0.14509805, 0.32156864, 1)
 Button/constants/align_to_largest_stylebox = 1
 Button/constants/h_separation = 8
 Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_3gaak")
 Button/styles/disabled = SubResource("StyleBoxFlat_1dfxa")
 Button/styles/focus = SubResource("StyleBoxFlat_kfxey")
 Button/styles/hover = SubResource("StyleBoxFlat_kfxey")
