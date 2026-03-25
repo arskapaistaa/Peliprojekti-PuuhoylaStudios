@@ -40,6 +40,8 @@ public partial class QuestionsManager : Node2D
 		_etenijaButton.Pressed += () => ButtonPressed(2);
 		_edistajaButton.Pressed += () => ButtonPressed(3);
 
+		_animations.AnimationFinished += OnAnimationFinished;
+
 		// Show first question.
 		NextQuestion();
 
@@ -82,6 +84,10 @@ public partial class QuestionsManager : Node2D
 		{
 		// Play normal fade animation.
 		_animations.Play("FadeOutIn");
+
+		// Disable all buttons.
+		ButtonsDisabled(true);
+
 		// Start timer.
 		_animationTimer.Start();
 		}
@@ -111,5 +117,33 @@ public partial class QuestionsManager : Node2D
 	public void TimerTimeout()
 	{
 		NextQuestion();
+	}
+
+	public void ButtonsDisabled(bool isDisabled)
+	{
+		// Disable buttons when true -> After answering to a question.
+		if(isDisabled == true)
+		{
+			_etsijaButton.Disabled = true;
+			_etenijaButton.Disabled = true;
+			_edistajaButton.Disabled = true;
+
+			GD.Print("Buttons disabled");
+		}
+		else if (isDisabled == false)
+		{
+			_etsijaButton.Disabled = false;
+			_etenijaButton.Disabled = false;
+			_edistajaButton.Disabled = false;
+
+			GD.Print("Buttons enabled");
+		}
+	}
+	private void OnAnimationFinished(StringName animationName)
+	{
+		if (animationName == "FadeOutIn")
+		{
+			ButtonsDisabled(false);
+		}
 	}
 }
