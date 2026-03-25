@@ -86,6 +86,12 @@ _data = {
 &"RESET": SubResource("Animation_m74ok")
 }
 
+[sub_resource type="Curve2D" id="Curve2D_8o58s"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, -87.3, 0, 0, 0, 0, 0, 0, 0, -87, 0, 0, 0, 0, 284.5, -87, 0, 0, 0, 0, 284.5, -197.835)
+}
+point_count = 4
+
 [node name="World" type="Node2D" unique_id=71007616]
 
 [node name="Control" type="Control" parent="." unique_id=338017573]
@@ -188,6 +194,7 @@ tile_map_data = PackedByteArray("AAD//wAAAAAbAAYAAAD/////AAAbAAYAAAAAAP//AAAbAAY
 tile_set = ExtResource("7_8rmvd")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
+visible = false
 color = Color(0.09329758, 0.10229925, 0.2502737, 1)
 
 [node name="Exit" type="Area2D" parent="." unique_id=154487]
@@ -230,5 +237,12 @@ autoplay = &"FadeIn"
 
 [node name="Counters" parent="." unique_id=74711613 instance=ExtResource("12_8rmvd")]
 
-[node name="Muskrat" parent="." unique_id=834044912 instance=ExtResource("13_8o58s")]
+[node name="Path2D2" type="Path2D" parent="." unique_id=989375694]
 position = Vector2(-286, 188)
+curve = SubResource("Curve2D_8o58s")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2" unique_id=1500018102]
+rotation = -1.5707964
+
+[node name="Muskrat" parent="Path2D2/PathFollow2D" unique_id=834044912 instance=ExtResource("13_8o58s")]
+rotation = 1.5707964
