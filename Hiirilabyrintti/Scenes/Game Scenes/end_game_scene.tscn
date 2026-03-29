@@ -34,26 +34,62 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("LabraRotta/Labrarotta:position")
+tracks/2/path = NodePath("LabraRotta/Labrarotta:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(712, 357), Vector2(39, 115)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("LabraRotta/Labrarotta:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.08726646259971647, 0.0, -0.08726646259971647, 0.0, 0.08726646259971647, 0.0, -0.08726646259971647, 0.0, 0.08726646259971647, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LabraRotta/Labrarotta:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(712, 357), Vector2(90.06, 176.535)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/Etsija:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/Etenija:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player/Edistaja:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_burp6"]
@@ -86,6 +122,42 @@ tracks/1/keys = {
 "update": 0,
 "values": [1.0, 0.0, 0.0, 1.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player/Etsija:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player/Etenija:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/Edistaja:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_r6a8p"]
 length = 0.001
@@ -116,26 +188,38 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("LabraRotta/Labrarotta:position")
+tracks/2/path = NodePath("LabraRotta/Labrarotta:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-177, 357)]
+"values": [0.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("LabraRotta/Labrarotta:rotation")
+tracks/3/path = NodePath("LabraRotta/Labrarotta:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(-177, 357)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/Etenija:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i2nwt"]
@@ -169,16 +253,16 @@ grow_vertical = 2
 [node name="QuestionsManager" type="Node2D" parent="." unique_id=2116300117 node_paths=PackedStringArray("_etsijaButton", "_etenijaButton", "_edistajaButton", "_dialogLabel", "_animations", "_animationTimer")]
 script = ExtResource("1_xmqa1")
 _maxQuestionIndex = 10
-_questionTexts = PackedStringArray("Jos juusto olisi valuuttaa, miten käyttäisit sitä?", "Jos olisit hiiri?", "Jos olis töissä?", "JOTAI JOTAI", "KHYL KHYL", "BUM BUM", "LILLERILII", "TEST TEST TEST TEST TEST TEST", "DKJFGSHBFGDJHFGBJD", "VITHUVITHUVITHUVITHU")
-_etsijaTexts = PackedStringArray("Minulla ei luultavasti olisi juustoa mitä käyttää...", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
-_etenijaTexts = PackedStringArray("Tuhlaisin sitä.", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
-_edistajaTexts = PackedStringArray("Palkkaisin muita tekemään minulle lisää juustoa.", "11111", "22222", "33333", "44444", "55555", "66666", "77777", "88888", "99999")
 _etsijaButton = NodePath("../Player/Etsija")
 _etenijaButton = NodePath("../Player/Etenija")
 _edistajaButton = NodePath("../Player/Edistaja")
 _dialogLabel = NodePath("../LabraRotta/DialogLabel")
 _animations = NodePath("../AnimationPlayer")
 _animationTimer = NodePath("../Timer")
+_questionTexts = PackedStringArray("Kun ajattelet tulevaisuuttasi, mikä kuvaa sinua parhaiten?", "Miten suhtaudut esteisiin ja haasteisiin?", "Mikä kuvaa parhaiten suhdettasi verkostoihin?", "Millä tavalla teet suunnitelmia?", "Mitä arvoihin ja motivaatioon liittyy sinun kohdallasi?", "Miten kuvailisit itsetuntemustasi tällä hetkellä?", "Kuinka määrätietoisesti etenet kohti tavoitteitasi arjessa?", "Miten hyödynnät muiden osaamista ja tukea?", "Mikä kuvaa parhaiten suhdettasi asiakkaisiin tai muihin ihmisiin, joita toimintasi koskee?", "Kun katsot eteenpäin, mikä tuntuu tärkeimmältä seuraavalta askeleelta?JD")
+_etsijaTexts = PackedStringArray("En ole vielä varma, mihin suuntaan haluan mennä. olisi juustoa mitä käyttää...", "Ne pysäyttävät minut helposti, en aina tiedä, miten ylittää ne.", "En ole miettinyt, kuka voisi auttaa minua tai ketä minä voisin auttaa.", "Minulla on haaveita, mutta konkreettiset suunnitelmat puuttuvat.", "En ole kovin tarkasti miettinyt, mitkä arvot ohjaavat minua.", "Olen vasta löytämässä omia vahvuuksiani ja sitä, mikä minulle on tärkeää.", "avoitteeni ovat epämääräisiä, joten arjessa ei aina ole selkeää suuntaa.", "Pyrin selviytymään yksin enkä aina osaa pyytää apua.", "En ole vielä miettinyt, kenelle ja miksi teen asioita.", "Tarvitsen ensin lisää selkeyttä siitä, kuka olen ja mihin haluan mennä.")
+_etenijaTexts = PackedStringArray("Minulla on tavoite, mutta en aina tiedä, miten edetä.", "Tunnistan esteet ja yritän löytää keinoja niiden yli.", "Tiedän, keneen voin tukeutua, mutta en aina hyödynnä verkostoani täysipainoisesti.", "Teen suunnitelmia ja pilkon ne askelmiksi, vaikka muutos vaatii välillä ponnisteluja.", "Tiedän arvoni, mutta ne eivät aina näy selvästi arjen valinnoissani.", "Tunnen itseni melko hyvin ja osaan hyödyntää vahvuuksiani.", "Etenen kohti tavoitettani, vaikka välillä tarvitsen tukea pysyäkseni liikkeessä.", "Otan apua vastaan kun sitä tarjotaan, mutta en aina aktiivisesti hae sitä.", "Tiedän kohderyhmäni, mutta asiakaslähtöisyys on vielä kehittymässä.", "Haluan löytää keinoja edetä kohti tavoitettani tehokkaammin ja kestävämmin.")
+_edistajaTexts = PackedStringArray("Tiedän tarkalleen, mitä haluan rakentaa ja kenelle.", "Näen esteet oppimismahdollisuuksina ja käännän ne voimavaraksi.", "Verkostoni on keskeinen osa toimintaani, autan muita ja saan apua.", "Rakennan toimintasuunnitelmia järjestelmällisesti ja priorisoin ajankäyttöni.", "Arvoni ja intohimoni ohjaavat vahvasti kaikkea tekemistäni.", "Vahva itsetuntemus on perustani, tiedän osaamiseni ja kehityskohteeni.", "Etenen systemaattisesti ja pidän huolta omasta jaksamisestani matkan varrella.", "Hyödynnän aktiivisesti verkostoja, mentoreita ja kumppaneita osana toimintaani.", "Asiakkaani arvot ja tarpeet ovat toimintani keskiössä.", "Haluan kehittää toimintaani, laajentaa verkostojani ja viedä ideani pidemmälle.")
 
 [node name="Timer" type="Timer" parent="." unique_id=663026272]
 one_shot = true
@@ -215,14 +299,14 @@ grow_vertical = 2
 [node name="Labrarotta" type="TextureRect" parent="LabraRotta" unique_id=922338601]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.072222225
-anchor_top = 0.119791664
-anchor_right = 0.7263889
-anchor_bottom = 0.5799647
-offset_left = -255.0
-offset_top = 127.0
-offset_right = 692.75
-offset_bottom = 1312.2339
+anchor_left = 0.08338889
+anchor_top = 0.09194531
+anchor_right = 0.6287037
+anchor_bottom = 0.47554657
+offset_left = -267.06
+offset_top = 180.465
+offset_right = 1313.0332
+offset_bottom = 2156.4824
 scale = Vector2(0.2715219, 0.27152187)
 texture = ExtResource("3_burp6")
 metadata/_edit_use_anchors_ = true
@@ -241,8 +325,6 @@ grow_horizontal = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_7txxy")
 text = "Jos olisit...?"
-horizontal_alignment = 1
-vertical_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
@@ -258,27 +340,28 @@ theme = ExtResource("2_7txxy")
 [node name="Etsija" type="Button" parent="Player" unique_id=1889609452]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.17600001
-anchor_top = 0.625
-anchor_right = 0.82400006
-anchor_bottom = 0.6875
-offset_left = -0.040008545
-offset_right = 0.039978027
+anchor_left = 0.12962963
+anchor_top = 0.5208333
+anchor_right = 0.8703704
+anchor_bottom = 0.6145833
+offset_top = 6.1035156e-05
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_7txxy")
+disabled = true
 action_mode = 0
 text = "En tiiä"
 text_overrun_behavior = 2
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Etenija" type="Button" parent="Player" unique_id=770756962]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.17592593
-anchor_top = 0.7083333
-anchor_right = 0.8240741
-anchor_bottom = 0.7708333
+anchor_left = 0.12962963
+anchor_top = 0.6510417
+anchor_right = 0.8703704
+anchor_bottom = 0.7447917
 action_mode = 0
 text = "Tyylii haslannu juustot"
 autowrap_mode = 2
@@ -287,12 +370,13 @@ metadata/_edit_use_anchors_ = true
 [node name="Edistaja" type="Button" parent="Player" unique_id=535673844]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.17592593
-anchor_top = 0.7916667
-anchor_right = 0.8252686
-anchor_bottom = 0.8541667
-offset_right = -0.64505005
+anchor_left = 0.12962963
+anchor_top = 0.78125
+anchor_right = 0.8717355
+anchor_bottom = 0.875
+offset_right = -1.4743652
 scale = Vector2(1.001843, 1)
+disabled = true
 action_mode = 0
 text = "Töihin"
 autowrap_mode = 2

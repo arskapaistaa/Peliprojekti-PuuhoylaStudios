@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cwxgkjk3yrgw6" path="res://Scripts/FinalGameScene.cs" id="1_nkp2i"]
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="2_syh1w"]
+[ext_resource type="Script" uid="uid://d1n58s2ogxlyd" path="res://Scenes/UI/Buttons/ReplayButton.cs" id="3_anni1"]
+[ext_resource type="Script" uid="uid://ctlmpnrwvnxfs" path="res://Scenes/UI/Buttons/ExitButton.cs" id="4_yifte"]
 
-[sub_resource type="Gradient" id="Gradient_burp6"]
+[sub_resource type="Gradient" id="Gradient_syh1w"]
 offsets = PackedFloat32Array(0, 0.9511278)
 colors = PackedColorArray(0.26146042, 0.31132343, 0.6147243, 1, 0.11764706, 0.14509805, 0.32156864, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_syh1w"]
-gradient = SubResource("Gradient_burp6")
+gradient = SubResource("Gradient_syh1w")
 width = 540
 height = 960
 fill = 1
@@ -17,7 +19,7 @@ fill_to = Vector2(1, 1)
 
 [sub_resource type="Animation" id="Animation_nkp2i"]
 resource_name = "FadeIn"
-length = 10.5
+length = 16.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -138,6 +140,42 @@ tracks/9/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Player:modulate:a")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(15, 15.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Player/RePlay:disabled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Player/Exit:disabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_syh1w"]
 length = 0.001
@@ -176,6 +214,42 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/RePlay:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/Exit:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_anni1"]
@@ -405,3 +479,51 @@ metadata/_edit_use_anchors_ = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2081561308]
 libraries/ = SubResource("AnimationLibrary_anni1")
 autoplay = &"FadeIn"
+
+[node name="Player" type="Control" parent="." unique_id=1862152628]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_syh1w")
+
+[node name="RePlay" type="Button" parent="Player" unique_id=1384249196 node_paths=PackedStringArray("_replay")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32407406
+anchor_top = 0.7161458
+anchor_right = 0.6574074
+anchor_bottom = 0.8098958
+offset_left = 3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_syh1w")
+disabled = true
+action_mode = 0
+text = "REPLAY
+"
+text_overrun_behavior = 2
+autowrap_mode = 2
+script = ExtResource("3_anni1")
+_replay = NodePath(".")
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit" type="Button" parent="Player" unique_id=68216442 node_paths=PackedStringArray("_exit")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32407406
+anchor_top = 0.8463542
+anchor_right = 0.6574074
+anchor_bottom = 0.9401042
+offset_left = 3.0517578e-05
+disabled = true
+action_mode = 0
+text = "EXIT
+
+"
+autowrap_mode = 2
+script = ExtResource("4_yifte")
+_exit = NodePath(".")
+metadata/_edit_use_anchors_ = true

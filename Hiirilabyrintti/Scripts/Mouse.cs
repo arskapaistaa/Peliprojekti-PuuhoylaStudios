@@ -17,7 +17,9 @@ public partial class Mouse : CharacterBody2D
             Input.GetActionStrength("ui_right") - Input.GetActionStrength("ui_left"),
             Input.GetActionStrength("ui_down") - Input.GetActionStrength("ui_up"));
 
-        inputDirection = inputDirection.Normalized();
+        // Add this line if wanted:
+        // inputDirection = inputDirection.Normalized();
+
         Velocity = inputDirection * speed;
         MoveAndSlide();
 
