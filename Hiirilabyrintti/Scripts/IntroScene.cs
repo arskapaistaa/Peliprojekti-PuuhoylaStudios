@@ -8,8 +8,9 @@ public partial class IntroScene : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		_animations.AnimationFinished += onAnimationFinished;
 		_animations.Play("Start");
+		_animations.AnimationFinished += onAnimationFinished;
+
 	}
 
 	public void onAnimationFinished(StringName animationName)

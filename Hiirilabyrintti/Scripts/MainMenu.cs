@@ -28,6 +28,6 @@ public partial class MainMenu : Node
 	private void LoadMainScene()
 	{
 		// Load new scene and remove main menu scene.
-		GetTree().ChangeSceneToFile("res://Scenes/Game Scenes/MainScene.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/Game Scenes/IntroScene.tscn");
 	}
 }
