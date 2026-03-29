@@ -18,6 +18,9 @@ public partial class FinalGameScene : Control
 	[Export] private Label _etenijaLabel;
 	[Export] private Label _etsijaLabel;
 
+	[Export] private Button _replay = null;
+	[Export] private Button _exit = null;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
