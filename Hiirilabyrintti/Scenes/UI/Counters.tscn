@@ -12,10 +12,11 @@ drillCounterLabel = NodePath("HBoxContainer/DrillLabel")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=774755094]
 anchors_preset = -1
-anchor_left = 0.75277776
+anchor_left = 0.6675926
 anchor_top = 0.022916667
 anchor_right = 0.9435185
 anchor_bottom = 0.065104164
+offset_left = 92.0
 grow_horizontal = 0
 theme = ExtResource("2_gninf")
 alignment = 1

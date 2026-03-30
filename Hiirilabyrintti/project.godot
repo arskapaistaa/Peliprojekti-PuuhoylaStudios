@@ -28,8 +28,8 @@ SettingsManager="*uid://bi8u2xtap61um"
 
 window/size/viewport_width=1080
 window/size/viewport_height=1920
-window/size/mode=3
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 window/handheld/orientation=1
 window/vsync/vsync_mode=0
 
