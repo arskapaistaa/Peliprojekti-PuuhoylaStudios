@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://co0xc4n8i42sj" path="res://fontit/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="1_3gaak"]
 [ext_resource type="FontFile" uid="uid://ccbjv37pactoi" path="res://fontit/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_1dfxa"]
+[ext_resource type="FontFile" uid="uid://2tc0b7ghsi5e" path="res://fontit/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="3_mf8j3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1rpc"]
 bg_color = Color(0.27450982, 0.3137255, 0.5882353, 1)
@@ -38,4 +39,6 @@ Button/styles/pressed = SubResource("StyleBoxFlat_k1rpc")
 HBoxContainer/constants/separation = 30
 Label/font_sizes/font_size = 40
 Label/fonts/font = ExtResource("2_1dfxa")
+LineEdit/font_sizes/font_size = 40
+LineEdit/fonts/font = ExtResource("3_mf8j3")
 Panel/styles/panel = SubResource("StyleBoxFlat_3gaak")

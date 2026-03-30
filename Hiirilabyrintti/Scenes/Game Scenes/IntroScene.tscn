@@ -223,8 +223,8 @@ offset_bottom = 0.19999695
 grow_horizontal = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_oxig5")
-text = "Terve <Name>!
-<Tutorial>"
+text = "Terve...
+Kukas sinä olet?"
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
@@ -241,3 +241,26 @@ color = Color(0.07683582, 0.07683582, 0.07683582, 1)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=343221281]
 libraries/ = SubResource("AnimationLibrary_oxig5")
 autoplay = &"Start"
+
+[node name="Player" type="Control" parent="." unique_id=1183318541]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="Player" unique_id=937516179]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43888888
+anchor_top = 0.39166668
+anchor_right = 0.7675926
+anchor_bottom = 0.42135417
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ville"
+alignment = 1
+virtual_keyboard_type = 4
+metadata/_edit_use_anchors_ = true
