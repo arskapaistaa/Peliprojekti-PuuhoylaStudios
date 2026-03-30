@@ -26,6 +26,8 @@ direction = Vector3(1, 1, 0)
 spread = 180.0
 initial_velocity_min = 5.0
 initial_velocity_max = 30.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 199.99998
 gravity = Vector3(0, 0, 0)
 damping_max = 20.0
 scale_min = 0.19999999
@@ -188,7 +190,7 @@ _camera = NodePath("Camera2D")
 
 [node name="Dust" type="GPUParticles2D" parent="Particles" unique_id=446508865]
 position = Vector2(-1, -1)
-amount = 400
+amount = 500
 texture = SubResource("CanvasTexture_2q34x")
 lifetime = 5.0
 randomness = 0.5
