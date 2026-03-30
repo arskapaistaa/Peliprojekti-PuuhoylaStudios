@@ -5,7 +5,7 @@ public partial class Mouse : CharacterBody2D
 {
     [Export] public float speed = 160f;
     [Export] private float _slowedSpeed = 50.0f;
-    [Export] private CpuParticles2D _particles;
+    [Export] private GpuParticles2D _walkParticles;
 
     // For animations
     [Export] private AnimatedSprite2D _sprite;
@@ -32,7 +32,7 @@ public partial class Mouse : CharacterBody2D
             _sprite.Play("Move");
 
             // Start emiting when moving.
-            _particles.Emitting = true;
+            _walkParticles.Emitting = true;
         }
         else
         {
@@ -40,7 +40,7 @@ public partial class Mouse : CharacterBody2D
             _sprite.Play("Idle");
 
             // Sttop emiting when Idle state.
-            _particles.Emitting = false;
+            _walkParticles.Emitting = false;
         }
 
         // Camera shake when colliding with wall.
