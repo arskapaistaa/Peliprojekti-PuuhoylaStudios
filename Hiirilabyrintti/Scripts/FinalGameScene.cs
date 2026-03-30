@@ -18,9 +18,6 @@ public partial class FinalGameScene : Control
 	[Export] private Label _etenijaLabel;
 	[Export] private Label _etsijaLabel;
 
-	[Export] private Button _replay = null;
-	[Export] private Button _exit = null;
-
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -37,10 +34,6 @@ public partial class FinalGameScene : Control
 		_edistajaLabel.Text = _edistaja[SettingsManager.Instance.Language] + " " + GameManager.Instance.EdistajaScore + "%";
 		_etenijaLabel.Text = _etenija[SettingsManager.Instance.Language] + " " + GameManager.Instance.EtenijaScore + "%";
 		_etsijaLabel.Text = _etsija[SettingsManager.Instance.Language] + " " + GameManager.Instance.EtsijaScore + "%";
-	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
 	}
 }
