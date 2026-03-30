@@ -3,7 +3,8 @@ using System;
 
 public partial class Mouse : CharacterBody2D
 {
-    [Export] public float speed = 200f;
+    [Export] public float speed = 160f;
+    [Export] private float _slowedSpeed = 50.0f;
     [Export] private CpuParticles2D _particles;
 
     // For animations
@@ -44,7 +45,6 @@ public partial class Mouse : CharacterBody2D
 
         // Camera shake when colliding with wall.
         // Only on impact.
-
         bool isOnWall = IsOnWall();
         if (isOnWall && !wasOnWall)
         {
@@ -54,5 +54,15 @@ public partial class Mouse : CharacterBody2D
             Input.VibrateHandheld(100);
         }
         wasOnWall = isOnWall;
+
+        if (IsOnWall())
+        {
+            speed = _slowedSpeed;
+        }
+        else if (!IsOnWall())
+        {
+            //Check from editor!!
+            speed = 160.0f;
+        }
     }
 }
