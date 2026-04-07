@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cwxgkjk3yrgw6" path="res://Scripts/FinalGameScene.cs" id="1_nkp2i"]
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="2_syh1w"]
-[ext_resource type="Script" uid="uid://d1n58s2ogxlyd" path="res://Scenes/UI/Buttons/ReplayButton.cs" id="3_anni1"]
-[ext_resource type="Script" uid="uid://ctlmpnrwvnxfs" path="res://Scenes/UI/Buttons/ExitButton.cs" id="4_yifte"]
+[ext_resource type="Script" uid="uid://d1n58s2ogxlyd" path="res://Scripts/Buttons/ReplayButton.cs" id="3_anni1"]
+[ext_resource type="Script" uid="uid://ctlmpnrwvnxfs" path="res://Scripts/Buttons/ExitButton.cs" id="4_yifte"]
 
 [sub_resource type="Gradient" id="Gradient_syh1w"]
 offsets = PackedFloat32Array(0, 0.9511278)
