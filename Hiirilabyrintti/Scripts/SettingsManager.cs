@@ -40,6 +40,6 @@ public partial class SettingsManager : Node
 	public bool Volume
 	{
 		get {return _volume; }
-		set {}
+		set { _volume = value; }
 	}
 }
