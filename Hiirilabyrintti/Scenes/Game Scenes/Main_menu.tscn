@@ -82,15 +82,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -99.0
-offset_top = -125.5
+offset_top = -125.0
 offset_right = 99.0
-offset_bottom = 125.5
+offset_bottom = 126.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_8l1vk")
 icon = ExtResource("3_8l1vk")
 
 [node name="Button2" type="Button" parent="." unique_id=1827402962]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -116,7 +117,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_47lb5")
-_volumeButton = NodePath("VolumeOnOffTest")
+_volumeButton = NodePath("../VolumeOnOffTest")
 
 [node name="ColorRect" type="ColorRect" parent="Settings menu" unique_id=525902898]
 layout_mode = 1
@@ -141,14 +142,16 @@ offset_bottom = 528.0
 theme = ExtResource("3_hwbvm")
 rounded = true
 
-[node name="VolumeOnOffTest" type="Button" parent="Settings menu" unique_id=1489572143]
+[node name="VolumeOnOffTest" type="Button" parent="." unique_id=1489572143]
+visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.4861111
-anchor_top = 0.44427082
-anchor_right = 0.6472222
-anchor_bottom = 0.50911456
-offset_bottom = 6.1035156e-05
+anchor_left = 0.40833333
+anchor_top = 0.7348958
+anchor_right = 0.5694444
+anchor_bottom = 0.7997396
+offset_right = 26.0
+offset_bottom = 5.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
@@ -156,3 +159,71 @@ toggle_mode = true
 action_mode = 0
 text = "ON"
 metadata/_edit_use_anchors_ = true
+
+[node name="VolumeOnOffTest4" type="Button" parent="." unique_id=312550016]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3611111
+anchor_top = 0.8588542
+anchor_right = 0.5222222
+anchor_bottom = 0.9236979
+offset_right = 126.0
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_hwbvm")
+toggle_mode = true
+action_mode = 0
+text = "CREDITS"
+metadata/_edit_use_anchors_ = true
+
+[node name="VolumeOnOffTest3" type="Button" parent="." unique_id=1666601113]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13055556
+anchor_top = 0.734375
+anchor_right = 0.29166666
+anchor_bottom = 0.7992188
+offset_right = 26.0
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_hwbvm")
+toggle_mode = true
+action_mode = 0
+text = "ON"
+metadata/_edit_use_anchors_ = true
+
+[node name="VolumeOnOffTest2" type="Button" parent="." unique_id=1590830218]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.68333334
+anchor_top = 0.7348958
+anchor_right = 0.84444445
+anchor_bottom = 0.7997396
+offset_right = 26.0
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_hwbvm")
+toggle_mode = true
+action_mode = 0
+text = "ON"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=285167655]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -267.0
+offset_top = 169.0
+offset_right = 267.0
+offset_bottom = 285.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 96
+text = "TRAPMOUSE"
