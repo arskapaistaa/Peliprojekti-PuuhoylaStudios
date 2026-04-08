@@ -25,9 +25,9 @@ public partial class Collectable : Area2D
 		if (body is Mouse mouse)
 		{
 			_isCollected = true;
+			QueueFree();
 			Collect(mouse);
 
-			QueueFree();
 		}
 	}
 

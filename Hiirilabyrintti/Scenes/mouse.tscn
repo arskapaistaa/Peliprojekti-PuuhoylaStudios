@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bqwl5fwiohujg" path="res://Scripts/Mouse.cs" id="1_tewyd"]
 [ext_resource type="Texture2D" uid="uid://bpaj87h77xcdl" path="res://Sprites/hiiri-sprite.png" id="2_3ber4"]
 [ext_resource type="Texture2D" uid="uid://bj3hkhf816jh7" path="res://Sprites/hiiri-idle.png" id="2_kxv04"]
+[ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="4_2q34x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kxv04"]
 radius = 8.0
@@ -143,13 +144,16 @@ height = 96
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Mouse" type="CharacterBody2D" unique_id=1410733989 node_paths=PackedStringArray("_sprite")]
+[node name="Mouse" type="CharacterBody2D" unique_id=1410733989 node_paths=PackedStringArray("_sprite", "DrillPrompt", "YesButton", "NoButton")]
 collision_layer = 2
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_tewyd")
 speed = 180.0
 _sprite = NodePath("Sprite2D")
+DrillPrompt = NodePath("CanvasLayer/DrillPrompt")
+YesButton = NodePath("CanvasLayer/DrillPrompt/YesButton")
+NoButton = NodePath("CanvasLayer/DrillPrompt/NoButton")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746396471]
 position = Vector2(0, -12)
@@ -191,3 +195,89 @@ scale = Vector2(2.8125005, 2.9062502)
 energy = 0.5
 shadow_filter = 1
 texture = SubResource("GradientTexture2D_2q34x")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1230043927]
+
+[node name="DrillPrompt" type="Control" parent="CanvasLayer" unique_id=885121639]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -342.0
+offset_right = 20.0
+offset_bottom = -302.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/DrillPrompt" unique_id=1910650900]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -5.0
+anchor_top = -1.05
+anchor_right = 6.0
+anchor_bottom = 2.225
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/DrillPrompt" unique_id=1718837339]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.7125
+anchor_top = -0.5875
+anchor_right = 5.7125
+anchor_bottom = 1.5875
+offset_left = 73.0
+offset_top = 7.0
+offset_right = -73.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_2q34x")
+text = "You have enough drill
+parts to build a drill.
+Do you want to build a drill?"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="YesButton" type="Button" parent="CanvasLayer/DrillPrompt" unique_id=80144038]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.0
+anchor_top = 2.825
+anchor_right = -1.1
+anchor_bottom = 3.65
+
+[node name="Label" type="Label" parent="CanvasLayer/DrillPrompt/YesButton" unique_id=54560683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.5258789e-05
+grow_horizontal = 2
+grow_vertical = 2
+text = "Yes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoButton" type="Button" parent="CanvasLayer/DrillPrompt" unique_id=2092154172]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.1000001
+anchor_top = 2.825
+anchor_right = 5.0
+anchor_bottom = 3.5290003
+offset_bottom = -0.012939453
+
+[node name="Label" type="Label" parent="CanvasLayer/DrillPrompt/NoButton" unique_id=1207157202]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "No"
+horizontal_alignment = 1
+vertical_alignment = 1

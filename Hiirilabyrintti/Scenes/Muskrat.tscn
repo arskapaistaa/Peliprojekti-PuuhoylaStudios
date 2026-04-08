@@ -190,11 +190,13 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="HireButton" type="Button" parent="Canvas/Control" unique_id=1422979896]
-layout_mode = 0
-offset_left = 77.0
-offset_top = 86.0
-offset_right = 155.0
-offset_bottom = 122.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.9250001
+anchor_top = 2.15
+anchor_right = 3.8750002
+anchor_bottom = 3.0500002
+offset_right = -1.5258789e-05
 
 [node name="Label" type="Label" parent="Canvas/Control/HireButton" unique_id=576884972]
 layout_mode = 1

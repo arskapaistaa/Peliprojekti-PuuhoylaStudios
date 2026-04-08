@@ -138,10 +138,11 @@ autoplay = "Idle"
 position = Vector2(8, 21)
 shape = SubResource("ConvexPolygonShape2D_nqguc")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=735239142 node_paths=PackedStringArray("_animations")]
+[node name="Area2D" type="Area2D" parent="." unique_id=735239142 node_paths=PackedStringArray("_animations", "rockMessageLabel")]
 collision_mask = 2
 script = ExtResource("1_8gfo0")
 _animations = NodePath("../Canvas/AnimationPlayer")
+rockMessageLabel = NodePath("../Canvas/Control/Label")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=722016869]
 position = Vector2(0, 41.5)
@@ -197,5 +198,6 @@ grow_vertical = 2
 theme = ExtResource("4_brjug")
 text = "Brada you need to find some
 drill parts to get trough"
+horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true

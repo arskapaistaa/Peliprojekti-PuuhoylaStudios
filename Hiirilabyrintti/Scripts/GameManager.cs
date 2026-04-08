@@ -3,6 +3,20 @@ using System;
 
 public partial class GameManager : Node
 {
+	[Signal]
+	public delegate void DrillReadyEventHandler();
+	private bool _mouseCanMove = true;
+	public bool MouseCanMove
+	{
+		get { return _mouseCanMove; }
+		set
+		{
+			_mouseCanMove = value;
+			GD.Print("Mouse can move: " + _mouseCanMove);
+		}
+	}
+
+
 
 	public static GameManager Instance
 	{
@@ -23,6 +37,8 @@ public partial class GameManager : Node
 			return;
 		}
 	}
+
+
 
 	// Cheese part
 	private int _cheeseScore = 0;
@@ -95,6 +111,8 @@ public partial class GameManager : Node
 
 	// Drill part
 	private int _drillScore = 0;
+	public int _neededToBuildDrill = 1;
+	public bool _hasDrill = false;
 	public int DrillScore
 	{
 		get {return _drillScore; }
@@ -128,6 +146,38 @@ public partial class GameManager : Node
 		{
 			GD.Print("Counter missing!");
 		}
+
+		if (DrillScore >= _neededToBuildDrill && !_hasDrill)
+		{
+			GD.Print("You have enough drill parts to build the drill!");
+			EmitSignal(SignalName.DrillReady);
+		}
+		return true;
+	}
+
+	public bool RemoveDrill(int amount)
+	{
+		if (amount < 0 || amount > DrillScore)
+		{
+			return false;
+		}
+
+		DrillScore -= amount;
+		if (DrillScore < 0)
+		{
+			DrillScore = 0;
+		}
+
+		// Update UI
+		if (counters != null)
+		{
+			counters.UpdateDrillScore(DrillScore);
+		}
+		else
+		{
+			GD.Print("Counter missing!");
+		}
+
 		return true;
 	}
 

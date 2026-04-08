@@ -151,9 +151,6 @@ position = Vector2(856, -161)
 [node name="Cheese12" parent="Objects/Cheeses" unique_id=1313041739 instance=ExtResource("3_16f24")]
 position = Vector2(830, 295)
 
-[node name="Cheese13" parent="Objects/Cheeses" unique_id=1875197126 instance=ExtResource("3_16f24")]
-position = Vector2(830, 295)
-
 [node name="Drills" type="Node" parent="Objects" unique_id=989159191]
 
 [node name="Drill" parent="Objects/Drills" unique_id=1849715523 instance=ExtResource("4_fg7yv")]
