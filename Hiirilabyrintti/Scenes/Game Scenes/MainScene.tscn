@@ -968,6 +968,7 @@ autoplay = "default"
 frame_progress = 0.45598695
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
+visible = false
 color = Color(0.09329758, 0.10229925, 0.2502737, 1)
 
 [node name="Exit" type="Area2D" parent="." unique_id=154487 node_paths=PackedStringArray("_animations")]

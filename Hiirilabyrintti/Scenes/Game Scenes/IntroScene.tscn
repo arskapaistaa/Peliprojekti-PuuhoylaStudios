@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://c2bv04lk7aa2s"]
+[gd_scene format=3 uid="uid://bbl5wfghxwt4x"]
 
 [ext_resource type="Texture2D" uid="uid://bbfv38hdvc0e6" path="res://Sprites/labrat.png" id="1_jl0je"]
-[ext_resource type="Script" uid="uid://comtmd2581ab1" path="res://Scripts/IntroScene.cs" id="1_oxig5"]
+[ext_resource type="Script" path="res://Scripts/IntroScene.cs" id="1_oxig5"]
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="2_oxig5"]
 
 [sub_resource type="Gradient" id="Gradient_burp6"]

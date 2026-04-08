@@ -108,6 +108,7 @@ theme_override_font_sizes/font_size = 63
 text = "ASETUKSET"
 
 [node name="Settings menu" type="Control" parent="." unique_id=1750706813 node_paths=PackedStringArray("_volumeButton")]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
