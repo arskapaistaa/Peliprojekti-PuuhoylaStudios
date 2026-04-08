@@ -35,4 +35,11 @@ public partial class SettingsManager : Node
             _language = Mathf.Clamp(value, 0, 1);
         }
     }
+
+	private bool _volume = true;
+	public bool Volume
+	{
+		get {return _volume; }
+		set { _volume = value; }
+	}
 }
