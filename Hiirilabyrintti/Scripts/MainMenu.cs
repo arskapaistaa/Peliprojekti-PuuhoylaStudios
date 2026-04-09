@@ -6,11 +6,13 @@ public partial class MainMenu : Node
 	[Export] private Button _playButton;
 	[Export] private AnimationPlayer _animations;
 	[Export] private Timer _animationTimer;
-	// Called when the node enters the scene tree for the first time.
+
+
 	public override void _Ready()
 	{
 		// // Connect pressed signal to method.
 		_playButton.Pressed += ButtonPressed;
+
 	}
 	private void ButtonPressed()
 	{
@@ -27,7 +29,7 @@ public partial class MainMenu : Node
 	}
 	private void LoadMainScene()
 	{
-		// Load new scene and remove main menu scene.
+		// Load intro scene.
 		GetTree().ChangeSceneToFile("res://Scenes/Game Scenes/IntroScene.tscn");
 	}
 }
