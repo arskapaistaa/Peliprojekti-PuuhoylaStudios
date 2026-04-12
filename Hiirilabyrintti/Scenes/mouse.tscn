@@ -2,11 +2,104 @@
 
 [ext_resource type="Script" uid="uid://bqwl5fwiohujg" path="res://Scripts/Mouse.cs" id="1_tewyd"]
 [ext_resource type="Texture2D" uid="uid://bpaj87h77xcdl" path="res://Sprites/hiiri-sprite.png" id="2_3ber4"]
+[ext_resource type="Texture2D" uid="uid://dfruw6hpy6a1j" path="res://Sprites/pora-animated.png" id="2_5rgqy"]
 [ext_resource type="Texture2D" uid="uid://bj3hkhf816jh7" path="res://Sprites/hiiri-idle.png" id="2_kxv04"]
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="4_2q34x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kxv04"]
 radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0hb1"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7xqq"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bh0h"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_togmm"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh73j"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm7ud"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(240, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtmqg"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(288, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4u5j"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(336, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64io5"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(384, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_venx8"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(432, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fd3l"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(480, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stmgt"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(528, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uises"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0hb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7xqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bh0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_togmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jh73j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm7ud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtmqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4u5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64io5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_venx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fd3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stmgt")
+}],
+"loop": true,
+"name": &"drill",
+"speed": 60.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2q34x"]
 atlas = ExtResource("2_kxv04")
@@ -144,7 +237,7 @@ height = 96
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Mouse" type="CharacterBody2D" unique_id=1410733989 node_paths=PackedStringArray("_sprite", "DrillPrompt", "YesButton", "NoButton")]
+[node name="Mouse" type="CharacterBody2D" unique_id=1410733989 node_paths=PackedStringArray("_sprite", "DrillPrompt", "YesButton", "NoButton", "_drill")]
 collision_layer = 2
 collision_mask = 5
 motion_mode = 1
@@ -154,17 +247,22 @@ _sprite = NodePath("Sprite2D")
 DrillPrompt = NodePath("CanvasLayer/DrillPrompt")
 YesButton = NodePath("CanvasLayer/DrillPrompt/YesButton")
 NoButton = NodePath("CanvasLayer/DrillPrompt/NoButton")
+_drill = NodePath("DrillSprite")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746396471]
 position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_kxv04")
 
+[node name="DrillSprite" type="AnimatedSprite2D" parent="." unique_id=80438716]
+position = Vector2(4.499999, -30.000002)
+scale = Vector2(0.31249997, 0.71875)
+sprite_frames = SubResource("SpriteFrames_uises")
+animation = &"drill"
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=838422735]
 sprite_frames = SubResource("SpriteFrames_1rou4")
-animation = &"Move"
+animation = &"Idle"
 autoplay = "Idle"
-frame = 7
-frame_progress = 0.76432276
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1018125281]
 zoom = Vector2(2.5, 2.5)
@@ -278,6 +376,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "No"
 horizontal_alignment = 1
 vertical_alignment = 1

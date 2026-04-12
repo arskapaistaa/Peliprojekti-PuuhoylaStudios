@@ -5,7 +5,7 @@ public partial class GameManager : Node
 {
 	[Signal]
 	public delegate void DrillReadyEventHandler();
-	private bool _mouseCanMove = true;
+	public bool _mouseCanMove = true;
 	public bool MouseCanMove
 	{
 		get { return _mouseCanMove; }
@@ -15,8 +15,6 @@ public partial class GameManager : Node
 			GD.Print("Mouse can move: " + _mouseCanMove);
 		}
 	}
-
-
 
 	public static GameManager Instance
 	{

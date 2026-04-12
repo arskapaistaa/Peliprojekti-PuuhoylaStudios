@@ -10,6 +10,7 @@ public partial class Mouse : CharacterBody2D
     [Export] private Control DrillPrompt;
     [Export] private Button YesButton;
     [Export] private Button NoButton;
+    [Export] private AnimatedSprite2D _drill;
     private int neededToBuildDrill = GameManager.Instance._neededToBuildDrill;
     public override void _Ready()
     {
@@ -22,6 +23,7 @@ public partial class Mouse : CharacterBody2D
         );
 
         DrillPrompt.Visible = false;
+        _drill.Visible = false;
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -62,8 +64,6 @@ public partial class Mouse : CharacterBody2D
     }
     private void OnYesPressed()
     {
-        GD.Print("You chose to build the drill!");
-
         GameManager.Instance.RemoveDrill(neededToBuildDrill);
         DrillPrompt.Visible = false;
         GameManager.Instance.MouseCanMove = true;
@@ -72,9 +72,18 @@ public partial class Mouse : CharacterBody2D
     }
     private void OnNoPressed()
     {
-        GD.Print("You chose not to build the drill.");
-
         DrillPrompt.Visible = false;
         GameManager.Instance.MouseCanMove = true;
+    }
+
+    public void StartDrilling()
+    {
+        _drill.Visible = true;
+        _drill.Play("drill");
+    }
+    public void StopDrilling()
+    {
+        _drill.Visible = false;
+        _drill.Stop();
     }
 }
