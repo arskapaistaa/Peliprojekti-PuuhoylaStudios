@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://i6eq2hs5s1a1"]
+[gd_scene format=3 uid="uid://bsjdxn8l57si"]
 
-[ext_resource type="Script" uid="uid://dtk848nbsdmpw" path="res://Scripts/VirtualJoystick.cs" id="1_m85la"]
+[ext_resource type="Script" path="res://Scripts/VirtualJoystick.cs" id="1_m85la"]
 [ext_resource type="Texture2D" uid="uid://bpjmai2dawyxx" path="res://Sprites/joystick-ring.png" id="2_sy3qb"]
-[ext_resource type="Script" uid="uid://nacorbtu2bin" path="res://Scripts/VirtualKnob.cs" id="3_s8u6t"]
+[ext_resource type="Script" path="res://Scripts/VirtualKnob.cs" id="3_s8u6t"]
 [ext_resource type="Texture2D" uid="uid://cxsktgo7fmmk2" path="res://Sprites/virtual-joystick.png" id="4_gxdom"]
 
 [node name="Joystick" type="Node2D" unique_id=1618852996]
