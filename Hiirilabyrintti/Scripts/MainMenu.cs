@@ -4,6 +4,7 @@ using System;
 public partial class MainMenu : Node
 {
 	[Export] private Button _playButton;
+	[Export] private Button _creditsButton = null;
 	[Export] private AnimationPlayer _animations;
 
 	public override void _Ready()
@@ -13,12 +14,13 @@ public partial class MainMenu : Node
 		_playButton.Disabled = false;
 
 		// Connect pressed signal to method.
-		_playButton.Pressed += ButtonPressed;
+		_playButton.Pressed += PlayButtonPressed;
+		_creditsButton.Pressed += CreditsButtonPressed;
 
 		_animations.AnimationFinished += onAnimationFinished;
 	}
 
-    private void ButtonPressed()
+    private void PlayButtonPressed()
 	{
 		// Disable the button to prevent multiple presses.
 		_playButton.Disabled = true;
@@ -27,6 +29,10 @@ public partial class MainMenu : Node
 		_animations.Play("FadeOut");
 
 	}
+	    private void CreditsButtonPressed()
+    {
+        _animations.Play("Credits");
+    }
 	private void onAnimationFinished(StringName animName)
     {
         if(animName == "FadeOut")

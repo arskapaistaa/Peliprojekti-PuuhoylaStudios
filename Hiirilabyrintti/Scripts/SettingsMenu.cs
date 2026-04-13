@@ -6,6 +6,7 @@ public partial class SettingsMenu : Control
 	[Export] private Button _volumeButton = null;
 	[Export] private Button _musicButton = null;
 	[Export] private Button _languageButton = null;
+	[Export] private Button _creditsButton = null;
 
 	public override void _Ready()
 	{
