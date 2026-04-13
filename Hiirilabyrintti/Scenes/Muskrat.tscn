@@ -1,8 +1,101 @@
 [gd_scene format=3 uid="uid://dvbw23xk7fe2d"]
 
+[ext_resource type="Texture2D" uid="uid://dfruw6hpy6a1j" path="res://Sprites/pora-animated.png" id="1_3vbgp"]
 [ext_resource type="Texture2D" uid="uid://rhmd8p758oqy" path="res://Sprites/piisami.png" id="1_ywhwv"]
 [ext_resource type="Script" uid="uid://fawb7k8v8hp7" path="res://Scripts/Muskrat.cs" id="2_8qx40"]
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="3_8qx40"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_supjp"]
+atlas = ExtResource("1_3vbgp")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57o6s"]
+atlas = ExtResource("1_3vbgp")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xm2jk"]
+atlas = ExtResource("1_3vbgp")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma26n"]
+atlas = ExtResource("1_3vbgp")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yloos"]
+atlas = ExtResource("1_3vbgp")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufdvh"]
+atlas = ExtResource("1_3vbgp")
+region = Rect2(240, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsikl"]
+atlas = ExtResource("1_3vbgp")
+region = Rect2(288, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib5e1"]
+atlas = ExtResource("1_3vbgp")
+region = Rect2(336, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yschu"]
+atlas = ExtResource("1_3vbgp")
+region = Rect2(384, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gjdt"]
+atlas = ExtResource("1_3vbgp")
+region = Rect2(432, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mdqo"]
+atlas = ExtResource("1_3vbgp")
+region = Rect2(480, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_be5vm"]
+atlas = ExtResource("1_3vbgp")
+region = Rect2(528, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7yqj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_supjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57o6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xm2jk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma26n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yloos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufdvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsikl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib5e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yschu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gjdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mdqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_be5vm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r77j2"]
 atlas = ExtResource("1_ywhwv")
@@ -117,7 +210,22 @@ _data = {
 &"start": SubResource("Animation_nqguc")
 }
 
-[node name="Muskrat" type="CharacterBody2D" unique_id=834044912]
+[node name="Muskrat" type="CharacterBody2D" unique_id=834044912 node_paths=PackedStringArray("_animations", "_dialogueLabel", "_hireButton", "_drillSprite")]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("2_8qx40")
+_hireCost = 1
+_animations = NodePath("Canvas/AnimationPlayer")
+_dialogueLabel = NodePath("Canvas/Control/Label")
+_hireButton = NodePath("Canvas/Control/HireButton")
+_drillSprite = NodePath("MuskratDrill")
+
+[node name="MuskratDrill" type="AnimatedSprite2D" parent="." unique_id=1016892136]
+position = Vector2(-5.9604645e-08, -40)
+scale = Vector2(0.72916675, 1)
+sprite_frames = SubResource("SpriteFrames_7yqj3")
+frame = 11
+frame_progress = 0.3700985
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1870994864]
 sprite_frames = SubResource("SpriteFrames_d28qf")
@@ -129,13 +237,8 @@ frame_progress = 0.65021986
 position = Vector2(-1, -13)
 shape = SubResource("CapsuleShape2D_3vaw0")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=357495324 node_paths=PackedStringArray("_animations", "_dialogueLabel", "_hireButton")]
+[node name="Area2D" type="Area2D" parent="." unique_id=357495324]
 collision_mask = 2
-script = ExtResource("2_8qx40")
-_hireCost = 1
-_animations = NodePath("../Canvas/AnimationPlayer")
-_dialogueLabel = NodePath("../Canvas/Control/Label")
-_hireButton = NodePath("../Canvas/Control/HireButton")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=930232195]
 position = Vector2(0, -30.5)
@@ -190,6 +293,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="HireButton" type="Button" parent="Canvas/Control" unique_id=1422979896]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.9250001

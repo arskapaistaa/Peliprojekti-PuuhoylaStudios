@@ -239,6 +239,7 @@ autoplay = &"FadeIn"
 script = ExtResource("13_b6wki")
 _pathFollow = NodePath("Path2D/PathFollow2D")
 _movementSpeed = 0.3
+_canMove = false
 
 [node name="Path2D" type="Path2D" parent="PathFollower" unique_id=989375694]
 position = Vector2(-286, 188)

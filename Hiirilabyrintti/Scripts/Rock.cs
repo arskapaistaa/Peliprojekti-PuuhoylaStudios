@@ -13,14 +13,23 @@ public partial class Rock : Area2D
 	[Export] private Label rockMessageLabel;
 	[Export] private Button _drillButton;
 	[Export] private AnimatedSprite2D _rockSprite;
+	private Muskrat muskrat;
 	private Mouse _mouse;
 	private bool drillingStarted = false;
+
+	private bool _canTrigger = false;
 
 	public override void _Ready()
 	{
 		_drillButton.Visible = false;
 		_drillButton.Pressed += OnDrillPressed;
+
 		_rockSprite.AnimationFinished += OnAnimationFinished;
+
+		GetTree().CreateTimer(0.2f).Timeout += () =>
+		{
+			_canTrigger = true;
+		};
 	}
 
 	public override void _EnterTree()
@@ -40,51 +49,64 @@ public partial class Rock : Area2D
 	// Method when player enters the area.
 	private void OnBodyEntered(Node2D body)
 	{
-		if (body is not Mouse mouse)
+		if (!_canTrigger) return;
+		if (body is Mouse mouse)
+		{
+			_mouse = mouse;
+			if (!IsConnected(SignalName.DrillStarted, new Callable(mouse, nameof(Mouse.StartDrilling))))
+			{
+				Connect(SignalName.DrillStarted, new Callable(mouse, nameof(Mouse.StartDrilling)));
+			}
+
+			GD.Print("Mouse entered rock area");
+
+			if (!GameManager.Instance._hasDrill)
+			{
+				if (GameManager.Instance.DrillScore >= GameManager.Instance._neededToBuildDrill)
+				{
+					GameManager.Instance.EmitSignal("DrillReady");
+					drillPromptShown = true;
+				}
+				else
+				{
+					_animations.Play("PopUp");
+					drillPromptShown = false;
+				}
+			}
+			else
+			{
+				GD.Print("Player HAS drill");
+
+				rockMessageLabel.Text = "With the drill, you can break\nthrough this rock and escape!";
+				rockMessageLabel.Visible = true;
+
+				_drillButton.Visible = true;
+
+				_animations.Play("PopUp");
+
+				drillPromptShown = false;
+			}
+			if (!IsConnected(SignalName.RockDestroyed, new Callable(mouse, nameof(Mouse.StopDrilling))))
+			{
+				Connect(SignalName.RockDestroyed, new Callable(mouse, nameof(Mouse.StopDrilling)));
+			}
+		}
+		else if (body is Muskrat m)
+		{
+			muskrat = m;
+
+			GD.Print("Muskrat entered rock area");
+
+			muskrat._drillSprite.Visible = true;
+			muskrat._drillSprite.Play("default");
+
+			_rockSprite.Play("Drilling");
+		}
+		else
 		{
 			return;
 		}
 
-		_mouse = mouse; // store reference
-
-		// ✅ connect signal ONLY ONCE
-		if (!IsConnected(SignalName.DrillStarted, new Callable(mouse, nameof(Mouse.StartDrilling))))
-		{
-			Connect(SignalName.DrillStarted, new Callable(mouse, nameof(Mouse.StartDrilling)));
-		}
-
-		GD.Print("Mouse entered rock area");
-
-		if (!GameManager.Instance._hasDrill)
-		{
-			if (GameManager.Instance.DrillScore >= GameManager.Instance._neededToBuildDrill)
-			{
-				GameManager.Instance.EmitSignal("DrillReady");
-				drillPromptShown = true;
-			}
-			else
-			{
-				_animations.Play("PopUp");
-				drillPromptShown = false;
-			}
-		}
-		else
-		{
-			GD.Print("Player HAS drill");
-
-			rockMessageLabel.Text = "With the drill, you can break\nthrough this rock and escape!";
-			rockMessageLabel.Visible = true;
-
-			_drillButton.Visible = true;
-
-			_animations.Play("PopUp");
-
-			drillPromptShown = false;
-		}
-		if (!IsConnected(SignalName.RockDestroyed, new Callable(mouse, nameof(Mouse.StopDrilling))))
-		{
-			Connect(SignalName.RockDestroyed, new Callable(mouse, nameof(Mouse.StopDrilling)));
-		}
 	}
 
 	private void OnDrillPressed()
