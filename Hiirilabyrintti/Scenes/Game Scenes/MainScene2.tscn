@@ -147,7 +147,7 @@ texture = ExtResource("12_si2a0")
 1:1/size_in_atlas = Vector2i(4, 4)
 1:1/0 = 0
 1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_8rmvd")
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -22.296535, -22.816788, -32, 32, -32, 32, 32, -32, 32)
 6:1/size_in_atlas = Vector2i(4, 4)
 6:1/0 = 0
 6:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_e0bv1")
@@ -155,7 +155,7 @@ texture = ExtResource("12_si2a0")
 11:1/size_in_atlas = Vector2i(4, 4)
 11:1/0 = 0
 11:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_8o58s")
-11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 23.262722, -32, 32, -22.89111, 32, 32, -32, 32)
 1:6/size_in_atlas = Vector2i(4, 4)
 1:6/0 = 0
 1:6/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_b52yi")
@@ -167,7 +167,7 @@ texture = ExtResource("12_si2a0")
 1:11/size_in_atlas = Vector2i(4, 4)
 1:11/0 = 0
 1:11/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_use57")
-1:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -22.668148, 32, -32, 24.08026)
 6:11/size_in_atlas = Vector2i(4, 4)
 6:11/0 = 0
 6:11/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_0f1ji")
@@ -175,23 +175,23 @@ texture = ExtResource("12_si2a0")
 11:11/size_in_atlas = Vector2i(4, 4)
 11:11/0 = 0
 11:11/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_rdn1l")
-11:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+11:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 23.63433, 22.668146, 32, -32, 32)
 17:1/size_in_atlas = Vector2i(4, 4)
 17:1/0 = 0
 17:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_d8io5")
-17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -23.485683, -24.154583, -32, 32, -32, 32, 32, -21.924927, 32, -32, 22.891113)
 17:6/size_in_atlas = Vector2i(4, 4)
 17:6/0 = 0
 17:6/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_jqtsw")
-17:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+17:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -22.891113, -21.330355, -32, 21.776283, -32, 32, -20.066883, 32, 32, -32, 32)
 17:11/size_in_atlas = Vector2i(4, 4)
 17:11/0 = 0
 17:11/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_ul11q")
-17:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+17:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 21.850609, 23.560009, 32, -21.033066, 32, -32, 23.337042)
 22:1/size_in_atlas = Vector2i(4, 4)
 22:1/0 = 0
 22:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xi3lm")
-22:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+22:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 21.62764, -32, 32, -21.256033, 32, 22.29654, 22.37086, 32, -32, 32)
 22:11/size_in_atlas = Vector2i(4, 4)
 22:11/0 = 0
 22:11/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_r64ix")
@@ -267,19 +267,19 @@ texture = ExtResource("12_si2a0")
 17:18/size_in_atlas = Vector2i(4, 4)
 17:18/0 = 0
 17:18/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_3x35i")
-17:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+17:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -22.296535, -22.816788, -32, 32, -32, 32, 32, -32, 32)
 17:23/size_in_atlas = Vector2i(4, 4)
 17:23/0 = 0
 17:23/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_8qk5m")
-17:23/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+17:23/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -22.668148, 32, -32, 24.08026)
 22:18/size_in_atlas = Vector2i(4, 4)
 22:18/0 = 0
 22:18/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_3jvf0")
-22:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+22:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 23.262722, -32, 32, -22.89111, 32, 32, -32, 32)
 22:23/size_in_atlas = Vector2i(4, 4)
 22:23/0 = 0
 22:23/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_8k5u2")
-22:23/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+22:23/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 23.63433, 22.668146, 32, -32, 32)
 35:13/size_in_atlas = Vector2i(4, 4)
 35:13/0 = 0
 35:13/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_wuw4t")
@@ -523,37 +523,55 @@ position = Vector2(-147, 0)
 position = Vector2(-282, 182)
 
 [node name="Cheese3" parent="Objects/Cheeses" unique_id=2136132247 instance=ExtResource("3_weqxp")]
-position = Vector2(-162, 325)
+position = Vector2(-864, 576)
 
 [node name="Cheese4" parent="Objects/Cheeses" unique_id=1831432107 instance=ExtResource("3_weqxp")]
-position = Vector2(-27, 439)
+position = Vector2(30, 321)
 
 [node name="Cheese5" parent="Objects/Cheeses" unique_id=1919720209 instance=ExtResource("3_weqxp")]
-position = Vector2(154, 881)
+position = Vector2(98, 892)
 
 [node name="Cheese6" parent="Objects/Cheeses" unique_id=1975133337 instance=ExtResource("3_weqxp")]
 position = Vector2(414, 573)
 
 [node name="Cheese7" parent="Objects/Cheeses" unique_id=281171500 instance=ExtResource("3_weqxp")]
-position = Vector2(-544, 438)
+position = Vector2(-731, 989)
 
 [node name="Cheese8" parent="Objects/Cheeses" unique_id=2053464442 instance=ExtResource("3_weqxp")]
 position = Vector2(-987, 438)
 
 [node name="Cheese9" parent="Objects/Cheeses" unique_id=2012204585 instance=ExtResource("3_weqxp")]
-position = Vector2(-734, 162)
+position = Vector2(983, 884)
 
 [node name="Cheese10" parent="Objects/Cheeses" unique_id=1626524096 instance=ExtResource("3_weqxp")]
-position = Vector2(-508, 190)
+position = Vector2(-36, 706)
 
 [node name="Cheese11" parent="Objects/Cheeses" unique_id=406486531 instance=ExtResource("3_weqxp")]
-position = Vector2(295, 435)
+position = Vector2(994, 2)
 
 [node name="Cheese12" parent="Objects/Cheeses" unique_id=1313041739 instance=ExtResource("3_weqxp")]
-position = Vector2(546, 326)
+position = Vector2(512, 312)
 
 [node name="Cheese13" parent="Objects/Cheeses" unique_id=1875197126 instance=ExtResource("3_weqxp")]
 position = Vector2(554, -5)
+
+[node name="Cheese14" parent="Objects/Cheeses" unique_id=547039816 instance=ExtResource("3_weqxp")]
+position = Vector2(427, 1338)
+
+[node name="Cheese15" parent="Objects/Cheeses" unique_id=1425295160 instance=ExtResource("3_weqxp")]
+position = Vector2(-735, 1329)
+
+[node name="Cheese16" parent="Objects/Cheeses" unique_id=1517578462 instance=ExtResource("3_weqxp")]
+position = Vector2(148, 1142)
+
+[node name="Cheese17" parent="Objects/Cheeses" unique_id=1765317697 instance=ExtResource("3_weqxp")]
+position = Vector2(-420, 753)
+
+[node name="Cheese18" parent="Objects/Cheeses" unique_id=2147144960 instance=ExtResource("3_weqxp")]
+position = Vector2(-991, 1995)
+
+[node name="Cheese19" parent="Objects/Cheeses" unique_id=911703648 instance=ExtResource("3_weqxp")]
+position = Vector2(990, 1475)
 
 [node name="Drills" type="Node" parent="Objects" unique_id=989159191]
 

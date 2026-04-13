@@ -769,13 +769,13 @@ z_index = 2
 position = Vector2(-147, 0)
 
 [node name="Cheese2" parent="Objects/Cheeses" unique_id=128622770 instance=ExtResource("3_16f24")]
-position = Vector2(-282, 182)
+position = Vector2(-871, 1017)
 
 [node name="Cheese3" parent="Objects/Cheeses" unique_id=2136132247 instance=ExtResource("3_16f24")]
 position = Vector2(-162, 325)
 
 [node name="Cheese4" parent="Objects/Cheeses" unique_id=1831432107 instance=ExtResource("3_16f24")]
-position = Vector2(-27, 439)
+position = Vector2(157, 1132)
 
 [node name="Cheese5" parent="Objects/Cheeses" unique_id=1919720209 instance=ExtResource("3_16f24")]
 position = Vector2(154, 881)
@@ -790,7 +790,7 @@ position = Vector2(-544, 438)
 position = Vector2(-987, 438)
 
 [node name="Cheese9" parent="Objects/Cheeses" unique_id=2012204585 instance=ExtResource("3_16f24")]
-position = Vector2(-734, 162)
+position = Vector2(-480, 834)
 
 [node name="Cheese10" parent="Objects/Cheeses" unique_id=1626524096 instance=ExtResource("3_16f24")]
 position = Vector2(-508, 190)
@@ -803,6 +803,24 @@ position = Vector2(546, 326)
 
 [node name="Cheese13" parent="Objects/Cheeses" unique_id=1875197126 instance=ExtResource("3_16f24")]
 position = Vector2(554, -5)
+
+[node name="Cheese14" parent="Objects/Cheeses" unique_id=1293366450 instance=ExtResource("3_16f24")]
+position = Vector2(-617, 1266)
+
+[node name="Cheese15" parent="Objects/Cheeses" unique_id=1497407126 instance=ExtResource("3_16f24")]
+position = Vector2(-683, 1973)
+
+[node name="Cheese16" parent="Objects/Cheeses" unique_id=700795080 instance=ExtResource("3_16f24")]
+position = Vector2(-163, 1470)
+
+[node name="Cheese17" parent="Objects/Cheeses" unique_id=669689199 instance=ExtResource("3_16f24")]
+position = Vector2(655, 1016)
+
+[node name="Cheese18" parent="Objects/Cheeses" unique_id=1873931606 instance=ExtResource("3_16f24")]
+position = Vector2(290, 834)
+
+[node name="Cheese19" parent="Objects/Cheeses" unique_id=2011469292 instance=ExtResource("3_16f24")]
+position = Vector2(800, 571)
 
 [node name="Drills" type="Node" parent="Objects" unique_id=989159191]
 
