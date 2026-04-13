@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bi8u2xtap61um" path="res://Scripts/SettingsManager.cs" id="5_8rmvd"]
 [ext_resource type="PackedScene" uid="uid://i1fnrld18ulw" path="res://Scenes/Managers/game_manager.tscn" id="5_j0wll"]
 [ext_resource type="Script" uid="uid://ctlleouhimdnx" path="res://Scripts/Exit.cs" id="7_m74ok"]
+[ext_resource type="Script" uid="uid://dypfsjao3kncs" path="res://Scripts/AudioManager.cs" id="7_use57"]
 [ext_resource type="PackedScene" uid="uid://dxyrlpqny8xd2" path="res://Scenes/Objects/rock.tscn" id="9_l6byj"]
 [ext_resource type="TileSet" uid="uid://ncwesptfwuuy" path="res://tilesets/New_Tileset.tres" id="10_8o58s"]
 [ext_resource type="Texture2D" uid="uid://da7i0guaqq2e3" path="res://Sprites/ants1.png" id="10_b6wki"]
@@ -15,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dh43j7qfw8w64" path="res://Sprites/tileset-green.png" id="11_e0bv1"]
 [ext_resource type="Texture2D" uid="uid://b1supvki2xjbh" path="res://Sprites/tileset-blue.png" id="11_lh3xx"]
 [ext_resource type="PackedScene" uid="uid://cggpma0qvjowe" path="res://Scenes/UI/Counters.tscn" id="12_8rmvd"]
+[ext_resource type="AudioStream" uid="uid://cupj5jtds3vte" path="res://Audio/SFX/Waterdrops_SFX.wav" id="16_b52yi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0bv1"]
 texture = ExtResource("11_lh3xx")
@@ -814,6 +816,10 @@ script = ExtResource("5_8rmvd")
 [node name="GameManager" parent="Managers" unique_id=1156478741 node_paths=PackedStringArray("counters") instance=ExtResource("5_j0wll")]
 counters = NodePath("../../Counters")
 
+[node name="AudioManager" type="Node" parent="Managers" unique_id=212365034 node_paths=PackedStringArray("_waterDropsSFX")]
+script = ExtResource("7_use57")
+_waterDropsSFX = NodePath("../../Audios/WaterdropsSFX")
+
 [node name="Maze" type="Node2D" parent="." unique_id=2137428445]
 position = Vector2(0, -166)
 
@@ -968,26 +974,23 @@ autoplay = "default"
 frame_progress = 0.45598695
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
-visible = false
 color = Color(0.09329758, 0.10229925, 0.2502737, 1)
 
-[node name="Exit" type="Area2D" parent="." unique_id=154487 node_paths=PackedStringArray("_animations")]
+[node name="Exit" type="Area2D" parent="." unique_id=154487]
 position = Vector2(1143, 1458)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("7_m74ok")
-_animations = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1871817842]
 position = Vector2(-2, 8)
 shape = SubResource("RectangleShape2D_l6byj")
 
-[node name="ExitRock" type="Area2D" parent="." unique_id=223876225 node_paths=PackedStringArray("_animations")]
+[node name="ExitRock" type="Area2D" parent="." unique_id=223876225]
 position = Vector2(0, -205)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("7_m74ok")
-_animations = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitRock" unique_id=1259531565]
 position = Vector2(-2, 8)
@@ -998,3 +1001,10 @@ libraries/ = SubResource("AnimationLibrary_j0wll")
 autoplay = &"FadeIn"
 
 [node name="Counters" parent="." unique_id=74711613 instance=ExtResource("12_8rmvd")]
+
+[node name="Audios" type="Node2D" parent="." unique_id=1393321954]
+
+[node name="WaterdropsSFX" type="AudioStreamPlayer2D" parent="Audios" unique_id=191829959]
+stream = ExtResource("16_b52yi")
+volume_db = -10.015
+bus = &"SFX"

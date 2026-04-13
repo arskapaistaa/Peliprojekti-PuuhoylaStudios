@@ -4,6 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dnd6b2ucqhpbv" path="res://Sprites/playnappi_off.png" id="3_8l1vk"]
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="3_hwbvm"]
 [ext_resource type="Script" uid="uid://c43uyc6ney5lw" path="res://Scripts/SettingsMenu.cs" id="4_47lb5"]
+[ext_resource type="Texture2D" uid="uid://csc5ktk4rmju2" path="res://Sprites/volume_on.png" id="5_ofbn6"]
+[ext_resource type="Texture2D" uid="uid://e8g60jg6rhcq" path="res://Sprites/fin_off.png" id="6_fh073"]
+[ext_resource type="Texture2D" uid="uid://cjbmr1st6a18h" path="res://Sprites/music_on.png" id="7_1obep"]
+[ext_resource type="Texture2D" uid="uid://hcl2r87tkljh" path="res://Sprites/trapmouse-logo.png" id="8_fh073"]
+[ext_resource type="Script" uid="uid://bi8u2xtap61um" path="res://Scripts/SettingsManager.cs" id="9_wayvo"]
 
 [sub_resource type="Animation" id="Animation_8l1vk"]
 resource_name = "FadeOut"
@@ -34,19 +39,153 @@ tracks/0/keys = {
 "update": 1,
 "values": [1.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Settings menu:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CreditsButton:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayButton:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TrapMouse:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_wayvo"]
+resource_name = "Start"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Settings menu:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CreditsButton:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayButton:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.5, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TrapMouse:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hwbvm"]
 _data = {
 &"FadeOut": SubResource("Animation_8l1vk"),
-&"RESET": SubResource("Animation_hwbvm")
+&"RESET": SubResource("Animation_hwbvm"),
+&"Start": SubResource("Animation_wayvo")
 }
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rsx4f"]
+[sub_resource type="Gradient" id="Gradient_1obep"]
+offsets = PackedFloat32Array(0, 0.7084746, 1)
+colors = PackedColorArray(0.26146042, 0.31132343, 0.6147243, 1, 0.18930998, 0.227929, 0.46764958, 1, 0.11764706, 0.14509805, 0.32156864, 1)
 
-[sub_resource type="Theme" id="Theme_8l1vk"]
-Button/styles/normal = SubResource("StyleBoxEmpty_rsx4f")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fh073"]
+gradient = SubResource("Gradient_1obep")
+width = 540
+height = 960
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
 
-[node name="MainMenu" type="Control" unique_id=1849334859 node_paths=PackedStringArray("_playButton", "_animations", "_animationTimer")]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4t1h1"]
+
+[node name="MainMenu" type="Control" unique_id=1849334859 node_paths=PackedStringArray("_playButton", "_animations")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,62 +193,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rsx4f")
-_playButton = NodePath("Button")
+_playButton = NodePath("PlayButton")
 _animations = NodePath("AnimationPlayer")
-_animationTimer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="." unique_id=1152679823]
-wait_time = 1.2
-one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=251821347]
 libraries/ = SubResource("AnimationLibrary_hwbvm")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1793292394]
+[node name="Background" type="Control" parent="." unique_id=1530144867]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.27450982, 0.3137255, 0.5882353, 1)
 
-[node name="Button" type="Button" parent="." unique_id=576446134]
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1319143365]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -99.0
-offset_top = -125.0
-offset_right = 99.0
-offset_bottom = 126.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_8l1vk")
-icon = ExtResource("3_8l1vk")
+texture = SubResource("GradientTexture2D_fh073")
 
-[node name="Button2" type="Button" parent="." unique_id=1827402962]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -258.0
-offset_top = 596.0
-offset_right = 262.0
-offset_bottom = 796.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("3_hwbvm")
-theme_override_font_sizes/font_size = 63
-text = "ASETUKSET"
-
-[node name="Settings menu" type="Control" parent="." unique_id=1750706813 node_paths=PackedStringArray("_volumeButton")]
-visible = false
+[node name="Settings menu" type="Control" parent="." unique_id=1750706813 node_paths=PackedStringArray("_volumeButton", "_musicButton", "_languageButton")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -117,59 +224,95 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_47lb5")
-_volumeButton = NodePath("../VolumeOnOffTest")
+_volumeButton = NodePath("VolumeButton")
+_musicButton = NodePath("MusicButton")
+_languageButton = NodePath("LanguageButton")
 
-[node name="ColorRect" type="ColorRect" parent="Settings menu" unique_id=525902898]
+[node name="VolumeButton" type="Button" parent="Settings menu" unique_id=1489572143]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.15277778
-anchor_top = 0.106770836
-anchor_right = 0.9675926
-anchor_bottom = 1.0026041
-offset_right = -130.0
-offset_bottom = -200.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.16862746, 0.19215687, 0.3764706, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="HSlider" type="HSlider" parent="Settings menu" unique_id=384345868]
-layout_mode = 0
-offset_left = 313.0
-offset_top = 478.0
-offset_right = 763.0
-offset_bottom = 528.0
-theme = ExtResource("3_hwbvm")
-rounded = true
-
-[node name="VolumeOnOffTest" type="Button" parent="." unique_id=1489572143]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.40833333
-anchor_top = 0.7348958
-anchor_right = 0.5694444
-anchor_bottom = 0.7997396
-offset_right = 26.0
-offset_bottom = 5.5
+anchor_left = 0.025999987
+anchor_top = 0.684375
+anchor_right = 1.0
+anchor_bottom = 0.7894792
+offset_left = 412.92
+offset_right = -459.0
+offset_bottom = -21.800049
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
 toggle_mode = true
 action_mode = 0
-text = "ON"
+icon = ExtResource("5_ofbn6")
+icon_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="VolumeOnOffTest4" type="Button" parent="." unique_id=312550016]
-visible = false
+[node name="LanguageButton" type="Button" parent="Settings menu" unique_id=1666601113]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3611111
-anchor_top = 0.8588542
-anchor_right = 0.5222222
-anchor_bottom = 0.9236979
-offset_right = 126.0
-offset_bottom = 5.5
+anchor_top = 0.68385416
+anchor_right = 0.29166666
+anchor_bottom = 0.77747923
+offset_left = 141.0
+offset_right = 6.0
+offset_bottom = 0.23986816
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_hwbvm")
+toggle_mode = true
+action_mode = 0
+text = "
+"
+icon = ExtResource("6_fh073")
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MusicButton" type="Button" parent="Settings menu" unique_id=1590830218]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.68333334
+anchor_top = 0.684375
+anchor_right = 1.0
+anchor_bottom = 0.7784792
+offset_right = -162.0
+offset_bottom = -0.6800537
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_hwbvm")
+toggle_mode = true
+action_mode = 0
+text = "
+"
+icon = ExtResource("7_1obep")
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TrapMouse" type="TextureRect" parent="." unique_id=610540473]
+material = SubResource("CanvasItemMaterial_4t1h1")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.133
+offset_left = 44.000004
+offset_top = 119.16359
+offset_right = 212.0
+offset_bottom = 71.804
+grow_horizontal = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8_fh073")
+
+[node name="SettingsManager" type="Node" parent="." unique_id=327568711]
+script = ExtResource("9_wayvo")
+
+[node name="CreditsButton" type="Button" parent="." unique_id=312550016]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.85625
+anchor_right = 1.0
+anchor_bottom = 0.924
+offset_left = 390.0
+offset_right = -390.0
+offset_bottom = -0.080078125
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
@@ -178,52 +321,20 @@ action_mode = 0
 text = "CREDITS"
 metadata/_edit_use_anchors_ = true
 
-[node name="VolumeOnOffTest3" type="Button" parent="." unique_id=1666601113]
-visible = false
+[node name="PlayButton" type="Button" parent="." unique_id=576446134]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.13055556
-anchor_top = 0.734375
-anchor_right = 0.29166666
-anchor_bottom = 0.7992188
-offset_right = 26.0
-offset_bottom = 5.5
+anchor_top = 0.287
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 400.0
+offset_top = -0.039978027
+offset_right = -360.0
+offset_bottom = -3.3434448
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
-toggle_mode = true
-action_mode = 0
-text = "ON"
-metadata/_edit_use_anchors_ = true
-
-[node name="VolumeOnOffTest2" type="Button" parent="." unique_id=1590830218]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.68333334
-anchor_top = 0.7348958
-anchor_right = 0.84444445
-anchor_bottom = 0.7997396
-offset_right = 26.0
-offset_bottom = 5.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("3_hwbvm")
-toggle_mode = true
-action_mode = 0
-text = "ON"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="." unique_id=285167655]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -267.0
-offset_top = 169.0
-offset_right = 267.0
-offset_bottom = 285.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 96
-text = "TRAPMOUSE"
+icon = ExtResource("3_8l1vk")
+flat = true
+icon_alignment = 1
+expand_icon = true
