@@ -6,6 +6,7 @@ public partial class MainMenu : Node
 	[Export] private Button _playButton;
 	[Export] private Button _creditsButton = null;
 	[Export] private AnimationPlayer _animations;
+	public bool _credits = false;
 
 	public override void _Ready()
 	{
@@ -31,7 +32,17 @@ public partial class MainMenu : Node
 	}
 	    private void CreditsButtonPressed()
     {
-        _animations.Play("Credits");
+		if(!_credits)
+		{
+			_animations.Play("Credits");
+			_credits = true;
+		}
+		else
+		{
+			_animations.Play("CreditsOff");
+			_credits = false;
+		}
+
     }
 	private void onAnimationFinished(StringName animName)
     {
