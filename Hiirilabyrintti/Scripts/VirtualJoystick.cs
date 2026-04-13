@@ -3,7 +3,7 @@ using Godot;
 
 namespace GA.Common.UI;
 
-public partial class VirtualJoystick : Control
+public partial class VirtualJoystick : Node2D
 {
 	[Export] private StringName _leftAction = "ui_left";
 	[Export] private StringName _rightAction = "ui_right";
