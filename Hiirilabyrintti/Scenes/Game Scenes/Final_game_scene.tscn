@@ -177,6 +177,21 @@ tracks/12/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_yifte"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
 [sub_resource type="Animation" id="Animation_syh1w"]
 length = 0.001
 tracks/0/type = "value"
@@ -251,10 +266,23 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_anni1"]
 _data = {
 &"FadeIn": SubResource("Animation_nkp2i"),
+&"FadeOut": SubResource("Animation_yifte"),
 &"RESET": SubResource("Animation_syh1w")
 }
 
@@ -325,6 +353,7 @@ offset_right = -140.0
 offset_bottom = 0.7199707
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1e-05, 1)
 size_flags_vertical = 4
 color = Color(0.32156864, 0.08627451, 0.16078432, 0.54901963)
 metadata/_edit_use_anchors_ = true
@@ -376,11 +405,13 @@ anchor_right = 0.8703704
 anchor_bottom = 0.41770834
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1e-05, 1)
 size_flags_vertical = 4
 color = Color(0.11764706, 0.14509805, 0.32156864, 0.54901963)
 metadata/_edit_use_anchors_ = true
 
 [node name="EtejinaLabel" type="Label" parent="Control/Etenijä" unique_id=1320087038]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.41666666
@@ -406,6 +437,7 @@ anchor_right = 0.8703704
 anchor_bottom = 0.41770834
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1e-05, 1)
 size_flags_vertical = 4
 color = Color(0.36862746, 0.49019608, 0.59607846, 1)
 metadata/_edit_use_anchors_ = true
@@ -427,11 +459,13 @@ anchor_right = 0.8703704
 anchor_bottom = 0.609375
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1e-05, 1)
 size_flags_vertical = 4
 color = Color(0.08627451, 0.2901961, 0.16862746, 0.54901963)
 metadata/_edit_use_anchors_ = true
 
 [node name="EtsijäLabel" type="Label" parent="Control/Etsijä" unique_id=1364223270]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.43148148
@@ -458,6 +492,7 @@ anchor_right = 0.8703704
 anchor_bottom = 0.609375
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1e-05, 1)
 size_flags_vertical = 4
 color = Color(0.37254903, 0.5803922, 0.38039216, 1)
 metadata/_edit_use_anchors_ = true
@@ -512,7 +547,7 @@ script = ExtResource("3_anni1")
 _replay = NodePath(".")
 metadata/_edit_use_anchors_ = true
 
-[node name="Exit" type="Button" parent="Player" unique_id=68216442 node_paths=PackedStringArray("_exit")]
+[node name="Exit" type="Button" parent="Player" unique_id=68216442 node_paths=PackedStringArray("_exitButton", "_animations")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.32407406
@@ -522,10 +557,11 @@ anchor_bottom = 0.9401042
 offset_left = 3.0517578e-05
 disabled = true
 action_mode = 0
-text = "EXIT
+text = "MAIN MENU
 
 "
 autowrap_mode = 2
 script = ExtResource("4_yifte")
-_exit = NodePath(".")
+_exitButton = NodePath(".")
+_animations = NodePath("../../AnimationPlayer")
 metadata/_edit_use_anchors_ = true
