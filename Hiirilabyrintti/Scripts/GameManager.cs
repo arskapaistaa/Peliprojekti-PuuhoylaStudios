@@ -95,7 +95,7 @@ public partial class GameManager : Node
 
 	// Drill part
 	private int _drillScore = 0;
-	public int _neededToBuildDrill = 1;
+	[Export] public int _neededToBuildDrill = 1;
 	public bool _hasDrill = false;
 
 	public int DrillScore
