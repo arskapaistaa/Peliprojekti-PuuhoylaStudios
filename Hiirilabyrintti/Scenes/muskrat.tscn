@@ -1,0 +1,318 @@
+[gd_scene format=3 uid="uid://dvbw23xk7fe2d"]
+
+[ext_resource type="Script" uid="uid://b5x1t66pbp5ry" path="res://Muskrat.cs" id="1_lxai5"]
+[ext_resource type="Texture2D" uid="uid://dfruw6hpy6a1j" path="res://Sprites/pora-animated.png" id="2_jkvd8"]
+[ext_resource type="Texture2D" uid="uid://rhmd8p758oqy" path="res://Sprites/piisami.png" id="3_co6fu"]
+[ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="4_r4s3l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywhqc"]
+atlas = ExtResource("2_jkvd8")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6kv5"]
+atlas = ExtResource("2_jkvd8")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa0lf"]
+atlas = ExtResource("2_jkvd8")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2oxyp"]
+atlas = ExtResource("2_jkvd8")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7hsd"]
+atlas = ExtResource("2_jkvd8")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nre3"]
+atlas = ExtResource("2_jkvd8")
+region = Rect2(240, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4icl"]
+atlas = ExtResource("2_jkvd8")
+region = Rect2(288, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn3y1"]
+atlas = ExtResource("2_jkvd8")
+region = Rect2(336, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvved"]
+atlas = ExtResource("2_jkvd8")
+region = Rect2(384, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spim1"]
+atlas = ExtResource("2_jkvd8")
+region = Rect2(432, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25nib"]
+atlas = ExtResource("2_jkvd8")
+region = Rect2(480, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccy8n"]
+atlas = ExtResource("2_jkvd8")
+region = Rect2(528, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8rrcq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywhqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6kv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wa0lf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2oxyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7hsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nre3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4icl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn3y1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvved")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spim1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25nib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccy8n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk8ja"]
+atlas = ExtResource("3_co6fu")
+region = Rect2(0, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xn7y"]
+atlas = ExtResource("3_co6fu")
+region = Rect2(48, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrbiu"]
+atlas = ExtResource("3_co6fu")
+region = Rect2(96, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqg8f"]
+atlas = ExtResource("3_co6fu")
+region = Rect2(144, 0, 48, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t7p4g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk8ja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xn7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrbiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqg8f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q7ih0"]
+radius = 11.0
+height = 36.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxlr1"]
+size = Vector2(46, 74)
+
+[sub_resource type="Animation" id="Animation_fsbm5"]
+resource_name = "Drilling"
+
+[sub_resource type="Animation" id="Animation_8gfo0"]
+resource_name = "PopOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_brjug"]
+resource_name = "PopUp"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_bk1ij"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_nqguc"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1la81"]
+_data = {
+&"Drilling": SubResource("Animation_fsbm5"),
+&"PopOut": SubResource("Animation_8gfo0"),
+&"PopUp": SubResource("Animation_brjug"),
+&"RESET": SubResource("Animation_bk1ij"),
+&"start": SubResource("Animation_nqguc")
+}
+
+[node name="Muskrat" type="CharacterBody2D" unique_id=614056375 node_paths=PackedStringArray("_animations", "_dialogueLabel", "_hireButton", "_drillSprite")]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_lxai5")
+_hireCost = 1
+_animations = NodePath("Canvas/AnimationPlayer")
+_dialogueLabel = NodePath("Canvas/Control/Label")
+_hireButton = NodePath("Canvas/Control/HireButton")
+_drillSprite = NodePath("MuskratDrill")
+
+[node name="MuskratDrill" type="AnimatedSprite2D" parent="." unique_id=225555878]
+position = Vector2(0.499999, -68.5)
+scale = Vector2(0.7291667, 1.140625)
+sprite_frames = SubResource("SpriteFrames_8rrcq")
+frame = 9
+frame_progress = 0.6938309
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=129747578]
+position = Vector2(1, -30)
+sprite_frames = SubResource("SpriteFrames_t7p4g")
+animation = &"idle"
+autoplay = "idle"
+frame = 3
+frame_progress = 0.6323787
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=880326147]
+position = Vector2(-1, -43)
+shape = SubResource("CapsuleShape2D_q7ih0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2066753307]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1746720015]
+position = Vector2(0, -61)
+shape = SubResource("RectangleShape2D_yxlr1")
+
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=1480464830]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Canvas" unique_id=876739518]
+libraries/ = SubResource("AnimationLibrary_1la81")
+autoplay = &"start"
+
+[node name="Control" type="Control" parent="Canvas" unique_id=1838680037]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -342.0
+offset_right = 20.0
+offset_bottom = -302.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Canvas/Control" unique_id=1429323004]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -7.75
+anchor_top = -1.0
+anchor_right = 8.9
+anchor_bottom = 2.125
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Canvas/Control" unique_id=1362048352]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.7125
+anchor_top = -0.5875
+anchor_right = 5.7125
+anchor_bottom = 1.5875
+offset_left = 73.0
+offset_top = 7.0
+offset_right = -73.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_r4s3l")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HireButton" type="Button" parent="Canvas/Control" unique_id=106320658]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 8.152
+anchor_bottom = 5.136
+offset_left = 175.0
+offset_top = 128.0
+offset_right = 1.9199829
+offset_bottom = -27.440002
+
+[node name="Label" type="Label" parent="Canvas/Control/HireButton" unique_id=381878904]
+layout_mode = 0
+offset_top = -14.0
+offset_right = 163.0
+offset_bottom = 45.0
+text = "Hire"
+horizontal_alignment = 1
+vertical_alignment = 1
