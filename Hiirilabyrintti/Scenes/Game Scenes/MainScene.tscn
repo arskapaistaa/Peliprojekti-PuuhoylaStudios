@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cggpma0qvjowe" path="res://Scenes/UI/Counters.tscn" id="12_8rmvd"]
 [ext_resource type="Texture2D" uid="uid://cxs0jjrm54jfo" path="res://Sprites/tileset-purple.png" id="15_0f1ji"]
 [ext_resource type="Texture2D" uid="uid://cnostexeg18wc" path="res://Sprites/tileset-orange.png" id="17_2ngyf"]
+[ext_resource type="Script" uid="uid://b8chywgava7pr" path="res://Scenes/Game Scenes/PathFollower.cs" id="18_0f1ji"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0bv1"]
 texture = ExtResource("11_lh3xx")
@@ -1661,6 +1662,8 @@ autoplay = &"FadeIn"
 [node name="Counters" parent="." unique_id=74711613 instance=ExtResource("12_8rmvd")]
 
 [node name="PathFollower" type="Node" parent="." unique_id=771984444]
+script = ExtResource("18_0f1ji")
+_movementSpeed = 0.6
 
 [node name="Path2D" type="Path2D" parent="PathFollower" unique_id=976917531]
 curve = SubResource("Curve2D_use57")
