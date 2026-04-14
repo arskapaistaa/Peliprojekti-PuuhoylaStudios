@@ -510,7 +510,7 @@ fill_to = Vector2(1, 1)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4t1h1"]
 
-[node name="MainMenu" type="Control" unique_id=1849334859 node_paths=PackedStringArray("_playButton", "_creditsButton", "_animations")]
+[node name="MainMenu" type="Control" unique_id=1849334859 node_paths=PackedStringArray("_playButton", "_animations")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -519,7 +519,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rsx4f")
 _playButton = NodePath("PlayButton")
-_creditsButton = NodePath("CreditsButton")
 _animations = NodePath("AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=251821347]
@@ -655,7 +654,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_de22f")
 
-[node name="Settings menu" type="Control" parent="." unique_id=1750706813 node_paths=PackedStringArray("_volumeButton", "_musicButton", "_languageButton")]
+[node name="Settings menu" type="Control" parent="." unique_id=1750706813 node_paths=PackedStringArray("_volumeButton", "_musicButton", "_languageButton", "_creditsButton")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -666,6 +665,7 @@ script = ExtResource("4_47lb5")
 _volumeButton = NodePath("VolumeButton")
 _musicButton = NodePath("MusicButton")
 _languageButton = NodePath("LanguageButton")
+_creditsButton = NodePath("../CreditsButton")
 
 [node name="VolumeButton" type="Button" parent="Settings menu" unique_id=1489572143]
 layout_mode = 1
