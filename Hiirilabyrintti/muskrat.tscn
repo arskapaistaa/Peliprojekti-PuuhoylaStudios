@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dvbw23xk7fe2d"]
+
+[ext_resource type="Script" uid="uid://b5x1t66pbp5ry" path="res://Muskrat.cs" id="1_lxai5"]
+
+[node name="Muskrat" type="CharacterBody2D" unique_id=614056375]
+script = ExtResource("1_lxai5")
