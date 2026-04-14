@@ -976,21 +976,23 @@ frame_progress = 0.45598695
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
 color = Color(0.09329758, 0.10229925, 0.2502737, 1)
 
-[node name="Exit" type="Area2D" parent="." unique_id=154487]
+[node name="Exit" type="Area2D" parent="." unique_id=154487 node_paths=PackedStringArray("_animations")]
 position = Vector2(1143, 1458)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("7_m74ok")
+_animations = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1871817842]
 position = Vector2(-2, 8)
 shape = SubResource("RectangleShape2D_l6byj")
 
-[node name="ExitRock" type="Area2D" parent="." unique_id=223876225]
+[node name="ExitRock" type="Area2D" parent="." unique_id=223876225 node_paths=PackedStringArray("_animations")]
 position = Vector2(0, -205)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("7_m74ok")
+_animations = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitRock" unique_id=1259531565]
 position = Vector2(-2, 8)
