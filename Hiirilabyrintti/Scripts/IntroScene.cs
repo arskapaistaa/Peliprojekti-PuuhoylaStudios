@@ -5,7 +5,13 @@ using System.Threading;
 public partial class IntroScene : Control
 {
 	[Export] private String[] _dialogArray = {};
+	[Export] private String[] _dialogArray2 = {};
+	[Export] private String[] _dialogArray3 = {};
+	[Export] private String[] _dialogArray4 = {};
 	[Export] private Label _dialogLabel;
+	[Export] private Label _dialogLabel2;
+	[Export] private Label _dialogLabel3;
+	[Export] private Label _dialogLabel4;
 	[Export] private AnimationPlayer _animations;
 	private int _randomMap = 0;
 	// Called when the node enters the scene tree for the first time.
@@ -13,6 +19,9 @@ public partial class IntroScene : Control
 	{
 
 		_dialogLabel.Text = _dialogArray[SettingsManager.Instance.Language];
+		_dialogLabel2.Text = _dialogArray2[SettingsManager.Instance.Language];
+		_dialogLabel3.Text = _dialogArray3[SettingsManager.Instance.Language];
+		_dialogLabel4.Text = _dialogArray4[SettingsManager.Instance.Language];
 
 		_animations.Play("Start");
 		_animations.AnimationFinished += onAnimationFinished;
