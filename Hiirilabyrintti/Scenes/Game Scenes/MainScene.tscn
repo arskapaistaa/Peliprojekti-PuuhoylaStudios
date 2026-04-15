@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cnostexeg18wc" path="res://Sprites/tileset-orange.png" id="17_2ngyf"]
 [ext_resource type="Script" uid="uid://b8chywgava7pr" path="res://Scenes/Game Scenes/PathFollower.cs" id="18_0f1ji"]
 [ext_resource type="PackedScene" uid="uid://ddsq208sig6nx" path="res://Scenes/muskrat.tscn" id="19_rdn1l"]
+[ext_resource type="PackedScene" uid="uid://qsvjdj57if2u" path="res://Scenes/Objects/mousetrap.tscn" id="20_2ngyf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0bv1"]
 texture = ExtResource("11_lh3xx")
@@ -1072,3 +1073,6 @@ loop = false
 [node name="Muskrat" parent="PathFollower/Path2D/PathFollow2D" unique_id=614056375 instance=ExtResource("19_rdn1l")]
 z_index = 1
 rotation = 1.5707964
+
+[node name="Mousetrap" parent="." unique_id=2138317421 instance=ExtResource("20_2ngyf")]
+position = Vector2(92, -5)
