@@ -14,8 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://djsufwucfqe6u" path="res://Sprites/ants2.png" id="11_b52yi"]
 [ext_resource type="Texture2D" uid="uid://b1supvki2xjbh" path="res://Sprites/tileset-blue.png" id="11_lh3xx"]
 [ext_resource type="PackedScene" uid="uid://cggpma0qvjowe" path="res://Scenes/UI/Counters.tscn" id="12_8rmvd"]
-[ext_resource type="AudioStream" uid="uid://cupj5jtds3vte" path="res://Audio/SFX/Waterdrops_SFX.wav" id="16_b52yi"]
 [ext_resource type="Texture2D" uid="uid://cxs0jjrm54jfo" path="res://Sprites/tileset-purple.png" id="15_0f1ji"]
+[ext_resource type="AudioStream" uid="uid://cupj5jtds3vte" path="res://Audio/SFX/Waterdrops_SFX.wav" id="16_b52yi"]
 [ext_resource type="Texture2D" uid="uid://cnostexeg18wc" path="res://Sprites/tileset-orange.png" id="17_2ngyf"]
 [ext_resource type="Script" uid="uid://b8chywgava7pr" path="res://Scenes/Game Scenes/PathFollower.cs" id="18_0f1ji"]
 [ext_resource type="PackedScene" uid="uid://ddsq208sig6nx" path="res://Scenes/muskrat.tscn" id="19_rdn1l"]
@@ -680,14 +680,12 @@ sources/0 = SubResource("TileSetAtlasSource_quyuw")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6byj"]
 size = Vector2(61, 64)
 
-[sub_resource type="Gradient" id="Gradient_b6wki"]
+[sub_resource type="Gradient" id="Gradient_rdn1l"]
 offsets = PackedFloat32Array(0, 0.007518797, 0.62030077)
 colors = PackedColorArray(1, 1, 1, 1, 0.90789473, 0.90789473, 0.90789473, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_b6wki"]
-gradient = SubResource("Gradient_b6wki")
-width = 146
-height = 96
+gradient = SubResource("Gradient_rdn1l")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -910,6 +908,7 @@ frame = 2
 frame_progress = 0.70979655
 
 [node name="Maze4" type="Node2D" parent="." unique_id=1244333827]
+visible = false
 position = Vector2(-229, -61)
 
 [node name="walls" type="TileMapLayer" parent="Maze4" unique_id=674935493]
@@ -961,6 +960,7 @@ frame = 2
 frame_progress = 0.70979655
 
 [node name="Maze5" type="Node2D" parent="." unique_id=680107899]
+visible = false
 position = Vector2(-263, -67)
 
 [node name="walls" type="TileMapLayer" parent="Maze5" unique_id=48684297]
@@ -1054,6 +1054,7 @@ autoplay = &"FadeIn"
 stream = ExtResource("16_b52yi")
 volume_db = -10.015
 bus = &"SFX"
+
 [node name="PathFollower" type="Node" parent="." unique_id=771984444 node_paths=PackedStringArray("_pathFollow")]
 script = ExtResource("18_0f1ji")
 _pathFollow = NodePath("Path2D/PathFollow2D")

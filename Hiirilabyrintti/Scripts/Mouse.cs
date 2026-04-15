@@ -17,6 +17,8 @@ public partial class Mouse : CharacterBody2D
     [Export] private Button YesButton;
     [Export] private Button NoButton;
     [Export] private AnimatedSprite2D _drill;
+    [Export] private string[] _yesButtonArray = {};
+    [Export] private string[] _noButtonArray = {};
 
     private int neededToBuildDrill = GameManager.Instance._neededToBuildDrill;
 
@@ -86,6 +88,8 @@ public partial class Mouse : CharacterBody2D
 
     private void ShowDrillPrompt()
     {
+        YesButton.Text = _yesButtonArray[SettingsManager.Instance.Language];
+        NoButton.Text = _noButtonArray[SettingsManager.Instance.Language];
         GameManager.Instance.MouseCanMove = false;
         DrillPrompt.Visible = true;
     }

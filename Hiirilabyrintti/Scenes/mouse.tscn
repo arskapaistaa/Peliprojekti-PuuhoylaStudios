@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dfruw6hpy6a1j" path="res://Sprites/pora-animated.png" id="2_5rgqy"]
 [ext_resource type="Texture2D" uid="uid://bj3hkhf816jh7" path="res://Sprites/hiiri-idle.png" id="2_kxv04"]
 [ext_resource type="Script" uid="uid://pn322knpbu86" path="res://Scripts/CameraShake.cs" id="4_2q34x"]
+[ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="6_uwmpi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kxv04"]
 radius = 8.0
@@ -299,6 +300,8 @@ DrillPrompt = NodePath("CanvasLayer/DrillPrompt")
 YesButton = NodePath("CanvasLayer/DrillPrompt/YesButton")
 NoButton = NodePath("CanvasLayer/DrillPrompt/NoButton")
 _drill = NodePath("DrillSprite")
+_yesButtonArray = PackedStringArray("Kyllä", "Yes")
+_noButtonArray = PackedStringArray("En", "No")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746396471]
 position = Vector2(0, -12)
@@ -340,7 +343,7 @@ process_material = SubResource("ParticleProcessMaterial_ffywo")
 zoom = Vector2(3.2, 3.2)
 process_callback = 0
 limit_left = -1216
-limit_top = -194
+limit_top = -161
 limit_right = 1216
 limit_bottom = 2272
 position_smoothing_enabled = true
@@ -371,24 +374,25 @@ texture = SubResource("GradientTexture2D_2q34x")
 
 [node name="DrillPrompt" type="Control" parent="CanvasLayer" unique_id=125501436]
 layout_mode = 3
-anchor_left = 0.298
-anchor_top = 0.29200003
-anchor_right = 0.78400004
-anchor_bottom = 0.439
-offset_left = 0.16000366
-offset_top = 0.35992432
-offset_right = 0.27996826
-offset_bottom = -0.8800049
+anchor_top = 0.23
+anchor_right = 1.0
+anchor_bottom = 0.467
+offset_left = 322.0
+offset_top = 119.399994
+offset_right = -233.0
+offset_bottom = -54.640015
 
 [node name="Panel" type="Panel" parent="CanvasLayer/DrillPrompt" unique_id=1404398236]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.23200001
-anchor_right = 1.0630001
-anchor_bottom = 0.70100003
-offset_left = -0.19999695
-offset_right = -0.07507324
-offset_bottom = 0.018997192
+anchor_left = -0.6
+anchor_top = -0.39100003
+anchor_right = 1.4330001
+anchor_bottom = 0.49800003
+offset_left = 138.0
+offset_top = -65.12899
+offset_right = -129.32507
+offset_bottom = -64.938
 
 [node name="Label" type="Label" parent="CanvasLayer/DrillPrompt/Panel" unique_id=565187184]
 layout_mode = 1
@@ -397,62 +401,41 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_uwmpi")
+theme_override_font_sizes/font_size = 55
 text = "You have enough
 parts to build a drill.
 Do you want to build a drill?"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="YesButton" type="Button" parent="CanvasLayer/DrillPrompt" unique_id=394484474]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.158
-anchor_top = 0.82900006
-anchor_right = 0.19600001
-anchor_bottom = 1.039
-offset_left = -0.049995422
-offset_top = 0.050979614
-offset_right = 0.099998474
-offset_bottom = 0.040985107
-
-[node name="Label" type="Label" parent="CanvasLayer/DrillPrompt/YesButton" unique_id=1878278421]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.054
-anchor_top = -0.16900001
-anchor_right = 1.054
-anchor_bottom = 0.915
-offset_left = 0.044000626
-offset_top = -0.028999329
-offset_right = -0.044006348
-offset_bottom = 0.01499939
+anchor_left = -0.611
+anchor_top = 0.776
+anchor_right = 0.15400001
+anchor_bottom = 1.1320001
+offset_left = 201.775
+offset_top = -65.056
+offset_right = 0.1499939
+offset_bottom = -65.09201
+theme = ExtResource("6_uwmpi")
+theme_override_font_sizes/font_size = 55
 text = "Yes"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="NoButton" type="Button" parent="CanvasLayer/DrillPrompt" unique_id=233450736]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.634
-anchor_top = 0.82900006
-anchor_right = 1.0
-anchor_bottom = 1.039
-offset_left = 0.1499939
-offset_top = 0.050979614
-offset_right = -6.0
-offset_bottom = 0.040985107
-
-[node name="Label" type="Label" parent="CanvasLayer/DrillPrompt/NoButton" unique_id=1559932571]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.054
-anchor_top = -0.16900001
-anchor_right = 1.054
-anchor_bottom = 0.915
-offset_left = 0.044000626
-offset_top = -0.028999329
-offset_right = -0.044006348
-offset_bottom = 0.01499939
+anchor_left = 0.69100004
+anchor_top = 0.776
+anchor_right = 1.4440001
+anchor_bottom = 1.1320001
+offset_left = 0.22497559
+offset_top = -65.056
+offset_right = -195.10004
+offset_bottom = -65.09201
+theme = ExtResource("6_uwmpi")
+theme_override_font_sizes/font_size = 55
 text = "No"
-horizontal_alignment = 1
-vertical_alignment = 1

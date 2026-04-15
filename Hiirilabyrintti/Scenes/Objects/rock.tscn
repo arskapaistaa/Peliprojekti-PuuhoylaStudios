@@ -145,6 +145,15 @@ gravity = Vector3(0, 0, 0)
 damping_max = 100.00001
 color = Color(0.87496775, 0.5597425, 0.4478556, 1)
 
+[sub_resource type="Gradient" id="Gradient_b6wki"]
+offsets = PackedFloat32Array(0, 0.007518797, 0.62030077)
+colors = PackedColorArray(1, 1, 1, 1, 0.90789473, 0.90789473, 0.90789473, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_brjug"]
+gradient = SubResource("Gradient_b6wki")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Rock" type="StaticBody2D" unique_id=2114008508]
 z_index = 4
 collision_mask = 2
@@ -199,10 +208,12 @@ grow_vertical = 2
 [node name="Panel" type="Panel" parent="Canvas/Control" unique_id=2102695625]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -5.0
-anchor_top = -0.675
-anchor_right = 6.0
-anchor_bottom = 1.675
+anchor_left = -9.4
+anchor_top = -5.825
+anchor_right = 1.6
+anchor_bottom = -3.475
+offset_right = 360.0
+offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -210,10 +221,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Canvas/Control" unique_id=69572931]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -4.7125
-anchor_top = -0.5875
-anchor_right = 5.7125
-anchor_bottom = 1.5875
+anchor_left = -10.95
+anchor_top = -5.875
+anchor_right = 12.2
+anchor_bottom = 0.375
 offset_left = 73.0
 offset_top = 7.0
 offset_right = -73.0
@@ -223,36 +234,23 @@ grow_vertical = 2
 theme = ExtResource("4_brjug")
 text = "Brada you need to find some
 drill parts to get trough"
+horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="DrillThrough" type="Button" parent="Canvas/Control" unique_id=1809007974]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.158
 anchor_top = 0.82900006
 anchor_right = 0.19600001
 anchor_bottom = 1.039
-offset_left = 56.32
-offset_top = 94.83998
-offset_right = 228.16
-offset_bottom = 145.43999
-
-[node name="Label" type="Label" parent="Canvas/Control/DrillThrough" unique_id=1952505082]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.054
-anchor_top = -0.16900001
-anchor_right = 1.054
-anchor_bottom = 0.915
-offset_left = 0.044008255
-offset_top = -0.028999329
-offset_right = -0.044006348
-offset_bottom = 0.01499939
+offset_left = -65.68
+offset_top = 60.83998
+offset_right = 120.16
+offset_bottom = 152.43999
 text = "Drill"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Drill particles" type="GPUParticles2D" parent="." unique_id=776610269]
 position = Vector2(0, 18)
@@ -261,3 +259,9 @@ amount = 20
 lifetime = 0.3
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_brjug")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2124068617]
+scale = Vector2(2.8125005, 2.9062502)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_brjug")

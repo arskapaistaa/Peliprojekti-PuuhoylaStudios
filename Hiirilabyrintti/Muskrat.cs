@@ -62,13 +62,32 @@ public partial class Muskrat : CharacterBody2D
 
 			if (GameManager.Instance.CheeseScore >= _hireCost)
 			{
-				_dialogueLabel.Text = " If you give me some cheese,\nI can help you get out of here.";
-				_hireButton.Visible = true;
+				if (SettingsManager.Instance.Language == 0) {
+					_dialogueLabel.Text = " Jos annat mulle vähä juusota,\nniin autan sut pihalle täältä.";
+					_hireButton.Visible = true;
+				}
+				else
+				{
+					_dialogueLabel.Text = " If you give me some cheese,\nI can help you get out of here.";
+					_hireButton.Visible = true;
+				}
+
 			}
 			else
 			{
-				_dialogueLabel.Text = $"You need at least\n{_hireCost} cheese to hire me.";
-				_hireButton.Visible = false;
+				if (SettingsManager.Instance.Language == 0)
+				{
+					_dialogueLabel.Text = $"Tarvitset vähintään\n{_hireCost} juustoa palkataksesi minut.";
+
+					_hireButton.Text = "Palkkaa";
+					_hireButton.Visible = false;
+				}
+				else
+				{
+					_dialogueLabel.Text = $"You need at least\n{_hireCost} cheese to hire me.";
+					_hireButton.Text = "Hire";
+					_hireButton.Visible = false;
+				}
 			}
 
 			_animations.Play("PopUp");

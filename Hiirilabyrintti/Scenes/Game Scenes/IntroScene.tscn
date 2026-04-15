@@ -89,10 +89,34 @@ tracks/4/keys = {
 "update": 1,
 "values": [1.0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LabraRotta/DialogLabel2:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.059999466]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LabraRotta/DialogLabel3:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_jl0je"]
 resource_name = "Start"
-length = 11.0
+length = 35.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -112,10 +136,10 @@ tracks/1/path = NodePath("LabraRotta/DialogLabel:modulate:a")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(5, 5.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(5, 5.5, 8, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.0]
+"values": [0.0, 1.0, 1.0, 0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -136,7 +160,7 @@ tracks/3/path = NodePath(".:modulate:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(10, 11),
+"times": PackedFloat32Array(28.966667, 29.966667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.0]
@@ -152,6 +176,30 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LabraRotta/DialogLabel2:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(8.5, 9, 15, 15.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LabraRotta/DialogLabel3:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(15.5, 16, 25, 25.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oxig5"]
@@ -205,8 +253,8 @@ anchor_top = 0.540625
 anchor_right = 0.67793065
 anchor_bottom = 0.97843426
 offset_left = -60.0
-offset_right = 1743.3809
-offset_bottom = 2255.27
+offset_right = 1743.3804
+offset_bottom = 2255.2695
 scale = Vector2(0.2715219, 0.27152187)
 texture = ExtResource("1_jl0je")
 metadata/_edit_use_anchors_ = true
@@ -227,6 +275,48 @@ size_flags_horizontal = 4
 theme = ExtResource("2_oxig5")
 text = "Terve...
 Kukas sinä olet?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogLabel2" type="Label" parent="LabraRotta" unique_id=1114741973]
+modulate = Color(1, 1, 1, 0.059999466)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.29081482
+anchor_top = 0.2390625
+anchor_right = 0.7182963
+anchor_bottom = 0.36447915
+offset_left = -0.08000183
+offset_right = 0.07998657
+offset_bottom = 0.19999695
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_oxig5")
+text = "Tehtävänäsi on löytää ulos labyrintistä. Tapoja on useita."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogLabel3" type="Label" parent="LabraRotta" unique_id=1934878929]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.29081482
+anchor_top = 0.2390625
+anchor_right = 0.7182963
+anchor_bottom = 0.36447915
+offset_left = -0.08000183
+offset_right = 0.07998657
+offset_bottom = 0.19999695
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_oxig5")
+text = "Voit joko etsiä reitin ulos, porata itsesi ulos tai palkata Muskratin tekemään sen."
+horizontal_alignment = 1
+vertical_alignment = 2
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
