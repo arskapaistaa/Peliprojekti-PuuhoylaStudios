@@ -26,9 +26,9 @@ public partial class FinalGameScene : Control
 
 		// Set color rect sizes to Score * 8. Beacause max width is 800px, and we have currently 10 questions.
 
-		_edistajaBar.SetSize(new Vector2(GameManager.Instance.EdistajaScore * 8, 40));
-		_etenijaBar.SetSize(new Vector2(GameManager.Instance.EtenijaScore * 8, 40));
-		_estijaBar.SetSize(new Vector2(GameManager.Instance.EtsijaScore * 8, 40));
+		_edistajaBar.SetSize(new Vector2(GameManager.Instance.EdistajaScore * 8, 60));
+		_etenijaBar.SetSize(new Vector2(GameManager.Instance.EtenijaScore * 8, 60));
+		_estijaBar.SetSize(new Vector2(GameManager.Instance.EtsijaScore * 8, 60));
 
 		// Set label texts, add Score and %.
 		_edistajaLabel.Text = _edistaja[SettingsManager.Instance.Language] + " " + GameManager.Instance.EdistajaScore + "%";
