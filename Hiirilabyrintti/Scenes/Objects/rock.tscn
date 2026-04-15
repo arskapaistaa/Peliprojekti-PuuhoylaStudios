@@ -174,7 +174,9 @@ collision_mask = 6
 script = ExtResource("1_8gfo0")
 _animations = NodePath("../Canvas/AnimationPlayer")
 rockMessageLabel = NodePath("../Canvas/Control/Label")
+_rockMessageLabelArray = PackedStringArray("Etsi 3 poranosaa jotta voit porata itse.", "Find 3 drill bits so you can drill yourself.")
 _drillButton = NodePath("../Canvas/Control/DrillThrough")
+_drillButtonArray = PackedStringArray("Poraa", "Drill")
 _rockSprite = NodePath("../AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=722016869]
@@ -246,9 +248,9 @@ anchor_left = -0.158
 anchor_top = 0.82900006
 anchor_right = 0.19600001
 anchor_bottom = 1.039
-offset_left = -65.68
+offset_left = -70.68
 offset_top = 60.83998
-offset_right = 120.16
+offset_right = 115.16
 offset_bottom = 152.43999
 text = "Drill"
 
