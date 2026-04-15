@@ -140,6 +140,9 @@ height = 36.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxlr1"]
 size = Vector2(46, 92)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jkvd8"]
+polygon = PackedVector2Array(0, -62, -4, -62, -12, -48, -12, -33, -5, -25, 4, -25, 11, -33, 11, -47, 3, -62)
+
 [sub_resource type="Animation" id="Animation_fsbm5"]
 resource_name = "Drilling"
 
@@ -218,7 +221,7 @@ _data = {
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_lxai5")
-_hireCost = 1
+_hireCost = 10
 _animations = NodePath("Canvas/AnimationPlayer")
 _dialogueLabel = NodePath("Canvas/Control/Label")
 _hireButton = NodePath("Canvas/Control/HireButton")
@@ -240,6 +243,7 @@ frame = 3
 frame_progress = 0.6323787
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=880326147]
+visible = false
 position = Vector2(-1, -43)
 shape = SubResource("CapsuleShape2D_q7ih0")
 
@@ -250,6 +254,9 @@ collision_mask = 2
 position = Vector2(0, -70)
 shape = SubResource("RectangleShape2D_yxlr1")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1917181084]
+occluder = SubResource("OccluderPolygon2D_jkvd8")
+
 [node name="Canvas" type="CanvasLayer" parent="." unique_id=1480464830]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Canvas" unique_id=876739518]
@@ -258,25 +265,26 @@ autoplay = &"start"
 
 [node name="Control" type="Control" parent="Canvas" unique_id=1838680037]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -342.0
-offset_right = 20.0
-offset_bottom = -302.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 520.0
+offset_top = 618.0
+offset_right = -520.0
+offset_bottom = -1262.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="Canvas/Control" unique_id=1429323004]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -9.25
-anchor_top = -1.0
-anchor_right = 10.4
-anchor_bottom = 2.125
+anchor_left = -13.170001
+anchor_top = -5.775
+anchor_right = 13.837001
+anchor_bottom = -2.65
+offset_left = 150.80005
+offset_right = -129.48004
+offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -284,10 +292,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Canvas/Control" unique_id=1362048352]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -9.250001
-anchor_top = -1.0
-anchor_right = 10.400001
-anchor_bottom = 2.125
+anchor_left = -9.300001
+anchor_top = -5.8
+anchor_right = 10.625
+anchor_bottom = 0.35
 offset_left = 3.0517578e-05
 offset_right = -3.0517578e-05
 grow_horizontal = 2
@@ -295,24 +303,17 @@ grow_vertical = 2
 theme = ExtResource("4_r4s3l")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="HireButton" type="Button" parent="Canvas/Control" unique_id=106320658]
-visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 8.152
-anchor_bottom = 5.136
-offset_left = 175.0
-offset_top = 128.0
-offset_right = 1.9199829
-offset_bottom = -27.440002
-
-[node name="Label" type="Label" parent="Canvas/Control/HireButton" unique_id=381878904]
-layout_mode = 0
-offset_top = -14.0
-offset_right = 163.0
-offset_bottom = 45.0
-text = "Hire"
-horizontal_alignment = 1
-vertical_alignment = 1
+anchor_left = -12.977
+anchor_top = 2.4250002
+anchor_right = 14.075001
+anchor_bottom = 4.925
+offset_left = 442.08002
+offset_right = -440.0
+text = "Hire
+"

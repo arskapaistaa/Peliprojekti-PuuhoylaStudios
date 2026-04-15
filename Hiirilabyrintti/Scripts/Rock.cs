@@ -11,7 +11,9 @@ public partial class Rock : Area2D
 
 	[Export] private AnimationPlayer _animations;
 	[Export] private Label rockMessageLabel;
+	[Export] private string[] _rockMessageLabelArray = {};
 	[Export] private Button _drillButton;
+	[Export]private string[] _drillButtonArray = {};
 	[Export] private AnimatedSprite2D _rockSprite;
 
 	private Muskrat muskrat;
@@ -22,6 +24,10 @@ public partial class Rock : Area2D
 
 	public override void _Ready()
 	{
+		//Language
+		rockMessageLabel.Text = _rockMessageLabelArray[SettingsManager.Instance.Language];
+		_drillButton.Text = _drillButtonArray[SettingsManager.Instance.Language];
+
 		_drillButton.Visible = false;
 		_drillButton.Pressed += OnDrillPressed;
 

@@ -681,14 +681,12 @@ sources/0 = SubResource("TileSetAtlasSource_quyuw")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6byj"]
 size = Vector2(61, 64)
 
-[sub_resource type="Gradient" id="Gradient_b6wki"]
+[sub_resource type="Gradient" id="Gradient_rdn1l"]
 offsets = PackedFloat32Array(0, 0.007518797, 0.62030077)
 colors = PackedColorArray(1, 1, 1, 1, 0.90789473, 0.90789473, 0.90789473, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_b6wki"]
-gradient = SubResource("Gradient_b6wki")
-width = 146
-height = 96
+gradient = SubResource("Gradient_rdn1l")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -911,6 +909,7 @@ frame = 2
 frame_progress = 0.70979655
 
 [node name="Maze4" type="Node2D" parent="." unique_id=1244333827]
+visible = false
 position = Vector2(-229, -61)
 
 [node name="walls" type="TileMapLayer" parent="Maze4" unique_id=674935493]
@@ -962,6 +961,7 @@ frame = 2
 frame_progress = 0.70979655
 
 [node name="Maze5" type="Node2D" parent="." unique_id=680107899]
+visible = false
 position = Vector2(-263, -67)
 
 [node name="walls" type="TileMapLayer" parent="Maze5" unique_id=48684297]

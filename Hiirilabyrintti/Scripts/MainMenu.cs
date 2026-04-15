@@ -6,9 +6,6 @@ public partial class MainMenu : Node
 	[Export] private Button _playButton;
 	[Export] private Button _creditsButton = null;
 	[Export] private AnimationPlayer _animations;
-	[Export] private Timer _animationTimer;
-
-
 
 	public bool _credits = false;
 
@@ -34,6 +31,8 @@ public partial class MainMenu : Node
 		_animations.Play("FadeOut");
 
 	}
+
+
 		// Load intro scene.
 	    private void CreditsButtonPressed()
     {
