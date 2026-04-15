@@ -5,7 +5,7 @@ public partial class PathFollower : Node
 {
 	[Export] private PathFollow2D _pathFollow;
 
-	[Export] private float _movementSpeed = 10.0f;
+	[Export] private float _movementSpeed = 2.0f;
 
 	// Later can be used to start moving by changing false to true.
 	[Export] public bool _canMove = true;

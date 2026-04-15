@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cxs0jjrm54jfo" path="res://Sprites/tileset-purple.png" id="15_0f1ji"]
 [ext_resource type="Texture2D" uid="uid://cnostexeg18wc" path="res://Sprites/tileset-orange.png" id="17_2ngyf"]
 [ext_resource type="Script" uid="uid://b8chywgava7pr" path="res://Scenes/Game Scenes/PathFollower.cs" id="18_0f1ji"]
+[ext_resource type="PackedScene" uid="uid://dvbw23xk7fe2d" path="res://Scenes/Muskrat.tscn" id="19_rdn1l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0bv1"]
 texture = ExtResource("11_lh3xx")
@@ -1296,6 +1297,10 @@ _data = {
 }
 
 [sub_resource type="Curve2D" id="Curve2D_use57"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -125, 0, 0, 0, 0, -150, -125, 0, 0, 0, 0, -150, -175)
+}
+point_count = 4
 
 [node name="World" type="Node2D" unique_id=71007616]
 
@@ -1633,6 +1638,7 @@ frame = 2
 frame_progress = 0.70979655
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
+visible = false
 color = Color(0.09329758, 0.10229925, 0.2502737, 1)
 
 [node name="Exit" type="Area2D" parent="." unique_id=154487]
@@ -1661,11 +1667,19 @@ autoplay = &"FadeIn"
 
 [node name="Counters" parent="." unique_id=74711613 instance=ExtResource("12_8rmvd")]
 
-[node name="PathFollower" type="Node" parent="." unique_id=771984444]
+[node name="PathFollower" type="Node" parent="." unique_id=771984444 node_paths=PackedStringArray("_pathFollow")]
 script = ExtResource("18_0f1ji")
+_pathFollow = NodePath("Path2D/PathFollow2D")
 _movementSpeed = 0.6
+_canMove = false
 
 [node name="Path2D" type="Path2D" parent="PathFollower" unique_id=976917531]
+position = Vector2(157, 125)
 curve = SubResource("Curve2D_use57")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="PathFollower/Path2D" unique_id=102055925]
+rotation = -1.5707964
+loop = false
+
+[node name="Muskrat" parent="PathFollower/Path2D/PathFollow2D" unique_id=614056375 instance=ExtResource("19_rdn1l")]
+rotation = 1.5707964
