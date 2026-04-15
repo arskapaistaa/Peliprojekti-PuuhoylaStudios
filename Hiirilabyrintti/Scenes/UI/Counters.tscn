@@ -4,11 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cunwtmrlplbe6" path="res://Sprites/juusto.png" id="2_86tgr"]
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="2_gninf"]
 [ext_resource type="Texture2D" uid="uid://cpp0t3yur1ih4" path="res://Sprites/poranosa.png" id="4_gninf"]
+[ext_resource type="Texture2D" uid="uid://68d0oqe3d55f" path="res://Sprites/pora.png" id="5_chqfj"]
 
-[node name="Counters" type="CanvasLayer" unique_id=74711613 node_paths=PackedStringArray("cheeseCounterLabel", "drillCounterLabel")]
+[node name="Counters" type="CanvasLayer" unique_id=74711613 node_paths=PackedStringArray("cheeseCounterLabel", "drillCounterLabel", "BuiltDrill")]
 script = ExtResource("1_vwuvs")
 cheeseCounterLabel = NodePath("HBoxContainer/CheeseLabel")
 drillCounterLabel = NodePath("HBoxContainer/DrillLabel")
+BuiltDrill = NodePath("HBoxContainer2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=774755094]
 anchors_preset = -1
@@ -43,3 +45,19 @@ text = "0"
 layout_mode = 2
 texture = ExtResource("4_gninf")
 expand_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=930733295]
+anchors_preset = -1
+anchor_left = 0.855
+anchor_top = 0.082
+anchor_right = 0.97
+anchor_bottom = 0.164
+offset_left = -0.4000244
+offset_top = -0.44000244
+offset_right = 0.4000244
+offset_bottom = -0.8800049
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2" unique_id=521088071]
+layout_mode = 2
+texture = ExtResource("5_chqfj")
+expand_mode = 3

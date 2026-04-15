@@ -1,21 +1,25 @@
 [gd_scene format=3 uid="uid://dxyrlpqny8xd2"]
 
 [ext_resource type="Script" uid="uid://35vp66usebh1" path="res://Scripts/Rock.cs" id="1_8gfo0"]
-[ext_resource type="Texture2D" uid="uid://dcdbw7fjn8oio" path="res://Sprites/kivi2.png" id="1_c7qrd"]
+[ext_resource type="Texture2D" uid="uid://bqywgpymvyko7" path="res://Sprites/kivi3.png" id="1_brjug"]
 [ext_resource type="Texture2D" uid="uid://bhsh1x6aiy4dt" path="res://Sprites/kivi1.png" id="2_l0sgq"]
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="4_brjug"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l0sgq"]
-atlas = ExtResource("1_c7qrd")
-region = Rect2(0, 0, 176, 96)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqguc"]
+atlas = ExtResource("1_brjug")
+region = Rect2(0, 0, 208, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8gfo0"]
-atlas = ExtResource("1_c7qrd")
-region = Rect2(176, 0, 176, 96)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsbm5"]
+atlas = ExtResource("1_brjug")
+region = Rect2(208, 0, 208, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_brjug"]
-atlas = ExtResource("1_c7qrd")
-region = Rect2(352, 0, 176, 96)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwwti"]
+atlas = ExtResource("1_brjug")
+region = Rect2(416, 0, 208, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y6ft"]
+atlas = ExtResource("1_brjug")
+region = Rect2(624, 0, 208, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bk1ij"]
 atlas = ExtResource("2_l0sgq")
@@ -25,16 +29,19 @@ region = Rect2(0, 0, 176, 96)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l0sgq")
+"texture": SubResource("AtlasTexture_nqguc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8gfo0")
+"texture": SubResource("AtlasTexture_fsbm5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_brjug")
+"texture": SubResource("AtlasTexture_xwwti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y6ft")
 }],
 "loop": false,
-"name": &"Cracking",
+"name": &"Drilling",
 "speed": 1.0
 }, {
 "frames": [{
@@ -144,17 +151,22 @@ collision_mask = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=905202901]
 sprite_frames = SubResource("SpriteFrames_bk1ij")
-animation = &"Idle"
+animation = &"Drilling"
 autoplay = "Idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2093208692]
 position = Vector2(8, 21)
 shape = SubResource("ConvexPolygonShape2D_nqguc")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=735239142 node_paths=PackedStringArray("_animations")]
-collision_mask = 2
+[node name="Area2D" type="Area2D" parent="." unique_id=735239142 node_paths=PackedStringArray("_animations", "rockMessageLabel", "_drillButton", "_rockSprite")]
+collision_mask = 6
 script = ExtResource("1_8gfo0")
 _animations = NodePath("../Canvas/AnimationPlayer")
+rockMessageLabel = NodePath("../Canvas/Control/Label")
+_drillButton = NodePath("../Canvas/Control/DrillThrough")
+_rockSprite = NodePath("../AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=722016869]
 visible = false
@@ -213,6 +225,34 @@ text = "Brada you need to find some
 drill parts to get trough"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="DrillThrough" type="Button" parent="Canvas/Control" unique_id=1809007974]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.158
+anchor_top = 0.82900006
+anchor_right = 0.19600001
+anchor_bottom = 1.039
+offset_left = 56.32
+offset_top = 94.83998
+offset_right = 228.16
+offset_bottom = 145.43999
+
+[node name="Label" type="Label" parent="Canvas/Control/DrillThrough" unique_id=1952505082]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.054
+anchor_top = -0.16900001
+anchor_right = 1.054
+anchor_bottom = 0.915
+offset_left = 0.044008255
+offset_top = -0.028999329
+offset_right = -0.044006348
+offset_bottom = 0.01499939
+text = "Drill"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Drill particles" type="GPUParticles2D" parent="." unique_id=776610269]
 position = Vector2(0, 18)

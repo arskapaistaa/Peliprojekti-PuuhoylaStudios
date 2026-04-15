@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqwl5fwiohujg" path="res://Scripts/Mouse.cs" id="1_tewyd"]
 [ext_resource type="Texture2D" uid="uid://bpaj87h77xcdl" path="res://Sprites/hiiri-sprite.png" id="2_3ber4"]
+[ext_resource type="Texture2D" uid="uid://dfruw6hpy6a1j" path="res://Sprites/pora-animated.png" id="2_5rgqy"]
 [ext_resource type="Texture2D" uid="uid://bj3hkhf816jh7" path="res://Sprites/hiiri-idle.png" id="2_kxv04"]
 [ext_resource type="Script" uid="uid://pn322knpbu86" path="res://Scripts/CameraShake.cs" id="4_2q34x"]
 
@@ -56,6 +57,98 @@ scale_max = 2.5
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kxv04"]
 radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0hb1"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7xqq"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bh0h"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_togmm"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh73j"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm7ud"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(240, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtmqg"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(288, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4u5j"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(336, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64io5"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(384, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_venx8"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(432, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fd3l"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(480, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stmgt"]
+atlas = ExtResource("2_5rgqy")
+region = Rect2(528, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uises"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0hb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7xqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bh0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_togmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jh73j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm7ud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtmqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4u5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64io5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_venx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fd3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stmgt")
+}],
+"loop": true,
+"name": &"drill",
+"speed": 60.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2q34x"]
 atlas = ExtResource("2_kxv04")
@@ -193,7 +286,7 @@ height = 96
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Mouse" type="CharacterBody2D" unique_id=1410733989 node_paths=PackedStringArray("_walkParticles", "_sprite", "_camera")]
+[node name="Mouse" type="CharacterBody2D" unique_id=1410733989 node_paths=PackedStringArray("_walkParticles", "_sprite", "_camera", "DrillPrompt", "YesButton", "NoButton", "_drill")]
 collision_layer = 2
 collision_mask = 5
 motion_mode = 1
@@ -201,6 +294,10 @@ script = ExtResource("1_tewyd")
 _walkParticles = NodePath("Particles/WalkParticles")
 _sprite = NodePath("Sprite2D")
 _camera = NodePath("Camera2D")
+DrillPrompt = NodePath("CanvasLayer/DrillPrompt")
+YesButton = NodePath("CanvasLayer/DrillPrompt/YesButton")
+NoButton = NodePath("CanvasLayer/DrillPrompt/NoButton")
+_drill = NodePath("DrillSprite")
 
 [node name="Particles" type="Node2D" parent="." unique_id=782508421]
 
@@ -224,6 +321,14 @@ process_material = SubResource("ParticleProcessMaterial_2q34x")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746396471]
 position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_kxv04")
+
+[node name="DrillSprite" type="AnimatedSprite2D" parent="." unique_id=1476910688]
+position = Vector2(4.000001, -32.499996)
+scale = Vector2(0.33333337, 0.9218751)
+sprite_frames = SubResource("SpriteFrames_uises")
+animation = &"drill"
+frame = 8
+frame_progress = 0.2655227
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=838422735]
 sprite_frames = SubResource("SpriteFrames_1rou4")
@@ -262,3 +367,93 @@ scale = Vector2(2.8125005, 2.9062502)
 energy = 0.5
 shadow_filter = 1
 texture = SubResource("GradientTexture2D_2q34x")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1561607648]
+
+[node name="DrillPrompt" type="Control" parent="CanvasLayer" unique_id=125501436]
+layout_mode = 3
+anchor_left = 0.298
+anchor_top = 0.29200003
+anchor_right = 0.78400004
+anchor_bottom = 0.439
+offset_left = 0.16000366
+offset_top = 0.35992432
+offset_right = 0.27996826
+offset_bottom = -0.8800049
+
+[node name="Panel" type="Panel" parent="CanvasLayer/DrillPrompt" unique_id=1404398236]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.23200001
+anchor_right = 1.0630001
+anchor_bottom = 0.70100003
+offset_left = -0.19999695
+offset_right = -0.07507324
+offset_bottom = 0.018997192
+
+[node name="Label" type="Label" parent="CanvasLayer/DrillPrompt/Panel" unique_id=565187184]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You have enough
+parts to build a drill.
+Do you want to build a drill?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="YesButton" type="Button" parent="CanvasLayer/DrillPrompt" unique_id=394484474]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.158
+anchor_top = 0.82900006
+anchor_right = 0.19600001
+anchor_bottom = 1.039
+offset_left = -0.049995422
+offset_top = 0.050979614
+offset_right = 0.099998474
+offset_bottom = 0.040985107
+
+[node name="Label" type="Label" parent="CanvasLayer/DrillPrompt/YesButton" unique_id=1878278421]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.054
+anchor_top = -0.16900001
+anchor_right = 1.054
+anchor_bottom = 0.915
+offset_left = 0.044000626
+offset_top = -0.028999329
+offset_right = -0.044006348
+offset_bottom = 0.01499939
+text = "Yes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoButton" type="Button" parent="CanvasLayer/DrillPrompt" unique_id=233450736]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.634
+anchor_top = 0.82900006
+anchor_right = 1.0
+anchor_bottom = 1.039
+offset_left = 0.1499939
+offset_top = 0.050979614
+offset_right = -6.0
+offset_bottom = 0.040985107
+
+[node name="Label" type="Label" parent="CanvasLayer/DrillPrompt/NoButton" unique_id=1559932571]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.054
+anchor_top = -0.16900001
+anchor_right = 1.054
+anchor_bottom = 0.915
+offset_left = 0.044000626
+offset_top = -0.028999329
+offset_right = -0.044006348
+offset_bottom = 0.01499939
+text = "No"
+horizontal_alignment = 1
+vertical_alignment = 1
