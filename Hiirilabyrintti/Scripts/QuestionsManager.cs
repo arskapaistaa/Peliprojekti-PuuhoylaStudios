@@ -19,6 +19,7 @@ public partial class QuestionsManager : Node2D
 
 	// Dialog label
 	[Export] private Label _dialogLabel;
+	[Export] private String[] _dialogLabelArray = {};
 
 	// UI animations
 	[Export] private AnimationPlayer _animations;
