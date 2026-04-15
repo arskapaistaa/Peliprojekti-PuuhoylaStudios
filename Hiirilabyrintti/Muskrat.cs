@@ -24,7 +24,7 @@ public partial class Muskrat : CharacterBody2D
 		area.BodyEntered += OnBodyEntered;
 		area.BodyExited += OnBodyExit;
 
-		_rock = GetTree().Root.GetNode<Rock>("/root/World/Rock/Area2D");
+		_rock = GetTree().Root.GetNode<Rock>("/root/World/Maze/Rock/Area2D");
 		_rock.RockDestroyed += OnRockDestroyed;
 	}
 
@@ -42,7 +42,7 @@ public partial class Muskrat : CharacterBody2D
 		if (GameManager.Instance.CheeseScore >= _hireCost)
 		{
 			GameManager.Instance.RemoveCheese(_hireCost);
-			_dialogueLabel.Text = "Thank you for the cheese! I'll help you get out of here.";
+			_dialogueLabel.Text = "Thank you for the cheese!\nI'll help you get out of here.";
 			_hireButton.Visible = false;
 
 			_isHired = true;
@@ -67,7 +67,7 @@ public partial class Muskrat : CharacterBody2D
 			}
 			else
 			{
-				_dialogueLabel.Text = $"You need at least {_hireCost} cheese to hire me.";
+				_dialogueLabel.Text = $"You need at least\n{_hireCost} cheese to hire me.";
 				_hireButton.Visible = false;
 			}
 

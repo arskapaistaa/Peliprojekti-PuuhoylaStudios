@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dvbw23xk7fe2d"]
+[gd_scene format=3 uid="uid://ddsq208sig6nx"]
 
 [ext_resource type="Script" uid="uid://b5x1t66pbp5ry" path="res://Muskrat.cs" id="1_lxai5"]
 [ext_resource type="Texture2D" uid="uid://dfruw6hpy6a1j" path="res://Sprites/pora-animated.png" id="2_jkvd8"]
@@ -273,9 +273,9 @@ grow_vertical = 2
 [node name="Panel" type="Panel" parent="Canvas/Control" unique_id=1429323004]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.75
+anchor_left = -9.25
 anchor_top = -1.0
-anchor_right = 8.9
+anchor_right = 10.4
 anchor_bottom = 2.125
 grow_horizontal = 2
 grow_vertical = 2
@@ -284,17 +284,16 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Canvas/Control" unique_id=1362048352]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -4.7125
-anchor_top = -0.5875
-anchor_right = 5.7125
-anchor_bottom = 1.5875
-offset_left = 73.0
-offset_top = 7.0
-offset_right = -73.0
-offset_bottom = -7.0
+anchor_left = -9.250001
+anchor_top = -1.0
+anchor_right = 10.400001
+anchor_bottom = 2.125
+offset_left = 3.0517578e-05
+offset_right = -3.0517578e-05
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_r4s3l")
+horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 

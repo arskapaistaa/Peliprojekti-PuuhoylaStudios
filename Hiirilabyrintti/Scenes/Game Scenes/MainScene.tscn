@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cxs0jjrm54jfo" path="res://Sprites/tileset-purple.png" id="15_0f1ji"]
 [ext_resource type="Texture2D" uid="uid://cnostexeg18wc" path="res://Sprites/tileset-orange.png" id="17_2ngyf"]
 [ext_resource type="Script" uid="uid://b8chywgava7pr" path="res://Scenes/Game Scenes/PathFollower.cs" id="18_0f1ji"]
-[ext_resource type="PackedScene" uid="uid://dvbw23xk7fe2d" path="res://Scenes/Muskrat.tscn" id="19_rdn1l"]
+[ext_resource type="PackedScene" uid="uid://ddsq208sig6nx" path="res://Scenes/muskrat.tscn" id="19_rdn1l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0bv1"]
 texture = ExtResource("11_lh3xx")
@@ -1298,7 +1298,7 @@ _data = {
 
 [sub_resource type="Curve2D" id="Curve2D_use57"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -125, 0, 0, 0, 0, -150, -125, 0, 0, 0, 0, -150, -175)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -125, 0, 0, 0, 0, -150, -125, 0, 0, 0, 0, -150, -140)
 }
 point_count = 4
 
@@ -1641,21 +1641,23 @@ frame_progress = 0.70979655
 visible = false
 color = Color(0.09329758, 0.10229925, 0.2502737, 1)
 
-[node name="Exit" type="Area2D" parent="." unique_id=154487]
+[node name="Exit" type="Area2D" parent="." unique_id=154487 node_paths=PackedStringArray("_animations")]
 position = Vector2(1143, 1458)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("7_m74ok")
+_animations = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1871817842]
 position = Vector2(-2, 8)
 shape = SubResource("RectangleShape2D_l6byj")
 
-[node name="ExitRock" type="Area2D" parent="." unique_id=223876225]
+[node name="ExitRock" type="Area2D" parent="." unique_id=223876225 node_paths=PackedStringArray("_animations")]
 position = Vector2(0, -205)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("7_m74ok")
+_animations = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitRock" unique_id=1259531565]
 position = Vector2(-2, 8)
@@ -1682,4 +1684,5 @@ rotation = -1.5707964
 loop = false
 
 [node name="Muskrat" parent="PathFollower/Path2D/PathFollow2D" unique_id=614056375 instance=ExtResource("19_rdn1l")]
+z_index = 1
 rotation = 1.5707964
