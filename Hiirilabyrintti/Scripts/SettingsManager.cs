@@ -42,4 +42,11 @@ public partial class SettingsManager : Node
 		get {return _volume; }
 		set { _volume = value; }
 	}
+
+	private bool _music = true;
+	public bool Music
+	{
+		get {return _music; }
+		set { _music = value; }
+	}
 }

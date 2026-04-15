@@ -19,6 +19,7 @@ public partial class QuestionsManager : Node2D
 
 	// Dialog label
 	[Export] private Label _dialogLabel;
+	[Export] private String[] _dialogLabelArray = {};
 
 	// UI animations
 	[Export] private AnimationPlayer _animations;
@@ -27,11 +28,15 @@ public partial class QuestionsManager : Node2D
 
 	// String array for question
 	[Export] private String[] _questionTexts = {};
+	[Export] private String[] _questionTextsENG = {};
 
 	// String array for answer
 	[Export] private String[] _etsijaTexts = {};
+	[Export] private String[] _etsijaTextsENG = {};
 	[Export] private String[] _etenijaTexts = {};
+	[Export] private String[] _etenijaTextsENG = {};
 	[Export] private String[] _edistajaTexts = {};
+	[Export] private String[] _edistajaTextsENG = {};
 
 	public override void _Ready()
 	{
@@ -92,13 +97,28 @@ public partial class QuestionsManager : Node2D
 	}
 	private void NextQuestion()
 	{
-		// Basic operation
-		_dialogLabel.Text = _questionTexts[question];
+		if (SettingsManager.Instance.Language == 0)
+		{
+			// Basic operation
+			_dialogLabel.Text = _questionTexts[question];
 
-		_etsijaButton.Text = _etsijaTexts[question];
-		_etenijaButton.Text = _etenijaTexts[question];
-		_edistajaButton.Text = _edistajaTexts[question];
+			_etsijaButton.Text = _etsijaTexts[question];
+			_etenijaButton.Text = _etenijaTexts[question];
+			_edistajaButton.Text = _edistajaTexts[question];
+		}
+		else
+		{
+			// Basic operation in English
+			_dialogLabel.Text = _questionTextsENG[question];
+
+			_etsijaButton.Text = _etsijaTextsENG[question];
+			_etenijaButton.Text = _etenijaTextsENG[question];
+			_edistajaButton.Text = _edistajaTextsENG[question];
+		}
+
 	}
+
+	// Method that triggers after last question.
 	private void LastQuestion()
 	{
 
