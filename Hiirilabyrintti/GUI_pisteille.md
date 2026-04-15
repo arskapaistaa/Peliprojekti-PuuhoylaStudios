@@ -76,10 +76,10 @@ public partial class Counters : CanvasLayer
 	[Export] public Label cheeseCounterLabel;
 	[Export] public Label drillCounterLabel;
 
-    public override void _Ready()
-    {
-        GameManager.Instance.counters = this;
-    }
+	public override void _Ready()
+	{
+		GameManager.Instance.counters = this;
+	}
 
 	public void UpdateCheeseScore(int CheeseScore)
 	{

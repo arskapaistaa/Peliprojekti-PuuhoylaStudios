@@ -19,7 +19,7 @@ fill_to = Vector2(1, 1)
 
 [sub_resource type="Animation" id="Animation_nkp2i"]
 resource_name = "FadeIn"
-length = 16.0
+length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -147,7 +147,7 @@ tracks/10/path = NodePath("Player:modulate:a")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(15, 15.5),
+"times": PackedFloat32Array(19.433332, 19.933332),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -159,7 +159,7 @@ tracks/11/path = NodePath("Player/RePlay:disabled")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 14),
+"times": PackedFloat32Array(0, 18.933332),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -171,10 +171,49 @@ tracks/12/path = NodePath("Player/Exit:disabled")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 14),
+"times": PackedFloat32Array(0, 18.933332),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("SecondDialog:modulate:a")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(13, 13.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("PlayerStyle:modulate:a")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(15, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_yifte"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_syh1w"]
@@ -251,10 +290,47 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SecondDialog:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PlayerStyle:modulate:a")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_anni1"]
 _data = {
 &"FadeIn": SubResource("Animation_nkp2i"),
+&"FadeOut": SubResource("Animation_yifte"),
 &"RESET": SubResource("Animation_syh1w")
 }
 
@@ -317,10 +393,12 @@ grow_vertical = 2
 [node name="Background" type="ColorRect" parent="Control/Edistäjä" unique_id=1570125867]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.12962963
-anchor_top = 0.21354167
-anchor_right = 0.8703704
-anchor_bottom = 0.234375
+anchor_top = 0.20104162
+anchor_right = 1.0
+anchor_bottom = 0.22149996
+offset_left = 140.0
+offset_right = -140.0
+offset_bottom = 20.71997
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
@@ -331,9 +409,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4037037
-anchor_top = 0.1375
+anchor_top = 0.12500004
 anchor_right = 0.5962963
-anchor_bottom = 0.2
+anchor_bottom = 0.1875
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -348,9 +426,10 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.12962963
-anchor_top = 0.21354167
+anchor_top = 0.20104162
 anchor_right = 0.8703704
-anchor_bottom = 0.234375
+anchor_bottom = 0.22187495
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
@@ -369,9 +448,10 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.12962963
-anchor_top = 0.396875
+anchor_top = 0.334375
 anchor_right = 0.8703704
-anchor_bottom = 0.41770834
+anchor_bottom = 0.35520834
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
@@ -382,9 +462,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.41666666
-anchor_top = 0.32604167
+anchor_top = 0.26354167
 anchor_right = 0.5833333
-anchor_bottom = 0.38854167
+anchor_bottom = 0.32604167
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -399,9 +479,10 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.12962963
-anchor_top = 0.396875
+anchor_top = 0.334375
 anchor_right = 0.8703704
-anchor_bottom = 0.41770834
+anchor_bottom = 0.35520834
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
@@ -420,9 +501,10 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.12962963
-anchor_top = 0.5885417
+anchor_top = 0.46770832
 anchor_right = 0.8703704
-anchor_bottom = 0.609375
+anchor_bottom = 0.48854166
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
@@ -433,9 +515,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.43148148
-anchor_top = 0.5208333
+anchor_top = 0.4
 anchor_right = 0.5685185
-anchor_bottom = 0.5833333
+anchor_bottom = 0.4625
 offset_top = 3.0517578e-05
 grow_horizontal = 2
 grow_vertical = 2
@@ -451,9 +533,10 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.12962963
-anchor_top = 0.5885417
+anchor_top = 0.46770832
 anchor_right = 0.8703704
-anchor_bottom = 0.609375
+anchor_bottom = 0.48854166
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
@@ -470,10 +553,45 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_syh1w")
-text = "Onneksi olkoon!
-Olet edistäjä!"
+text = "Vastauksesi kertovat, että olet:"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SecondDialog" type="Label" parent="." unique_id=1820450809]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.083333336
+anchor_top = 0.5260417
+anchor_right = 1.0833334
+anchor_bottom = 0.60625
+offset_right = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_syh1w")
+text = "Tapa miten pääsit ulos labyrintistä kertoo, että olet:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerStyle" type="Label" parent="." unique_id=1648333717]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.083333336
+anchor_top = 0.60625
+anchor_right = 1.0833334
+anchor_bottom = 0.68645835
+offset_right = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_syh1w")
+text = "Edistäjä"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2081561308]
@@ -510,7 +628,7 @@ script = ExtResource("3_anni1")
 _replay = NodePath(".")
 metadata/_edit_use_anchors_ = true
 
-[node name="Exit" type="Button" parent="Player" unique_id=68216442 node_paths=PackedStringArray("_exit")]
+[node name="Exit" type="Button" parent="Player" unique_id=68216442 node_paths=PackedStringArray("_exitButton", "_animations")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.32407406
@@ -520,10 +638,11 @@ anchor_bottom = 0.9401042
 offset_left = 3.0517578e-05
 disabled = true
 action_mode = 0
-text = "EXIT
+text = "MAIN MENU
 
 "
 autowrap_mode = 2
 script = ExtResource("4_yifte")
-_exit = NodePath(".")
+_exitButton = NodePath(".")
+_animations = NodePath("../../AnimationPlayer")
 metadata/_edit_use_anchors_ = true

@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://bggtt6a36gih4"]
 
-[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_1gcqp"]
+[ext_resource type="PackedScene" uid="uid://bsjdxn8l57si" path="res://Scenes/UI/Joystick.tscn" id="2_lkv6t"]
 
 [node name="TouchControls" type="CanvasLayer" unique_id=1829277298]
 
-[node name="Virtual Joystick" parent="." unique_id=821376932 instance=ExtResource("1_1gcqp")]
+[node name="VirtualJoystick" type="Control" parent="." unique_id=256702228]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Joystick" parent="VirtualJoystick" unique_id=1618852996 instance=ExtResource("2_lkv6t")]
+position = Vector2(545, 1596)

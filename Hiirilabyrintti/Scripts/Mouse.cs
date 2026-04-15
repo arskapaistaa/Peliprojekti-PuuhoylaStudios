@@ -12,14 +12,42 @@ public partial class Mouse : CharacterBody2D
 
     [Export] private CameraShake _camera;
     private bool wasOnWall = false;
+
+    [Export] private Control DrillPrompt;
+    [Export] private Button YesButton;
+    [Export] private Button NoButton;
+    [Export] private AnimatedSprite2D _drill;
+
+    private int neededToBuildDrill = GameManager.Instance._neededToBuildDrill;
+
+    public override void _Ready()
+    {
+        YesButton.Pressed += OnYesPressed;
+        NoButton.Pressed += OnNoPressed;
+
+        GameManager.Instance.Connect(
+            GameManager.SignalName.DrillReady,
+            new Callable(this, nameof(ShowDrillPrompt))
+        );
+
+        DrillPrompt.Visible = false;
+        _drill.Visible = false;
+    }
+
     public override void _PhysicsProcess(double delta)
     {
+        if (!GameManager.Instance.MouseCanMove)
+        {
+            speed = 0f;
+        }
+        else
+        {
+            speed = 160f;
+        }
+
         Vector2 inputDirection = new Vector2(
             Input.GetActionStrength("ui_right") - Input.GetActionStrength("ui_left"),
             Input.GetActionStrength("ui_down") - Input.GetActionStrength("ui_up"));
-
-        // Add this line if wanted:
-        // inputDirection = inputDirection.Normalized();
 
         Velocity = inputDirection * speed;
         MoveAndSlide();
@@ -28,29 +56,20 @@ public partial class Mouse : CharacterBody2D
         {
             Rotation = Velocity.Angle() + Mathf.Pi / 2f;
 
-            // Play Move when moving
             _sprite.Play("Move");
-
-            // Start emiting when moving.
             _walkParticles.Emitting = true;
         }
         else
         {
-            // Play idle when Idle state
             _sprite.Play("Idle");
-
-            // Sttop emiting when Idle state.
             _walkParticles.Emitting = false;
         }
 
-        // Camera shake when colliding with wall.
-        // Only on impact.
+        // Camera shake on wall impact
         bool isOnWall = IsOnWall();
         if (isOnWall && !wasOnWall)
         {
             _camera.Shake(2.0f);
-
-            // Also vibration 100ms.
             Input.VibrateHandheld(100);
         }
         wasOnWall = isOnWall;
@@ -59,10 +78,42 @@ public partial class Mouse : CharacterBody2D
         {
             speed = _slowedSpeed;
         }
-        else if (!IsOnWall())
+        else if (!IsOnWall() && GameManager.Instance.MouseCanMove)
         {
-            //Check from editor!!
             speed = 160.0f;
         }
+    }
+
+    private void ShowDrillPrompt()
+    {
+        GameManager.Instance.MouseCanMove = false;
+        DrillPrompt.Visible = true;
+    }
+
+    private void OnYesPressed()
+    {
+        GameManager.Instance.RemoveDrill(neededToBuildDrill);
+        DrillPrompt.Visible = false;
+        GameManager.Instance.MouseCanMove = true;
+        GameManager.Instance._hasDrill = true;
+        GameManager.Instance.counters.BuiltDrill.Visible = true;
+    }
+
+    private void OnNoPressed()
+    {
+        DrillPrompt.Visible = false;
+        GameManager.Instance.MouseCanMove = true;
+    }
+
+    public void StartDrilling()
+    {
+        _drill.Visible = true;
+        _drill.Play("drill");
+    }
+
+    public void StopDrilling()
+    {
+        _drill.Visible = false;
+        _drill.Stop();
     }
 }
