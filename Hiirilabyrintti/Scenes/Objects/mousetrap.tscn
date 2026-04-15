@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://qsvjdj57if2u"]
+
+[ext_resource type="Texture2D" uid="uid://b863fbcmfqa3s" path="res://Sprites/loukku.png" id="1_goqyi"]
+[ext_resource type="Script" uid="uid://dqvasvxqb8s0d" path="res://Scripts/Mousetrap.cs" id="1_ug2qn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug2qn"]
+atlas = ExtResource("1_goqyi")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neqh7"]
+atlas = ExtResource("1_goqyi")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1b08"]
+atlas = ExtResource("1_goqyi")
+region = Rect2(128, 0, 64, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mgenj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug2qn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neqh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1b08")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umikl"]
+size = Vector2(26, 44)
+
+[node name="Mousetrap" type="Area2D" unique_id=2138317421 node_paths=PackedStringArray("_mouseTrap")]
+collision_mask = 3
+script = ExtResource("1_ug2qn")
+_mouseTrap = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1871088280]
+sprite_frames = SubResource("SpriteFrames_mgenj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=626346095]
+shape = SubResource("RectangleShape2D_umikl")

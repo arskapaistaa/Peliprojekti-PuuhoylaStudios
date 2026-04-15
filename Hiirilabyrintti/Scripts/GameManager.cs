@@ -73,7 +73,7 @@ public partial class GameManager : Node
 
 	public bool RemoveCheese(int amount)
 	{
-		if (amount < 0 || amount > CheeseScore)
+		if (amount < 0)
 			return false;
 
 		CheeseScore -= amount;
