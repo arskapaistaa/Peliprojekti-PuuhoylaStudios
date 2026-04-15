@@ -699,7 +699,7 @@ offset_bottom = 0.23986816
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
-toggle_mode = true
+disabled = true
 action_mode = 0
 text = "
 "
@@ -719,6 +719,7 @@ offset_bottom = -0.6800537
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
+disabled = true
 toggle_mode = true
 action_mode = 0
 text = "
