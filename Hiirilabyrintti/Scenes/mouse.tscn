@@ -6,55 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bj3hkhf816jh7" path="res://Sprites/hiiri-idle.png" id="2_kxv04"]
 [ext_resource type="Script" uid="uid://pn322knpbu86" path="res://Scripts/CameraShake.cs" id="4_2q34x"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_2q34x"]
-
-[sub_resource type="Curve" id="Curve_5rgqy"]
-_limits = [-1.0, 1.0, 0.0, 1.0]
-_data = [Vector2(0, 0.01886797), 0.0, 0.0, 0, 0, Vector2(1, -0.025728941), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_uwmpi"]
-curve = SubResource("Curve_5rgqy")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ffywo"]
-particle_flag_disable_z = true
-emission_shape_scale = Vector3(200, 400, 1)
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-angle_min = -556.5
-angle_max = 360.00003
-direction = Vector3(1, 1, 0)
-spread = 180.0
-initial_velocity_min = 5.0
-initial_velocity_max = 30.0
-angular_velocity_min = -1.6093254e-05
-angular_velocity_max = 199.99998
-gravity = Vector3(0, 0, 0)
-damping_max = 20.0
-scale_min = 0.19999999
-scale_max = 2.0
-color = Color(0.5529556, 0.55295557, 0.55295557, 1)
-hue_variation_min = -0.100000024
-hue_variation_max = 0.99999994
-hue_variation_curve = SubResource("CurveTexture_uwmpi")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2q34x"]
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 7.34
-angle_min = 1.0728835e-05
-angle_max = 207.00002
-direction = Vector3(0, 1, 0)
-initial_velocity_min = 10.0
-initial_velocity_max = 40.0
-gravity = Vector3(0, 0, 0)
-radial_accel_min = -2.2351742e-06
-radial_accel_max = 200.0
-damping_min = 10.0
-damping_max = 50.000004
-scale_min = 0.5
-scale_max = 2.5
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kxv04"]
 radius = 8.0
 
@@ -149,6 +100,24 @@ animations = [{
 "name": &"drill",
 "speed": 60.0
 }]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2q34x"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 7.34
+angle_min = 1.0728835e-05
+angle_max = 207.00002
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 40.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 200.0
+damping_min = 10.0
+damping_max = 50.000004
+scale_min = 0.5
+scale_max = 2.5
+color = Color(0.37789738, 0.26374474, 0.09976614, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2q34x"]
 atlas = ExtResource("2_kxv04")
@@ -275,6 +244,38 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_2q34x"]
+
+[sub_resource type="Curve" id="Curve_5rgqy"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.01886797), 0.0, 0.0, 0, 0, Vector2(1, -0.025728941), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_uwmpi"]
+curve = SubResource("Curve_5rgqy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ffywo"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(200, 200, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -556.5
+angle_max = 360.00003
+direction = Vector3(1, 1, 0)
+spread = 180.0
+initial_velocity_min = 5.0
+initial_velocity_max = 30.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 199.99998
+gravity = Vector3(0, 0, 0)
+damping_max = 20.0
+scale_min = 0.19999999
+scale_max = 2.0
+color = Color(0.5529556, 0.55295557, 0.55295557, 1)
+hue_variation_min = -0.100000024
+hue_variation_max = 0.99999994
+hue_variation_curve = SubResource("CurveTexture_uwmpi")
+
 [sub_resource type="Gradient" id="Gradient_kxv04"]
 offsets = PackedFloat32Array(0, 0.007518797, 0.62030077)
 colors = PackedColorArray(1, 1, 1, 1, 0.90789473, 0.90789473, 0.90789473, 1, 0, 0, 0, 1)
@@ -291,32 +292,13 @@ collision_layer = 2
 collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_tewyd")
-_walkParticles = NodePath("Particles/WalkParticles")
+_walkParticles = NodePath("WalkParticles")
 _sprite = NodePath("Sprite2D")
 _camera = NodePath("Camera2D")
 DrillPrompt = NodePath("CanvasLayer/DrillPrompt")
 YesButton = NodePath("CanvasLayer/DrillPrompt/YesButton")
 NoButton = NodePath("CanvasLayer/DrillPrompt/NoButton")
 _drill = NodePath("DrillSprite")
-
-[node name="Particles" type="Node2D" parent="." unique_id=782508421]
-
-[node name="Dust" type="GPUParticles2D" parent="Particles" unique_id=446508865]
-position = Vector2(-1, -1)
-amount = 500
-texture = SubResource("CanvasTexture_2q34x")
-lifetime = 5.0
-randomness = 0.5
-fixed_fps = 60
-process_material = SubResource("ParticleProcessMaterial_ffywo")
-
-[node name="WalkParticles" type="GPUParticles2D" parent="Particles" unique_id=703424901]
-emitting = false
-amount = 6
-lifetime = 0.5
-fixed_fps = 60
-trail_lifetime = 0.1
-process_material = SubResource("ParticleProcessMaterial_2q34x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746396471]
 position = Vector2(0, -12)
@@ -330,12 +312,29 @@ animation = &"drill"
 frame = 8
 frame_progress = 0.2655227
 
+[node name="WalkParticles" type="GPUParticles2D" parent="." unique_id=703424901]
+emitting = false
+amount = 6
+lifetime = 0.5
+fixed_fps = 60
+trail_lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_2q34x")
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=838422735]
 sprite_frames = SubResource("SpriteFrames_1rou4")
 animation = &"Move"
 autoplay = "Idle"
 frame = 7
 frame_progress = 0.76432276
+
+[node name="Dust" type="GPUParticles2D" parent="." unique_id=446508865]
+position = Vector2(-1, -1)
+amount = 500
+texture = SubResource("CanvasTexture_2q34x")
+lifetime = 5.0
+randomness = 0.5
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_ffywo")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1018125281]
 zoom = Vector2(3.2, 3.2)
