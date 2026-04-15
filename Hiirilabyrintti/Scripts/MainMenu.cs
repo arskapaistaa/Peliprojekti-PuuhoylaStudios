@@ -6,13 +6,6 @@ public partial class MainMenu : Node
 	[Export] private Button _playButton;
 	[Export] private Button _creditsButton = null;
 	[Export] private AnimationPlayer _animations;
-	[Export] private Timer _animationTimer;
-
-
-	public override void _Ready()
-	{
-		// // Connect pressed signal to method.
-		_playButton.Pressed += ButtonPressed;
 
 	public bool _credits = false;
 
@@ -38,8 +31,8 @@ public partial class MainMenu : Node
 		_animations.Play("FadeOut");
 
 	}
-	private void LoadMainScene()
-	{
+
+
 		// Load intro scene.
 	    private void CreditsButtonPressed()
     {
