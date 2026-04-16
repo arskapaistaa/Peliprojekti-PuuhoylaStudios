@@ -38,6 +38,8 @@ public partial class QuestionsManager : Node2D
 	[Export] private String[] _edistajaTexts = {};
 	[Export] private String[] _edistajaTextsENG = {};
 
+	[Export] private AudioStreamPlayer2D _buttonDownSFX = null;
+
 	public override void _Ready()
 	{
 		// Connect pressed signalt to method.
@@ -60,6 +62,13 @@ public partial class QuestionsManager : Node2D
 	// Method which can be called when button is pressed.
 	private void ButtonPressed(int buttonNumber)
 	{
+		if (SettingsManager.Instance.Volume)
+		{
+			_buttonDownSFX.Play();
+		}
+
+		Input.VibrateHandheld(100);
+
 		switch (buttonNumber)
 		{
 			case 1:

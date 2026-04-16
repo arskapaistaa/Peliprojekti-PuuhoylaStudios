@@ -4,6 +4,7 @@ using System;
 public partial class ReplayButton : Button
 {
 	[Export] private Button _replay = null;
+	[Export] private AudioStreamPlayer2D _buttonDownSFX = null;
 
 	public override void _Ready()
 	{
@@ -20,6 +21,13 @@ public partial class ReplayButton : Button
 		GameManager.Instance.EtsijaScore = 0;
 		GameManager.Instance.EtenijaScore = 0;
 		GameManager.Instance.EdistajaScore = 0;
+
+		if (SettingsManager.Instance.Volume)
+		{
+			_buttonDownSFX.Play();
+		}
+
+		Input.VibrateHandheld(100);
 
 		// TODO: Load different scene
 	}

@@ -6,6 +6,7 @@ public partial class MainMenu : Node
 	[Export] private Button _playButton;
 	[Export] private Button _creditsButton = null;
 	[Export] private AnimationPlayer _animations;
+	[Export] private AudioStreamPlayer2D _buttonDownSFX = null;
 
 	public bool _credits = false;
 
@@ -30,11 +31,15 @@ public partial class MainMenu : Node
 		// Play fade out animation and after it load the main scene.
 		_animations.Play("FadeOut");
 
+		if (SettingsManager.Instance.Volume)
+		{
+			_buttonDownSFX.Play();
+		}
+
+		Input.VibrateHandheld(500);
 	}
 
-
-		// Load intro scene.
-	    private void CreditsButtonPressed()
+	private void CreditsButtonPressed()
     {
 		if(!_credits)
 		{
@@ -46,6 +51,13 @@ public partial class MainMenu : Node
 			_animations.Play("CreditsOff");
 			_credits = false;
 		}
+
+		if (SettingsManager.Instance.Volume)
+		{
+			_buttonDownSFX.Play();
+		}
+
+		Input.VibrateHandheld(100);
 
     }
 	private void onAnimationFinished(StringName animName)

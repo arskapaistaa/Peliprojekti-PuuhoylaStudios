@@ -7,6 +7,7 @@ public partial class SettingsMenu : Control
 	[Export] private Button _musicButton = null;
 	[Export] private Button _languageButton = null;
 	[Export] private Button _creditsButton = null;
+	[Export] private AudioStreamPlayer2D _buttonDownSFX = null;
 
 	public override void _Ready()
 	{
@@ -24,12 +25,26 @@ public partial class SettingsMenu : Control
 		UpdateButtons();
 		// For debugging
 		GD.Print(SettingsManager.Instance.Volume ? "Volume On" : "Volume Off");
+
+		if (SettingsManager.Instance.Volume)
+		{
+			_buttonDownSFX.Play();
+		}
+
+		Input.VibrateHandheld(100);
 	}
 		public void MusicButtonPressed()
     {
 		SettingsManager.Instance.Music = !SettingsManager.Instance.Music;
 
 		UpdateButtons();
+
+		if (SettingsManager.Instance.Volume)
+		{
+			_buttonDownSFX.Play();
+		}
+
+		Input.VibrateHandheld(100);
 
     }
 	    public void LanguageButtonPressed()
@@ -44,6 +59,13 @@ public partial class SettingsMenu : Control
 		}
 
 		UpdateButtons();
+
+		if (SettingsManager.Instance.Volume)
+		{
+			_buttonDownSFX.Play();
+		}
+
+		Input.VibrateHandheld(100);
 	}
 
 	// Set text to ON or OFF

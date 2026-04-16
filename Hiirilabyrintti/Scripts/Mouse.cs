@@ -19,6 +19,7 @@ public partial class Mouse : CharacterBody2D
     [Export] private AnimatedSprite2D _drill;
     [Export] private string[] _yesButtonArray = {};
     [Export] private string[] _noButtonArray = {};
+    [Export] private AudioStreamPlayer2D _walkSFX = null;
 
     private int neededToBuildDrill = GameManager.Instance._neededToBuildDrill;
 
@@ -109,6 +110,9 @@ public partial class Mouse : CharacterBody2D
     {
         _drill.Visible = true;
         _drill.Play("drill");
+
+        _camera.Shake(4.0f);
+        Input.VibrateHandheld(3000);
     }
 
     public void StopDrilling()

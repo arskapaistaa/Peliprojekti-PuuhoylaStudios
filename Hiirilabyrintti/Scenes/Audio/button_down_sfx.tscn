@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://il5r6o7medad"]
+
+[ext_resource type="AudioStream" uid="uid://ox7tw7hwlicr" path="res://Audio/SFX/Button1.mp3" id="1_5ca00"]
+
+[node name="ButtonDownSFX" type="AudioStreamPlayer2D" unique_id=919058289]
+stream = ExtResource("1_5ca00")
