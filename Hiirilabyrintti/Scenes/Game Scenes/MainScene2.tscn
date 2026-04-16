@@ -601,6 +601,7 @@ script = ExtResource("5_hj5x6")
 
 [node name="GameManager" parent="Managers" unique_id=1156478741 node_paths=PackedStringArray("counters") instance=ExtResource("6_ybsqa")]
 counters = NodePath("../../Counters")
+_neededToBuildDrill = 3
 
 [node name="Maze2" type="Node2D" parent="." unique_id=178975357]
 position = Vector2(-2557, 27)

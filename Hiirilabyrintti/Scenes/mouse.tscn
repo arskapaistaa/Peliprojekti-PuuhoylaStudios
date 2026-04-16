@@ -301,6 +301,8 @@ DrillPrompt = NodePath("CanvasLayer/DrillPrompt")
 YesButton = NodePath("CanvasLayer/DrillPrompt/YesButton")
 NoButton = NodePath("CanvasLayer/DrillPrompt/NoButton")
 _drill = NodePath("DrillSprite")
+_yesButtonArray = PackedStringArray("Kyllä", "Yes")
+_noButtonArray = PackedStringArray("En", "No")
 _walkSFX = NodePath("WalkSFX")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746396471]

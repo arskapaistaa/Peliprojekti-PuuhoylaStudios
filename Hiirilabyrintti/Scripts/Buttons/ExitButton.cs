@@ -15,6 +15,12 @@ public partial class ExitButton : Button
 
     public void ButtonPressed()
 	{
+		GameManager.Instance.CheeseScore = 0;
+		GameManager.Instance.DrillScore = 0;
+		GameManager.Instance.EtsijaScore = 0;
+		GameManager.Instance.EtenijaScore = 0;
+		GameManager.Instance.EdistajaScore = 0;
+
 		_animations.Play("FadeOut");
 
 		if (SettingsManager.Instance.Volume)

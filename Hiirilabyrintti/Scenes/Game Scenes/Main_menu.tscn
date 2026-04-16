@@ -738,12 +738,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.133
-offset_left = 44.000004
-offset_top = 119.16359
-offset_right = 212.0
-offset_bottom = 71.804
+offset_left = 104.0
+offset_top = 119.16392
+offset_right = 272.0
+offset_bottom = 71.80391
 grow_horizontal = 2
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("8_fh073")
 
 [node name="SettingsManager" type="Node" parent="." unique_id=327568711]
