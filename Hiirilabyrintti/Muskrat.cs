@@ -23,7 +23,7 @@ public partial class Muskrat : CharacterBody2D
 		area.BodyEntered += OnBodyEntered;
 		area.BodyExited += OnBodyExit;
 
-		_rock = GetTree().Root.GetNode<Rock>("/root/World/Maze/Rock/Area2D");
+		_rock = GetTree().Root.GetNode<Rock>("/root/World/Rock/Area2D");
 		_rock.RockDestroyed += OnRockDestroyed;
 	}
 
@@ -67,6 +67,7 @@ public partial class Muskrat : CharacterBody2D
 		if (body is Mouse && !_isHired)
 		{
 			GD.Print("Player Entered");
+			_animations.Play("PopUp");
 
 			if (GameManager.Instance.CheeseScore >= _hireCost)
 			{
@@ -96,8 +97,6 @@ public partial class Muskrat : CharacterBody2D
 					_hireButton.Visible = false;
 				}
 			}
-
-			_animations.Play("PopUp");
 		}
 	}
 

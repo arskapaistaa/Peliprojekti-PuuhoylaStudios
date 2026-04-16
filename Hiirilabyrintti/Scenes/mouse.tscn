@@ -290,6 +290,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="Mouse" type="CharacterBody2D" unique_id=1410733989 node_paths=PackedStringArray("_walkParticles", "_sprite", "_camera", "DrillPrompt", "YesButton", "NoButton", "_drill", "_drillPromptLabel", "_walkSFX")]
+z_index = 2
 collision_layer = 2
 collision_mask = 5
 motion_mode = 1
@@ -411,6 +412,7 @@ offset_right = -140.0
 offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("6_uwmpi")
 theme_override_font_sizes/font_size = 55
 text = "Yes"
@@ -428,6 +430,7 @@ offset_right = 348.0
 offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("6_uwmpi")
 theme_override_font_sizes/font_size = 55
 text = "No"

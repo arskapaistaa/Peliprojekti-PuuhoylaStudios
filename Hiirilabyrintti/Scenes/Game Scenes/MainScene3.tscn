@@ -483,6 +483,15 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_dohcd"]
+offsets = PackedFloat32Array(0, 0.007518797, 0.62030077)
+colors = PackedColorArray(1, 1, 1, 1, 0.90789473, 0.90789473, 0.90789473, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xqcer"]
+gradient = SubResource("Gradient_dohcd")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6byj"]
 size = Vector2(82, 64)
 
@@ -516,7 +525,6 @@ grow_vertical = 2
 [node name="TouchControls" parent="Control" unique_id=400990887 instance=ExtResource("1_8c0gc")]
 
 [node name="Mouse" parent="." unique_id=557865975 instance=ExtResource("2_kch43")]
-z_index = 2
 
 [node name="Environment" type="Node" parent="." unique_id=2055302965]
 
@@ -667,6 +675,13 @@ rotation = 1.5657707
 sprite_frames = SubResource("SpriteFrames_25xdm")
 autoplay = "default"
 
+[node name="PointLight2D" type="PointLight2D" parent="Maze3" unique_id=2111855111]
+position = Vector2(5118, -108)
+scale = Vector2(2.8125005, 2.9062502)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_xqcer")
+
 [node name="Exit" type="Area2D" parent="." unique_id=154487 node_paths=PackedStringArray("_animations")]
 position = Vector2(-28, 2208)
 collision_layer = 8
@@ -690,7 +705,7 @@ position = Vector2(4, -142)
 [node name="PathFollower" type="Node" parent="." unique_id=581776510 node_paths=PackedStringArray("_pathFollow")]
 script = ExtResource("13_irhtu")
 _pathFollow = NodePath("Path2D/PathFollow2D")
-_movementSpeed = 0.6
+_movementSpeed = 0.1
 _canMove = false
 
 [node name="Path2D" type="Path2D" parent="PathFollower" unique_id=1566633172]
