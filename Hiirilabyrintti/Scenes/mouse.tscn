@@ -289,7 +289,7 @@ height = 96
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Mouse" type="CharacterBody2D" unique_id=1410733989 node_paths=PackedStringArray("_walkParticles", "_sprite", "_camera", "DrillPrompt", "YesButton", "NoButton", "_drill", "_walkSFX")]
+[node name="Mouse" type="CharacterBody2D" unique_id=1410733989 node_paths=PackedStringArray("_walkParticles", "_sprite", "_camera", "DrillPrompt", "YesButton", "NoButton", "_drill", "_drillPromptLabel", "_walkSFX")]
 collision_layer = 2
 collision_mask = 5
 motion_mode = 1
@@ -303,6 +303,8 @@ NoButton = NodePath("CanvasLayer/DrillPrompt/NoButton")
 _drill = NodePath("DrillSprite")
 _yesButtonArray = PackedStringArray("Kyllä", "Yes")
 _noButtonArray = PackedStringArray("En", "No")
+_drillPromptLabel = NodePath("CanvasLayer/DrillPrompt/Label")
+_drillPrompArray = PackedStringArray("Sinulla on tapeeksi osia. Haluatko rakentaa poran?", "You have enoughparts to build a drill.Do you want to build a drill?")
 _walkSFX = NodePath("WalkSFX")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746396471]
@@ -376,32 +378,71 @@ texture = SubResource("GradientTexture2D_2q34x")
 
 [node name="DrillPrompt" type="Control" parent="CanvasLayer" unique_id=125501436]
 layout_mode = 3
-anchor_top = 0.23
-anchor_right = 1.0
-anchor_bottom = 0.467
-offset_left = 322.0
-offset_top = 119.399994
-offset_right = -233.0
-offset_bottom = -54.640015
-
-[node name="Panel" type="Panel" parent="CanvasLayer/DrillPrompt" unique_id=1404398236]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.6
-anchor_top = -0.39100003
-anchor_right = 1.4330001
-anchor_bottom = 0.49800003
-offset_left = 138.0
-offset_top = -65.12899
-offset_right = -129.32507
-offset_bottom = -64.938
-theme = ExtResource("6_uwmpi")
-
-[node name="Label" type="Label" parent="CanvasLayer/DrillPrompt/Panel" unique_id=565187184]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/DrillPrompt" unique_id=1404398236]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -384.0
+offset_right = 400.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="YesButton" type="Button" parent="CanvasLayer/DrillPrompt" unique_id=394484474]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -59.0
+offset_right = -140.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_uwmpi")
+theme_override_font_sizes/font_size = 55
+text = "Yes"
+
+[node name="NoButton" type="Button" parent="CanvasLayer/DrillPrompt" unique_id=233450736]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 148.0
+offset_top = -59.0
+offset_right = 348.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_uwmpi")
+theme_override_font_sizes/font_size = 55
+text = "No"
+
+[node name="Label" type="Label" parent="CanvasLayer/DrillPrompt" unique_id=565187184]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -384.0
+offset_right = 400.0
+offset_bottom = -134.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_uwmpi")
@@ -412,36 +453,6 @@ Do you want to build a drill?"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-
-[node name="YesButton" type="Button" parent="CanvasLayer/DrillPrompt" unique_id=394484474]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.60700005
-anchor_top = 0.544
-anchor_right = 0.15400001
-anchor_bottom = 0.90000004
-offset_left = 199.67502
-offset_top = 0.13598633
-offset_right = 0.1499939
-offset_bottom = 0.099990845
-theme = ExtResource("6_uwmpi")
-theme_override_font_sizes/font_size = 55
-text = "Yes"
-
-[node name="NoButton" type="Button" parent="CanvasLayer/DrillPrompt" unique_id=233450736]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.69100004
-anchor_top = 0.544
-anchor_right = 1.4440001
-anchor_bottom = 0.90000004
-offset_left = 0.22497559
-offset_top = 0.13598633
-offset_right = -195.10004
-offset_bottom = 0.099990845
-theme = ExtResource("6_uwmpi")
-theme_override_font_sizes/font_size = 55
-text = "No"
 
 [node name="WalkSFX" type="AudioStreamPlayer2D" parent="." unique_id=1010652260]
 stream = ExtResource("7_ffywo")

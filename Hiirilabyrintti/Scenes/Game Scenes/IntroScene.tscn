@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bbfv38hdvc0e6" path="res://Sprites/labrat.png" id="1_jl0je"]
 [ext_resource type="Script" uid="uid://comtmd2581ab1" path="res://Scripts/IntroScene.cs" id="1_oxig5"]
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="2_oxig5"]
+[ext_resource type="AudioStream" uid="uid://y2y06gu3n6xs" path="res://Audio/SFX/LabraRat.mp3" id="4_ddmiq"]
 
 [sub_resource type="Gradient" id="Gradient_burp6"]
 offsets = PackedFloat32Array(0, 0.011278195, 0.7593985)
@@ -113,6 +114,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [0.0]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("LabratVoiceSFX:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_jl0je"]
 resource_name = "Start"
@@ -213,6 +226,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [0.0, 1.0, 1.0]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("LabratVoiceSFX:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(5, 8.5, 15.5, 25.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oxig5"]
 _data = {
@@ -231,7 +256,7 @@ script = ExtResource("1_oxig5")
 _dialogArray = PackedStringArray("Tervetuloa nr. 0067!", "Welecome nr. 0067!")
 _dialogArray2 = PackedStringArray("Tehtävänäsi on löytää ulos labyrintistä. Tapoja on useita.", "Your mission is to find your way out of the labyrinth. There are several ways.")
 _dialogArray3 = PackedStringArray("Voit joko etsiä reitin ulos, porata itsesi ulos tai palkata Muskratin tekemään sen.", "You can either find a way out, drill yourself out, or hire Muskrat to do it.")
-_dialogArray4 = PackedStringArray("Onnea matkaan!", "I wish you luck!")
+_dialogArray4 = PackedStringArray("Onnea matkaan... ja varo ansoja!", "I wish you luck... and beware of traps!")
 _dialogLabel = NodePath("LabraRotta/DialogLabel")
 _dialogLabel2 = NodePath("LabraRotta/DialogLabel2")
 _dialogLabel3 = NodePath("LabraRotta/DialogLabel3")
@@ -257,11 +282,11 @@ texture = SubResource("GradientTexture2D_ddmiq")
 
 [node name="LabraRotta" type="Control" parent="." unique_id=233994596]
 layout_mode = 1
-anchor_top = 0.39100003
-anchor_right = 0.634
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -750.7201
-offset_right = 395.27997
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Labrarotta" type="TextureRect" parent="LabraRotta" unique_id=1532334882]
 layout_mode = 1
@@ -272,8 +297,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -540.0
 offset_top = 78.0
-offset_right = 1684.4985
-offset_bottom = 2599.9563
+offset_right = 1769.2058
+offset_bottom = 2695.9907
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.2715219, 0.27152187)
@@ -282,14 +307,17 @@ texture = ExtResource("1_jl0je")
 [node name="DialogLabel" type="Label" parent="LabraRotta" unique_id=761083196]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.374
-offset_left = 283.0
-offset_top = 319.0
-offset_right = -297.0
-offset_bottom = 0.9199829
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -684.0
+offset_right = 243.0
+offset_bottom = -184.0
 grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_oxig5")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -299,72 +327,77 @@ theme_override_constants/shadow_outline_size = 2
 text = "Terve...
 Kukas sinä olet?"
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="DialogLabel2" type="Label" parent="LabraRotta" unique_id=1114741973]
 modulate = Color(1, 1, 1, 0.059999466)
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.374
-offset_left = 283.0
-offset_top = 319.0
-offset_right = -297.0
-offset_bottom = 0.9199829
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -684.0
+offset_right = 243.0
+offset_bottom = -184.0
 grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_oxig5")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 3
 text = "Tehtävänäsi on löytää ulos labyrintistä. Tapoja on useita."
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="DialogLabel3" type="Label" parent="LabraRotta" unique_id=1934878929]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.374
-offset_left = 283.0
-offset_top = 319.0
-offset_right = -297.0
-offset_bottom = 0.9199829
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -684.0
+offset_right = 243.0
+offset_bottom = -184.0
 grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_oxig5")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 3
 text = "Voit joko etsiä reitin ulos, porata itsesi ulos tai palkata Muskratin tekemään sen."
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="DialogLabel4" type="Label" parent="LabraRotta" unique_id=348767170]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.374
-offset_left = 283.0
-offset_top = 319.0
-offset_right = -297.0
-offset_bottom = 0.9199829
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -684.0
+offset_right = 243.0
+offset_bottom = -184.0
 grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_oxig5")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 3
 text = "Onnea"
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="CommonLight" type="PointLight2D" parent="." unique_id=825717754]
 position = Vector2(539, 628)
@@ -379,3 +412,7 @@ color = Color(0.07683582, 0.07683582, 0.07683582, 1)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=343221281]
 libraries/ = SubResource("AnimationLibrary_oxig5")
 autoplay = &"Start"
+
+[node name="LabratVoiceSFX" type="AudioStreamPlayer2D" parent="." unique_id=1092486830]
+stream = ExtResource("4_ddmiq")
+pitch_scale = 2.0

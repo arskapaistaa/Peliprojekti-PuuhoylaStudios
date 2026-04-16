@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://1ck2rw23skm7" path="res://Scenes/mouse.tscn" id="2_acspe"]
 [ext_resource type="PackedScene" uid="uid://84ar5dqmbht4" path="res://Scenes/Objects/cheese.tscn" id="3_16f24"]
 [ext_resource type="PackedScene" uid="uid://rf85et4ym5tv" path="res://Scenes/Objects/drill.tscn" id="4_fg7yv"]
-[ext_resource type="Script" uid="uid://bi8u2xtap61um" path="res://Scripts/SettingsManager.cs" id="5_8rmvd"]
 [ext_resource type="PackedScene" uid="uid://i1fnrld18ulw" path="res://Scenes/Managers/game_manager.tscn" id="5_j0wll"]
 [ext_resource type="Script" uid="uid://ctlleouhimdnx" path="res://Scripts/Exit.cs" id="7_m74ok"]
 [ext_resource type="Script" uid="uid://dypfsjao3kncs" path="res://Scripts/AudioManager.cs" id="7_use57"]
@@ -693,6 +692,12 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fg7yv"]
 size = Vector2(150, 64)
 
+[sub_resource type="Curve2D" id="Curve2D_use57"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -125, 0, 0, 0, 0, -150, -125, 0, 0, 0, 0, -150, -140)
+}
+point_count = 4
+
 [sub_resource type="Animation" id="Animation_16f24"]
 resource_name = "FadeIn"
 length = 2.0
@@ -747,28 +752,7 @@ _data = {
 &"RESET": SubResource("Animation_m74ok")
 }
 
-[sub_resource type="Curve2D" id="Curve2D_use57"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -125, 0, 0, 0, 0, -150, -125, 0, 0, 0, 0, -150, -140)
-}
-point_count = 4
-
 [node name="World" type="Node2D" unique_id=71007616]
-
-[node name="Control" type="Control" parent="." unique_id=338017573]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TouchControls" parent="Control" unique_id=400990887 instance=ExtResource("1_6hmk7")]
-
-[node name="Mouse" parent="." unique_id=557865975 instance=ExtResource("2_acspe")]
-z_index = 2
-
-[node name="Environment" type="Node" parent="." unique_id=2055302965]
 
 [node name="Objects" type="Node" parent="." unique_id=1499062993]
 
@@ -846,7 +830,6 @@ position = Vector2(-987, 1470)
 position = Vector2(-600, 1466)
 
 [node name="Managers" type="Node" parent="." unique_id=1022473391]
-script = ExtResource("5_8rmvd")
 
 [node name="GameManager" parent="Managers" unique_id=1156478741 node_paths=PackedStringArray("counters") instance=ExtResource("5_j0wll")]
 counters = NodePath("../../Counters")
@@ -854,6 +837,8 @@ counters = NodePath("../../Counters")
 [node name="AudioManager" type="Node" parent="Managers" unique_id=212365034 node_paths=PackedStringArray("_waterDropsSFX")]
 script = ExtResource("7_use57")
 _waterDropsSFX = NodePath("../../Audios/WaterdropsSFX")
+
+[node name="Counters" parent="." unique_id=74711613 instance=ExtResource("12_8rmvd")]
 
 [node name="Maze" type="Node2D" parent="." unique_id=2137428445]
 position = Vector2(0, -166)
@@ -1012,9 +997,6 @@ autoplay = "default"
 frame = 2
 frame_progress = 0.70979655
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
-color = Color(0.09329758, 0.10229925, 0.2502737, 1)
-
 [node name="Exit" type="Area2D" parent="." unique_id=154487 node_paths=PackedStringArray("_animations")]
 position = Vector2(1127, 1457)
 collision_layer = 8
@@ -1042,12 +1024,6 @@ _animations = NodePath("../AnimationPlayer")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitRock" unique_id=1259531565]
 position = Vector2(-2, 8)
 shape = SubResource("RectangleShape2D_fg7yv")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1696038060]
-libraries/ = SubResource("AnimationLibrary_j0wll")
-autoplay = &"FadeIn"
-
-[node name="Counters" parent="." unique_id=74711613 instance=ExtResource("12_8rmvd")]
 
 [node name="Audios" type="Node2D" parent="." unique_id=1393321954]
 
@@ -1087,3 +1063,15 @@ rotation = 1.5707964
 [node name="Mousetrap3" parent="Mousetraps" unique_id=1632290014 instance=ExtResource("20_2ngyf")]
 position = Vector2(63, 873)
 rotation = 1.5707964
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
+color = Color(0.09329758, 0.10229925, 0.2502737, 1)
+
+[node name="TouchControls" parent="." unique_id=400990887 instance=ExtResource("1_6hmk7")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1696038060]
+libraries/ = SubResource("AnimationLibrary_j0wll")
+autoplay = &"FadeIn"
+
+[node name="Mouse" parent="." unique_id=557865975 instance=ExtResource("2_acspe")]
+z_index = 2

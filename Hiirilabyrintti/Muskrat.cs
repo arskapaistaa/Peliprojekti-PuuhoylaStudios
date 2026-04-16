@@ -40,8 +40,17 @@ public partial class Muskrat : CharacterBody2D
 
 		if (GameManager.Instance.CheeseScore >= _hireCost)
 		{
+			if (SettingsManager.Instance.Language == 0)
+			{
+				_dialogueLabel.Text = "Kiitoksia juustosta!\nSeuraa minua..";
+			}
+			else
+			{
+				_dialogueLabel.Text = "Thank you for the cheese!\nI'll help you get out of here.";
+			}
+
 			GameManager.Instance.RemoveCheese(_hireCost);
-			_dialogueLabel.Text = "Thank you for the cheese!\nI'll help you get out of here.";
+
 			_hireButton.Visible = false;
 
 			_isHired = true;
@@ -62,12 +71,14 @@ public partial class Muskrat : CharacterBody2D
 			if (GameManager.Instance.CheeseScore >= _hireCost)
 			{
 				if (SettingsManager.Instance.Language == 0) {
-					_dialogueLabel.Text = " Jos annat mulle vähä juusota,\nniin autan sut pihalle täältä.";
+					_dialogueLabel.Text = " Jos annat mulle vähä juustoa,\nniin autan sut pihalle täältä.";
+					_hireButton.Text = "Palkkaa";
 					_hireButton.Visible = true;
 				}
 				else
 				{
 					_dialogueLabel.Text = " If you give me some cheese,\nI can help you get out of here.";
+					_hireButton.Text = "Hire";
 					_hireButton.Visible = true;
 				}
 
@@ -77,14 +88,11 @@ public partial class Muskrat : CharacterBody2D
 				if (SettingsManager.Instance.Language == 0)
 				{
 					_dialogueLabel.Text = $"Tarvitset vähintään\n{_hireCost} juustoa palkataksesi minut.";
-
-					_hireButton.Text = "Palkkaa";
 					_hireButton.Visible = false;
 				}
 				else
 				{
 					_dialogueLabel.Text = $"You need at least\n{_hireCost} cheese to hire me.";
-					_hireButton.Text = "Hire";
 					_hireButton.Visible = false;
 				}
 			}

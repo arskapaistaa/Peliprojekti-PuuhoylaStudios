@@ -19,6 +19,8 @@ public partial class Mouse : CharacterBody2D
     [Export] private AnimatedSprite2D _drill;
     [Export] private string[] _yesButtonArray = {};
     [Export] private string[] _noButtonArray = {};
+    [Export] private Label _drillPromptLabel = null;
+    [Export] private string[] _drillPrompArray = {};
     [Export] private AudioStreamPlayer2D _walkSFX = null;
 
     private int neededToBuildDrill = GameManager.Instance._neededToBuildDrill;
@@ -35,6 +37,7 @@ public partial class Mouse : CharacterBody2D
 
         DrillPrompt.Visible = false;
         _drill.Visible = false;
+
     }
 
     public override void _PhysicsProcess(double delta)
@@ -87,6 +90,8 @@ public partial class Mouse : CharacterBody2D
     {
         YesButton.Text = _yesButtonArray[SettingsManager.Instance.Language];
         NoButton.Text = _noButtonArray[SettingsManager.Instance.Language];
+        _drillPromptLabel.Text = _drillPrompArray[SettingsManager.Instance.Language];
+
         GameManager.Instance.MouseCanMove = false;
         DrillPrompt.Visible = true;
     }

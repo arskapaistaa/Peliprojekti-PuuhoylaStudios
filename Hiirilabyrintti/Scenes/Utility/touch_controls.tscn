@@ -43,16 +43,15 @@ _data = {
 
 [node name="VirtualJoystick" type="Control" parent="." unique_id=256702228]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1656.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Joystick" parent="VirtualJoystick" unique_id=1618852996 instance=ExtResource("2_lkv6t")]
-position = Vector2(0, 675)
+position = Vector2(544.37, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=296993127]
 libraries/ = SubResource("AnimationLibrary_g8jhs")

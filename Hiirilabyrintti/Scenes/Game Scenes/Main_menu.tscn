@@ -379,7 +379,7 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id="Animation_wayvo"]
 resource_name = "Start"
-length = 5.0
+length = 4.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -423,7 +423,7 @@ tracks/3/path = NodePath("PlayButton:modulate:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(3.5, 5),
+"times": PackedFloat32Array(3.5, 4.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -557,25 +557,26 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="Credits" unique_id=1208456725]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.51203704
-anchor_bottom = 0.30885416
-offset_left = 69.0
-offset_top = 233.0
-offset_right = 484.0
-offset_bottom = 360.0
+anchor_left = 0.28800002
+anchor_top = 0.215
+anchor_right = 0.28800002
+anchor_bottom = 0.215
+offset_left = -242.04001
+offset_top = -179.80002
+offset_right = 725.95996
+offset_bottom = 540.19995
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_n77w2")
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Credits" unique_id=1553250807]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.525
-anchor_top = 0.0125
-anchor_right = 1.0
+anchor_top = 0.038020834
+anchor_right = 0.94166666
 anchor_bottom = 0.359375
-offset_top = 49.0
-offset_right = -63.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "PROGRAMMERS
@@ -595,78 +596,85 @@ metadata/_edit_use_anchors_ = true
 [node name="Label2" type="Label" parent="Credits" unique_id=2140409924]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.46800002
-anchor_right = 0.47200003
-anchor_bottom = 0.532
-offset_left = 50.0
-offset_top = 126.43994
-offset_right = 0.23995972
-offset_bottom = 124.56
+anchor_left = 0.046296295
+anchor_top = 0.5338542
+anchor_right = 0.4722222
+anchor_bottom = 0.596875
 grow_vertical = 2
 text = " TEAM AND COACHING
 Outi Tuisku"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="Credits" unique_id=810158143]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.528
-anchor_top = 0.46800002
-anchor_right = 1.0
-anchor_bottom = 0.532
-offset_left = -0.23999023
-offset_top = 126.43994
-offset_right = -50.0
-offset_bottom = 124.56
+anchor_left = 0.5277778
+anchor_top = 0.5338542
+anchor_right = 0.9537037
+anchor_bottom = 0.596875
 grow_horizontal = 0
 grow_vertical = 2
 text = "GAME PROGRAMMING
 Sami Kojo"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="Credits" unique_id=1814337738]
-layout_mode = 0
-offset_left = 70.0
-offset_top = 1148.0
-offset_right = 1038.0
-offset_bottom = 2094.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27048147
+anchor_top = 0.71995836
+anchor_right = 0.27048147
+anchor_bottom = 0.71995836
+offset_left = -242.12
+offset_top = -236.32007
+offset_right = 725.88
+offset_bottom = 709.67993
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_bbix3")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect3" type="TextureRect" parent="Credits" unique_id=1804065083]
-layout_mode = 0
-offset_left = 556.0
-offset_top = 1195.0
-offset_right = 3077.0
-offset_bottom = 3069.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.748
+anchor_top = 0.72
+anchor_right = 0.748
+anchor_bottom = 0.72
+offset_left = -251.84003
+offset_top = -187.40002
+offset_right = 2269.16
+offset_bottom = 1686.6
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("12_0yo5u")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect4" type="TextureRect" parent="Credits" unique_id=467775517]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.36600003
-anchor_right = 1.0
-anchor_bottom = 0.51000005
-offset_left = 187.5
-offset_top = 0.27996826
-offset_right = -187.5
-offset_bottom = 0.79992676
+anchor_left = 0.5
+anchor_top = 0.43800002
+anchor_right = 0.5
+anchor_bottom = 0.43800002
+offset_left = -352.5
+offset_top = -137.96002
+offset_right = 352.5
+offset_bottom = 139.03998
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_de22f")
+metadata/_edit_use_anchors_ = true
 
 [node name="Settings menu" type="Control" parent="." unique_id=1750706813 node_paths=PackedStringArray("_volumeButton", "_musicButton", "_languageButton", "_creditsButton", "_buttonDownSFX")]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -1920.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 script = ExtResource("4_47lb5")
 _volumeButton = NodePath("VolumeButton")
 _musicButton = NodePath("MusicButton")
@@ -677,13 +685,10 @@ _buttonDownSFX = NodePath("../ButtonDownSFX")
 [node name="VolumeButton" type="Button" parent="Settings menu" unique_id=1489572143]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.025999987
-anchor_top = 0.684375
-anchor_right = 1.0
-anchor_bottom = 0.7894792
-offset_left = 412.92
-offset_right = -459.0
-offset_bottom = -21.800049
+anchor_left = 0.42037037
+anchor_top = 0.7421875
+anchor_right = 0.587037
+anchor_bottom = 0.8359375
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
@@ -696,16 +701,13 @@ metadata/_edit_use_anchors_ = true
 [node name="LanguageButton" type="Button" parent="Settings menu" unique_id=1666601113]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.68385416
-anchor_right = 0.29166666
-anchor_bottom = 0.77747923
-offset_left = 141.0
-offset_right = 6.0
-offset_bottom = 0.23986816
+anchor_left = 0.12870371
+anchor_top = 0.7416667
+anchor_right = 0.29537037
+anchor_bottom = 0.8354167
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
-disabled = true
 action_mode = 0
 text = "
 "
@@ -716,16 +718,13 @@ metadata/_edit_use_anchors_ = true
 [node name="MusicButton" type="Button" parent="Settings menu" unique_id=1590830218]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.68333334
-anchor_top = 0.684375
-anchor_right = 1.0
-anchor_bottom = 0.7784792
-offset_right = -162.0
-offset_bottom = -0.6800537
+anchor_left = 0.712037
+anchor_top = 0.7421875
+anchor_right = 0.8787037
+anchor_bottom = 0.8359375
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
-disabled = true
 toggle_mode = true
 action_mode = 0
 text = "
@@ -738,9 +737,9 @@ metadata/_edit_use_anchors_ = true
 material = SubResource("CanvasItemMaterial_4t1h1")
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.50100005
+anchor_left = 0.513037
 anchor_top = 0.1
-anchor_right = 0.50100005
+anchor_right = 0.5130371
 anchor_bottom = 0.1
 offset_left = -437.08008
 offset_top = -72.83608
@@ -757,13 +756,10 @@ script = ExtResource("9_wayvo")
 [node name="CreditsButton" type="Button" parent="." unique_id=312550016]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 390.0
-offset_top = -276.0
-offset_right = -390.0
-offset_bottom = -146.0
+anchor_left = 0.36481482
+anchor_top = 0.89427084
+anchor_right = 0.6425926
+anchor_bottom = 0.96197915
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
@@ -775,10 +771,14 @@ metadata/_edit_use_anchors_ = true
 [node name="PlayButton" type="Button" parent="." unique_id=576446134]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.37037036
-anchor_top = 0.28697917
-anchor_right = 0.6666667
-anchor_bottom = 0.49825862
+anchor_left = 0.50437045
+anchor_top = 0.41400003
+anchor_right = 0.50437045
+anchor_bottom = 0.41400003
+offset_left = -159.72003
+offset_top = -201.88007
+offset_right = 160.27997
+offset_bottom = 203.77649
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
