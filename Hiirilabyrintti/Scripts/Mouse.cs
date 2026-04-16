@@ -42,6 +42,10 @@ public partial class Mouse : CharacterBody2D
         {
             speed = 0f;
         }
+        else if (IsOnWall())
+        {
+            speed = _slowedSpeed;
+        }
         else
         {
             speed = 160f;
@@ -52,7 +56,6 @@ public partial class Mouse : CharacterBody2D
             Input.GetActionStrength("ui_down") - Input.GetActionStrength("ui_up"));
 
         Velocity = inputDirection * speed;
-        MoveAndSlide();
 
         if (Velocity.Length() > 0)
         {
@@ -76,14 +79,7 @@ public partial class Mouse : CharacterBody2D
         }
         wasOnWall = isOnWall;
 
-        if (IsOnWall())
-        {
-            speed = _slowedSpeed;
-        }
-        else if (!IsOnWall() && GameManager.Instance.MouseCanMove)
-        {
-            speed = 160.0f;
-        }
+        MoveAndSlide();
     }
 
     private void ShowDrillPrompt()
