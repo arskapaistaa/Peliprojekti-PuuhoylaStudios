@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Hiirilabyrintti"
-run/main_scene="uid://bqltr75osi442"
+run/main_scene="uid://bhf8bs8vv0rup"
 config/features=PackedStringArray("4.6", "C#", "Mobile")
 config/icon="res://icon.svg"
 
@@ -28,11 +28,9 @@ SettingsManager="*uid://bi8u2xtap61um"
 
 window/size/viewport_width=1080
 window/size/viewport_height=1920
-window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-window/stretch/scale_mode="integer"
 window/handheld/orientation=1
 window/vsync/vsync_mode=0
 

@@ -527,6 +527,7 @@ _buttonDownSFX = NodePath("ButtonDownSFX")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=251821347]
 libraries/ = SubResource("AnimationLibrary_hwbvm")
+autoplay = &"Start"
 
 [node name="Background" type="Control" parent="." unique_id=1530144867]
 layout_mode = 1
@@ -597,9 +598,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.046296295
-anchor_top = 0.5338542
-anchor_right = 0.4722222
-anchor_bottom = 0.596875
+anchor_top = 0.56666666
+anchor_right = 0.47962964
+anchor_bottom = 0.63072914
 grow_vertical = 2
 text = " TEAM AND COACHING
 Outi Tuisku"
@@ -610,10 +611,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Label3" type="Label" parent="Credits" unique_id=810158143]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5277778
-anchor_top = 0.5338542
+anchor_left = 0.5212963
+anchor_top = 0.56666666
 anchor_right = 0.9537037
-anchor_bottom = 0.596875
+anchor_bottom = 0.63072914
 grow_horizontal = 0
 grow_vertical = 2
 text = "GAME PROGRAMMING
@@ -626,9 +627,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.27048147
-anchor_top = 0.71995836
+anchor_top = 0.7532917
 anchor_right = 0.27048147
-anchor_bottom = 0.71995836
+anchor_bottom = 0.7532917
 offset_left = -242.12
 offset_top = -236.32007
 offset_right = 725.88
@@ -641,9 +642,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.748
-anchor_top = 0.72
-anchor_right = 0.748
-anchor_bottom = 0.72
+anchor_top = 0.75333333
+anchor_right = 0.7480001
+anchor_bottom = 0.75333333
 offset_left = -251.84003
 offset_top = -187.40002
 offset_right = 2269.16
@@ -655,10 +656,10 @@ metadata/_edit_use_anchors_ = true
 [node name="TextureRect4" type="TextureRect" parent="Credits" unique_id=467775517]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.43800002
-anchor_right = 0.5
-anchor_bottom = 0.43800002
+anchor_left = 0.50046295
+anchor_top = 0.4671667
+anchor_right = 0.50046295
+anchor_bottom = 0.4671667
 offset_left = -352.5
 offset_top = -137.96002
 offset_right = 352.5
