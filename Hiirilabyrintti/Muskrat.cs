@@ -8,7 +8,6 @@ public partial class Muskrat : CharacterBody2D
 	[Export] private Label _dialogueLabel;
 	[Export] private Button _hireButton;
 	[Export] public AnimatedSprite2D _drillSprite;
-
 	public bool _isHired = false;
 	private bool wasJustHired = false;
 

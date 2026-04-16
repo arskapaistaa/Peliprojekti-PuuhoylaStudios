@@ -395,6 +395,7 @@ offset_left = 138.0
 offset_top = -65.12899
 offset_right = -129.32507
 offset_bottom = -64.938
+theme = ExtResource("6_uwmpi")
 
 [node name="Label" type="Label" parent="CanvasLayer/DrillPrompt/Panel" unique_id=565187184]
 layout_mode = 1

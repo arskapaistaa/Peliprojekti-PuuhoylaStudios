@@ -218,6 +218,7 @@ offset_right = 360.0
 offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_brjug")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Canvas/Control" unique_id=69572931]

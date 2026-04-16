@@ -600,7 +600,6 @@ script = ExtResource("5_xqcer")
 
 [node name="GameManager" parent="Managers" unique_id=1156478741 node_paths=PackedStringArray("counters") instance=ExtResource("6_wp52m")]
 counters = NodePath("../../Counters")
-_neededToBuildDrill = 3
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
 color = Color(0.032208487, 0.15301698, 0.08084742, 1)
@@ -707,7 +706,6 @@ loop = false
 [node name="Muskrat" parent="PathFollower/Path2D/PathFollow2D" unique_id=614056375 instance=ExtResource("14_dohcd")]
 z_index = 1
 rotation = 1.5707964
-_hireCost = 1
 
 [node name="Mousetraps" type="Node" parent="PathFollower/Path2D/PathFollow2D" unique_id=762640704]
 

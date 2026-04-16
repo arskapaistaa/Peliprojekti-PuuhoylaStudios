@@ -4,3 +4,4 @@
 
 [node name="GameManager" type="Node" unique_id=281904268]
 script = ExtResource("1_fsqmu")
+_neededToBuildDrill = 3

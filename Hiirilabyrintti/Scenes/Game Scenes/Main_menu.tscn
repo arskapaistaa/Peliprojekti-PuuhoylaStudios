@@ -660,11 +660,13 @@ texture = ExtResource("13_de22f")
 
 [node name="Settings menu" type="Control" parent="." unique_id=1750706813 node_paths=PackedStringArray("_volumeButton", "_musicButton", "_languageButton", "_creditsButton", "_buttonDownSFX")]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -1920.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 script = ExtResource("4_47lb5")
 _volumeButton = NodePath("VolumeButton")
 _musicButton = NodePath("MusicButton")
@@ -736,15 +738,18 @@ metadata/_edit_use_anchors_ = true
 material = SubResource("CanvasItemMaterial_4t1h1")
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.133
-offset_left = 104.0
-offset_top = 119.16392
-offset_right = 272.0
-offset_bottom = 71.80391
+anchor_left = 0.50100005
+anchor_top = 0.1
+anchor_right = 0.50100005
+anchor_bottom = 0.1
+offset_left = -437.08008
+offset_top = -72.83608
+offset_right = 810.9199
+offset_bottom = 135.16391
 grow_horizontal = 2
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("8_fh073")
+metadata/_edit_use_anchors_ = true
 
 [node name="SettingsManager" type="Node" parent="." unique_id=327568711]
 script = ExtResource("9_wayvo")
@@ -752,12 +757,13 @@ script = ExtResource("9_wayvo")
 [node name="CreditsButton" type="Button" parent="." unique_id=312550016]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.85625
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.924
+anchor_bottom = 1.0
 offset_left = 390.0
+offset_top = -276.0
 offset_right = -390.0
-offset_bottom = -0.080078125
+offset_bottom = -146.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
@@ -769,13 +775,10 @@ metadata/_edit_use_anchors_ = true
 [node name="PlayButton" type="Button" parent="." unique_id=576446134]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.287
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 400.0
-offset_top = -0.039978027
-offset_right = -360.0
-offset_bottom = -3.3434448
+anchor_left = 0.37037036
+anchor_top = 0.28697917
+anchor_right = 0.6666667
+anchor_bottom = 0.49825862
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
@@ -784,6 +787,7 @@ icon = ExtResource("3_8l1vk")
 flat = true
 icon_alignment = 1
 expand_icon = true
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonDownSFX" parent="." unique_id=919058289 instance=ExtResource("14_0yo5u")]
 
