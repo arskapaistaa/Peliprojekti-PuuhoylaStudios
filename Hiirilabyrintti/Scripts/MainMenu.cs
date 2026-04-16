@@ -12,8 +12,6 @@ public partial class MainMenu : Node
 
 	public override void _Ready()
 	{
-		_animations.Play("Start");
-
 		_playButton.Disabled = false;
 
 		// Connect pressed signal to method.
