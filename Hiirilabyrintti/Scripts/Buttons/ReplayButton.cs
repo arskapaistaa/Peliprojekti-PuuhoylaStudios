@@ -16,6 +16,7 @@ public partial class ReplayButton : Button
 		GetTree().CallDeferred("change_scene_to_file", "res://Scenes/Game Scenes/IntroScene.tscn");
 
 		// Reset everything
+		GameManager.Instance._hasDrill = false;
 		GameManager.Instance.CheeseScore = 0;
 		GameManager.Instance.DrillScore = 0;
 		GameManager.Instance.EtsijaScore = 0;

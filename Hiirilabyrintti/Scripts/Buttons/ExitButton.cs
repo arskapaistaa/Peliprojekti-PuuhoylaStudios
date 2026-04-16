@@ -15,6 +15,7 @@ public partial class ExitButton : Button
 
     public void ButtonPressed()
 	{
+		GameManager.Instance._hasDrill = false;
 		GameManager.Instance.CheeseScore = 0;
 		GameManager.Instance.DrillScore = 0;
 		GameManager.Instance.EtsijaScore = 0;
