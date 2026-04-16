@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dttjdvobha4tu" path="res://Sprites/MUUSA logo neliö iso.png" id="12_0yo5u"]
 [ext_resource type="Texture2D" uid="uid://bcd4nudpj7dxb" path="res://Sprites/tiko-logo-en.png" id="13_de22f"]
 [ext_resource type="PackedScene" uid="uid://il5r6o7medad" path="res://Scenes/Audio/button_down_sfx.tscn" id="14_0yo5u"]
-[ext_resource type="AudioStream" uid="uid://ox7tw7hwlicr" path="res://Audio/SFX/Button1.mp3" id="14_bbix3"]
+[ext_resource type="AudioStream" uid="uid://1vl8jyabuiia" path="res://Audio/SFX/Button2.mp3" id="15_0yo5u"]
 
 [sub_resource type="Animation" id="Animation_r4jmg"]
 resource_name = "Credits"
@@ -788,4 +788,4 @@ expand_icon = true
 [node name="ButtonDownSFX" parent="." unique_id=919058289 instance=ExtResource("14_0yo5u")]
 
 [node name="ButtonUpSFX" type="AudioStreamPlayer2D" parent="." unique_id=1984113893]
-stream = ExtResource("14_bbix3")
+stream = ExtResource("15_0yo5u")

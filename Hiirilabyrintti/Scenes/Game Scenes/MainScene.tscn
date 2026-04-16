@@ -850,6 +850,7 @@ script = ExtResource("5_8rmvd")
 
 [node name="GameManager" parent="Managers" unique_id=1156478741 node_paths=PackedStringArray("counters") instance=ExtResource("5_j0wll")]
 counters = NodePath("../../Counters")
+_neededToBuildDrill = 3
 
 [node name="AudioManager" type="Node" parent="Managers" unique_id=212365034 node_paths=PackedStringArray("_waterDropsSFX")]
 script = ExtResource("7_use57")
@@ -1074,5 +1075,16 @@ loop = false
 z_index = 1
 rotation = 1.5707964
 
-[node name="Mousetrap" parent="." unique_id=2138317421 instance=ExtResource("20_2ngyf")]
-position = Vector2(92, -5)
+[node name="Mousetraps" type="Node" parent="." unique_id=1385367327]
+
+[node name="Mousetrap" parent="Mousetraps" unique_id=2138317421 instance=ExtResource("20_2ngyf")]
+position = Vector2(-706, 333)
+rotation = 1.5707964
+
+[node name="Mousetrap2" parent="Mousetraps" unique_id=202277706 instance=ExtResource("20_2ngyf")]
+position = Vector2(315, 203)
+rotation = 1.5707964
+
+[node name="Mousetrap3" parent="Mousetraps" unique_id=1632290014 instance=ExtResource("20_2ngyf")]
+position = Vector2(63, 873)
+rotation = 1.5707964

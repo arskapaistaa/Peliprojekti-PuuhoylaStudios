@@ -6,6 +6,7 @@ public partial class Mousetrap : Area2D
 {
 
 	[Export] private AnimatedSprite2D _mouseTrap;
+	[Export] private AudioStreamPlayer2D _mouseTrapSFX = null;
 	bool _isActive = true;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -28,6 +29,11 @@ public partial class Mousetrap : Area2D
 			GameManager.Instance.RemoveCheese(3);
 			_mouseTrap.Play("default");
 			_isActive = false;
+
+			if (SettingsManager.Instance.Volume)
+			{
+				_mouseTrapSFX.Play();
+			}
 		}
 	}
 

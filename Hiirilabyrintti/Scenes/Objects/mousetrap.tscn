@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b863fbcmfqa3s" path="res://Sprites/loukku.png" id="1_goqyi"]
 [ext_resource type="Script" uid="uid://dqvasvxqb8s0d" path="res://Scripts/Mousetrap.cs" id="1_ug2qn"]
+[ext_resource type="AudioStream" uid="uid://cviesgek3g6wf" path="res://Audio/SFX/Trap.mp3" id="3_neqh7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ug2qn"]
 atlas = ExtResource("1_goqyi")
@@ -35,13 +36,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umikl"]
 size = Vector2(26, 44)
 
-[node name="Mousetrap" type="Area2D" unique_id=2138317421 node_paths=PackedStringArray("_mouseTrap")]
+[node name="Mousetrap" type="Area2D" unique_id=2138317421 node_paths=PackedStringArray("_mouseTrap", "_mouseTrapSFX")]
 collision_mask = 3
 script = ExtResource("1_ug2qn")
 _mouseTrap = NodePath("AnimatedSprite2D")
+_mouseTrapSFX = NodePath("TrapSound")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1871088280]
 sprite_frames = SubResource("SpriteFrames_mgenj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=626346095]
 shape = SubResource("RectangleShape2D_umikl")
+
+[node name="TrapSound" type="AudioStreamPlayer2D" parent="." unique_id=1084308127]
+stream = ExtResource("3_neqh7")
+volume_db = -10.0
