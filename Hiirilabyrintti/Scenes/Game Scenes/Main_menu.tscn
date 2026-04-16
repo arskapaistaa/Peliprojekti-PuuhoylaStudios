@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bqf1nyehc4gak" path="res://Sprites/FI_co-funded by VERTICAL RGB_POS.png" id="11_bbix3"]
 [ext_resource type="Texture2D" uid="uid://dttjdvobha4tu" path="res://Sprites/MUUSA logo neliö iso.png" id="12_0yo5u"]
 [ext_resource type="Texture2D" uid="uid://bcd4nudpj7dxb" path="res://Sprites/tiko-logo-en.png" id="13_de22f"]
+[ext_resource type="PackedScene" uid="uid://il5r6o7medad" path="res://Scenes/Audio/button_down_sfx.tscn" id="14_0yo5u"]
+[ext_resource type="AudioStream" uid="uid://1vl8jyabuiia" path="res://Audio/SFX/Button2.mp3" id="15_0yo5u"]
 
 [sub_resource type="Animation" id="Animation_r4jmg"]
 resource_name = "Credits"
@@ -510,7 +512,7 @@ fill_to = Vector2(1, 1)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4t1h1"]
 
-[node name="MainMenu" type="Control" unique_id=1849334859 node_paths=PackedStringArray("_playButton", "_creditsButton", "_animations")]
+[node name="MainMenu" type="Control" unique_id=1849334859 node_paths=PackedStringArray("_playButton", "_creditsButton", "_animations", "_buttonDownSFX")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -521,6 +523,7 @@ script = ExtResource("1_rsx4f")
 _playButton = NodePath("PlayButton")
 _creditsButton = NodePath("CreditsButton")
 _animations = NodePath("AnimationPlayer")
+_buttonDownSFX = NodePath("ButtonDownSFX")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=251821347]
 libraries/ = SubResource("AnimationLibrary_hwbvm")
@@ -655,7 +658,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_de22f")
 
-[node name="Settings menu" type="Control" parent="." unique_id=1750706813 node_paths=PackedStringArray("_volumeButton", "_musicButton", "_languageButton", "_creditsButton")]
+[node name="Settings menu" type="Control" parent="." unique_id=1750706813 node_paths=PackedStringArray("_volumeButton", "_musicButton", "_languageButton", "_creditsButton", "_buttonDownSFX")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -667,6 +670,7 @@ _volumeButton = NodePath("VolumeButton")
 _musicButton = NodePath("MusicButton")
 _languageButton = NodePath("LanguageButton")
 _creditsButton = NodePath("../CreditsButton")
+_buttonDownSFX = NodePath("../ButtonDownSFX")
 
 [node name="VolumeButton" type="Button" parent="Settings menu" unique_id=1489572143]
 layout_mode = 1
@@ -780,3 +784,8 @@ icon = ExtResource("3_8l1vk")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="ButtonDownSFX" parent="." unique_id=919058289 instance=ExtResource("14_0yo5u")]
+
+[node name="ButtonUpSFX" type="AudioStreamPlayer2D" parent="." unique_id=1984113893]
+stream = ExtResource("15_0yo5u")

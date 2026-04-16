@@ -7,7 +7,10 @@ public partial class AudioManager : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		_waterDropsSFX.Playing = SettingsManager.Instance.Volume;
+		if (SettingsManager.Instance.Volume)
+		{
+		_waterDropsSFX.Play();
+		}
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

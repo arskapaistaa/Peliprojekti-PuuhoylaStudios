@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://da7i0guaqq2e3" path="res://Sprites/ants1.png" id="10_uaots"]
 [ext_resource type="Texture2D" uid="uid://djsufwucfqe6u" path="res://Sprites/ants2.png" id="11_1ypfq"]
 [ext_resource type="Texture2D" uid="uid://bkf4vvi5j7s51" path="res://Sprites/tileset-red.png" id="12_si2a0"]
+[ext_resource type="Script" uid="uid://b8chywgava7pr" path="res://Scenes/Game Scenes/PathFollower.cs" id="13_n0f62"]
+[ext_resource type="PackedScene" uid="uid://ddsq208sig6nx" path="res://Scenes/muskrat.tscn" id="13_r7erh"]
+[ext_resource type="PackedScene" uid="uid://qsvjdj57if2u" path="res://Scenes/Objects/mousetrap.tscn" id="15_gcggf"]
 [ext_resource type="Script" uid="uid://ctlleouhimdnx" path="res://Scripts/Exit.cs" id="16_dumgh"]
 [ext_resource type="PackedScene" uid="uid://cggpma0qvjowe" path="res://Scenes/UI/Counters.tscn" id="17_nfdoo"]
 
@@ -495,6 +498,12 @@ _data = {
 &"RESET": SubResource("Animation_m74ok")
 }
 
+[sub_resource type="Curve2D" id="Curve2D_n0f62"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 437, 0, 0, 0, 0, 0, 437, -0.245)
+}
+point_count = 3
+
 [node name="World" type="Node2D" unique_id=71007616]
 
 [node name="Control" type="Control" parent="." unique_id=338017573]
@@ -682,3 +691,34 @@ libraries/ = SubResource("AnimationLibrary_j0wll")
 autoplay = &"FadeIn"
 
 [node name="Counters" parent="." unique_id=74711613 instance=ExtResource("17_nfdoo")]
+
+[node name="PathFollower" type="Node" parent="." unique_id=754616553 node_paths=PackedStringArray("_pathFollow")]
+script = ExtResource("13_n0f62")
+_pathFollow = NodePath("Path2D/PathFollow2D")
+_movementSpeed = 0.6
+_canMove = false
+
+[node name="Path2D" type="Path2D" parent="PathFollower" unique_id=1043087267]
+position = Vector2(-440, -4)
+curve = SubResource("Curve2D_n0f62")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PathFollower/Path2D" unique_id=879459374]
+loop = false
+
+[node name="Muskrat" parent="PathFollower/Path2D/PathFollow2D" unique_id=614056375 instance=ExtResource("13_r7erh")]
+z_index = 1
+rotation = 1.5707964
+_hireCost = 1
+
+[node name="Mousetraps" type="Node" parent="PathFollower" unique_id=970374608]
+
+[node name="Mousetrap" parent="PathFollower/Mousetraps" unique_id=2138317421 instance=ExtResource("15_gcggf")]
+position = Vector2(-733, 330)
+rotation = 1.5707964
+
+[node name="Mousetrap2" parent="PathFollower/Mousetraps" unique_id=615111761 instance=ExtResource("15_gcggf")]
+position = Vector2(792, 14)
+rotation = 1.5707964
+
+[node name="Mousetrap3" parent="PathFollower/Mousetraps" unique_id=608832257 instance=ExtResource("15_gcggf")]
+position = Vector2(-713, 900)

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bj3hkhf816jh7" path="res://Sprites/hiiri-idle.png" id="2_kxv04"]
 [ext_resource type="Script" uid="uid://pn322knpbu86" path="res://Scripts/CameraShake.cs" id="4_2q34x"]
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="6_uwmpi"]
+[ext_resource type="AudioStream" uid="uid://c0kxf77agidqp" path="res://Audio/SFX/Walk.mp3" id="7_ffywo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kxv04"]
 radius = 8.0
@@ -288,7 +289,7 @@ height = 96
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Mouse" type="CharacterBody2D" unique_id=1410733989 node_paths=PackedStringArray("_walkParticles", "_sprite", "_camera", "DrillPrompt", "YesButton", "NoButton", "_drill")]
+[node name="Mouse" type="CharacterBody2D" unique_id=1410733989 node_paths=PackedStringArray("_walkParticles", "_sprite", "_camera", "DrillPrompt", "YesButton", "NoButton", "_drill", "_walkSFX")]
 collision_layer = 2
 collision_mask = 5
 motion_mode = 1
@@ -300,6 +301,7 @@ DrillPrompt = NodePath("CanvasLayer/DrillPrompt")
 YesButton = NodePath("CanvasLayer/DrillPrompt/YesButton")
 NoButton = NodePath("CanvasLayer/DrillPrompt/NoButton")
 _drill = NodePath("DrillSprite")
+_walkSFX = NodePath("WalkSFX")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746396471]
 position = Vector2(0, -12)
@@ -437,3 +439,7 @@ offset_bottom = 0.099990845
 theme = ExtResource("6_uwmpi")
 theme_override_font_sizes/font_size = 55
 text = "No"
+
+[node name="WalkSFX" type="AudioStreamPlayer2D" parent="." unique_id=1010652260]
+stream = ExtResource("7_ffywo")
+bus = &"SFX"

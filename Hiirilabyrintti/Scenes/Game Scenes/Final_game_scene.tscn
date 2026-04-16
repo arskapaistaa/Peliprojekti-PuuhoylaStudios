@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="2_syh1w"]
 [ext_resource type="Script" uid="uid://d1n58s2ogxlyd" path="res://Scripts/Buttons/ReplayButton.cs" id="3_anni1"]
 [ext_resource type="Script" uid="uid://ctlmpnrwvnxfs" path="res://Scripts/Buttons/ExitButton.cs" id="4_yifte"]
+[ext_resource type="PackedScene" uid="uid://il5r6o7medad" path="res://Scenes/Audio/button_down_sfx.tscn" id="5_iuyby"]
 
 [sub_resource type="Gradient" id="Gradient_syh1w"]
 offsets = PackedFloat32Array(0, 0.9511278)
@@ -607,7 +608,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_syh1w")
 
-[node name="RePlay" type="Button" parent="Player" unique_id=1384249196 node_paths=PackedStringArray("_replay")]
+[node name="RePlay" type="Button" parent="Player" unique_id=1384249196 node_paths=PackedStringArray("_replay", "_buttonDownSFX")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.32407406
@@ -626,9 +627,10 @@ text_overrun_behavior = 2
 autowrap_mode = 2
 script = ExtResource("3_anni1")
 _replay = NodePath(".")
+_buttonDownSFX = NodePath("../../ButtonDownSFX")
 metadata/_edit_use_anchors_ = true
 
-[node name="Exit" type="Button" parent="Player" unique_id=68216442 node_paths=PackedStringArray("_exitButton", "_animations")]
+[node name="Exit" type="Button" parent="Player" unique_id=68216442 node_paths=PackedStringArray("_exitButton", "_animations", "_buttonDownSFX")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.32407406
@@ -645,4 +647,7 @@ autowrap_mode = 2
 script = ExtResource("4_yifte")
 _exitButton = NodePath(".")
 _animations = NodePath("../../AnimationPlayer")
+_buttonDownSFX = NodePath("../../ButtonDownSFX")
 metadata/_edit_use_anchors_ = true
+
+[node name="ButtonDownSFX" parent="." unique_id=919058289 instance=ExtResource("5_iuyby")]
