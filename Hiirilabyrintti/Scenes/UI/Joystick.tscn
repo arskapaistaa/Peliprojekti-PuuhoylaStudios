@@ -7,6 +7,7 @@
 
 [node name="Joystick" type="Node2D" unique_id=1618852996]
 modulate = Color(0.36862746, 0.49019608, 0.59607846, 0.7529412)
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_m85la")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=596391768 node_paths=PackedStringArray("_joystickButton")]

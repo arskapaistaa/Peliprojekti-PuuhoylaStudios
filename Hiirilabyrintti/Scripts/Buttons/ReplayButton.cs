@@ -13,7 +13,7 @@ public partial class ReplayButton : Button
 
 	public void ButtonPressed()
 	{
-		GetTree().CallDeferred("change_scene_to_file", "res://Scenes/Game Scenes/MainScene.tscn");
+		GetTree().CallDeferred("change_scene_to_file", "res://Scenes/Game Scenes/IntroScene.tscn");
 
 		// Reset everything
 		GameManager.Instance.CheeseScore = 0;
