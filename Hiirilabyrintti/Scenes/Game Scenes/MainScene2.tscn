@@ -456,6 +456,12 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fg7yv"]
 size = Vector2(150, 64)
 
+[sub_resource type="Curve2D" id="Curve2D_n0f62"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 437, 0, 0, 0, 0, 0, 437, -45)
+}
+point_count = 3
+
 [sub_resource type="Animation" id="Animation_16f24"]
 resource_name = "FadeIn"
 length = 2.0
@@ -470,6 +476,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audios/AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-60.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_j0wll"]
@@ -487,6 +505,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [1.0, 0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audios/AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -60.0]
+}
 
 [sub_resource type="Animation" id="Animation_m74ok"]
 length = 0.001
@@ -502,19 +532,25 @@ tracks/0/keys = {
 "update": 1,
 "values": [1.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audios/AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j0wll"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_md707"]
 _data = {
 &"FadeIn": SubResource("Animation_16f24"),
 &"FadeOut": SubResource("Animation_j0wll"),
 &"RESET": SubResource("Animation_m74ok")
 }
-
-[sub_resource type="Curve2D" id="Curve2D_n0f62"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 437, 0, 0, 0, 0, 0, 437, -0.245)
-}
-point_count = 3
 
 [node name="World" type="Node2D" unique_id=71007616]
 
@@ -675,12 +711,11 @@ texture = SubResource("GradientTexture2D_gcggf")
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
 color = Color(0.26302123, 0.085931234, 0.12963101, 1)
 
-[node name="Exit" type="Area2D" parent="." unique_id=154487 node_paths=PackedStringArray("_animations")]
+[node name="Exit" type="Area2D" parent="." unique_id=154487]
 position = Vector2(-27, 2189)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("16_dumgh")
-_animations = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1871817842]
 position = Vector2(-2, 6)
@@ -691,20 +726,15 @@ scale = Vector2(2.8125005, 2.9062502)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_qatwa")
 
-[node name="ExitRock" type="Area2D" parent="." unique_id=223876225 node_paths=PackedStringArray("_animations")]
+[node name="ExitRock" type="Area2D" parent="." unique_id=223876225]
 position = Vector2(0, -205)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("16_dumgh")
-_animations = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitRock" unique_id=1259531565]
 position = Vector2(-2, 8)
 shape = SubResource("RectangleShape2D_fg7yv")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1696038060]
-libraries/ = SubResource("AnimationLibrary_j0wll")
-autoplay = &"FadeIn"
 
 [node name="Counters" parent="." unique_id=74711613 instance=ExtResource("17_nfdoo")]
 
@@ -719,6 +749,9 @@ position = Vector2(-440, -4)
 curve = SubResource("Curve2D_n0f62")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="PathFollower/Path2D" unique_id=879459374]
+position = Vector2(437, -45)
+rotation = -1.5707964
+progress = 482.0
 loop = false
 
 [node name="Muskrat" parent="PathFollower/Path2D/PathFollow2D" unique_id=614056375 instance=ExtResource("13_r7erh")]
@@ -752,5 +785,8 @@ bus = &"SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audios" unique_id=935099710]
 stream = ExtResource("18_4tkr0")
-volume_db = -0.5999994
 bus = &"Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=626220753]
+libraries/ = SubResource("AnimationLibrary_md707")
+autoplay = &"FadeIn"

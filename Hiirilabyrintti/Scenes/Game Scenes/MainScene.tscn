@@ -745,6 +745,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [1.0, 0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audios/AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -60.0]
+}
 
 [sub_resource type="Animation" id="Animation_m74ok"]
 length = 0.001
@@ -782,7 +794,7 @@ _data = {
 
 [sub_resource type="Curve2D" id="Curve2D_use57"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -125, 0, 0, 0, 0, -150, -125, 0, 0, 0, 0, -150, -140)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -125, 0, 0, 0, 0, -150, -125, 0, 0, 0, 0, -150, -175)
 }
 point_count = 4
 
@@ -1109,7 +1121,9 @@ position = Vector2(157, 125)
 curve = SubResource("Curve2D_use57")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="PathFollower/Path2D" unique_id=102055925]
+position = Vector2(-150, -175)
 rotation = -1.5707964
+progress = 325.0
 loop = false
 
 [node name="Muskrat" parent="PathFollower/Path2D/PathFollow2D" unique_id=614056375 instance=ExtResource("19_rdn1l")]
