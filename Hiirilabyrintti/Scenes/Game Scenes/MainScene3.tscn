@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bi8u2xtap61um" path="res://Scripts/SettingsManager.cs" id="5_xqcer"]
 [ext_resource type="PackedScene" uid="uid://i1fnrld18ulw" path="res://Scenes/Managers/game_manager.tscn" id="6_wp52m"]
 [ext_resource type="PackedScene" uid="uid://dxyrlpqny8xd2" path="res://Scenes/Objects/rock.tscn" id="7_25xdm"]
+[ext_resource type="Script" uid="uid://dypfsjao3kncs" path="res://Scripts/AudioManager.cs" id="7_fsdfm"]
 [ext_resource type="Texture2D" uid="uid://dh43j7qfw8w64" path="res://Sprites/tileset-green.png" id="9_8c0gc"]
 [ext_resource type="Texture2D" uid="uid://da7i0guaqq2e3" path="res://Sprites/ants1.png" id="9_s4pbe"]
 [ext_resource type="Texture2D" uid="uid://djsufwucfqe6u" path="res://Sprites/ants2.png" id="10_246mv"]
@@ -15,6 +16,8 @@
 [ext_resource type="Script" uid="uid://b8chywgava7pr" path="res://Scenes/Game Scenes/PathFollower.cs" id="13_irhtu"]
 [ext_resource type="PackedScene" uid="uid://ddsq208sig6nx" path="res://Scenes/muskrat.tscn" id="14_dohcd"]
 [ext_resource type="PackedScene" uid="uid://qsvjdj57if2u" path="res://Scenes/Objects/mousetrap.tscn" id="15_dohcd"]
+[ext_resource type="AudioStream" uid="uid://ugn1otk8683g" path="res://Audio/SFX/Waterdrops.mp3" id="17_s4pbe"]
+[ext_resource type="AudioStream" uid="uid://c3ah75xk6ytkp" path="res://Audio/Music/Music.mp3" id="18_246mv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fg7yv"]
 size = Vector2(150, 64)
@@ -609,6 +612,11 @@ script = ExtResource("5_xqcer")
 [node name="GameManager" parent="Managers" unique_id=1156478741 node_paths=PackedStringArray("counters") instance=ExtResource("6_wp52m")]
 counters = NodePath("../../Counters")
 
+[node name="AudioManager" type="Node" parent="Managers" unique_id=1780080970 node_paths=PackedStringArray("_waterDropsSFX", "_music")]
+script = ExtResource("7_fsdfm")
+_waterDropsSFX = NodePath("../../Audios/WaterdropsSFX")
+_music = NodePath("../../Audios/AudioStreamPlayer")
+
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
 color = Color(0.032208487, 0.15301698, 0.08084742, 1)
 
@@ -734,3 +742,15 @@ rotation = 1.5707964
 
 [node name="Mousetrap3" parent="PathFollower/Path2D/PathFollow2D/Mousetraps" unique_id=1065299822 instance=ExtResource("15_dohcd")]
 position = Vector2(-45, 1084)
+
+[node name="Audios" type="Node2D" parent="." unique_id=2041158824]
+
+[node name="WaterdropsSFX" type="AudioStreamPlayer2D" parent="Audios" unique_id=2013054596]
+stream = ExtResource("17_s4pbe")
+volume_db = -10.015
+bus = &"SFX"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audios" unique_id=1808292793]
+stream = ExtResource("18_246mv")
+volume_db = -0.5999994
+bus = &"Music"
