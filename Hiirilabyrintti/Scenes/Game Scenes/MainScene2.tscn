@@ -711,11 +711,12 @@ texture = SubResource("GradientTexture2D_gcggf")
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
 color = Color(0.26302123, 0.085931234, 0.12963101, 1)
 
-[node name="Exit" type="Area2D" parent="." unique_id=154487]
+[node name="Exit" type="Area2D" parent="." unique_id=154487 node_paths=PackedStringArray("_animations")]
 position = Vector2(-27, 2189)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("16_dumgh")
+_animations = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1871817842]
 position = Vector2(-2, 6)
@@ -726,11 +727,12 @@ scale = Vector2(2.8125005, 2.9062502)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_qatwa")
 
-[node name="ExitRock" type="Area2D" parent="." unique_id=223876225]
+[node name="ExitRock" type="Area2D" parent="." unique_id=223876225 node_paths=PackedStringArray("_animations")]
 position = Vector2(0, -205)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("16_dumgh")
+_animations = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitRock" unique_id=1259531565]
 position = Vector2(-2, 8)

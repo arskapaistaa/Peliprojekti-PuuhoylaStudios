@@ -656,11 +656,12 @@ _music = NodePath("../../Audios/AudioStreamPlayer")
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=795061754]
 color = Color(0.032208487, 0.15301698, 0.08084742, 1)
 
-[node name="ExitRock" type="Area2D" parent="." unique_id=223876225]
+[node name="ExitRock" type="Area2D" parent="." unique_id=223876225 node_paths=PackedStringArray("_animations")]
 position = Vector2(4, -204)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("11_mm5ou")
+_animations = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitRock" unique_id=1259531565]
 position = Vector2(-2, 8)
@@ -721,11 +722,12 @@ energy = 0.5
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_xqcer")
 
-[node name="Exit" type="Area2D" parent="." unique_id=154487]
+[node name="Exit" type="Area2D" parent="." unique_id=154487 node_paths=PackedStringArray("_animations")]
 position = Vector2(-28, 2208)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("11_mm5ou")
+_animations = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1871817842]
 position = Vector2(-2, 8)
