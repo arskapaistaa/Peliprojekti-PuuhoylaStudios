@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://84ar5dqmbht4" path="res://Scenes/Objects/cheese.tscn" id="3_weqxp"]
 [ext_resource type="PackedScene" uid="uid://rf85et4ym5tv" path="res://Scenes/Objects/drill.tscn" id="4_4tkr0"]
 [ext_resource type="Script" uid="uid://bi8u2xtap61um" path="res://Scripts/SettingsManager.cs" id="5_hj5x6"]
+[ext_resource type="Script" uid="uid://dypfsjao3kncs" path="res://Scripts/AudioManager.cs" id="6_md707"]
 [ext_resource type="PackedScene" uid="uid://i1fnrld18ulw" path="res://Scenes/Managers/game_manager.tscn" id="6_ybsqa"]
 [ext_resource type="PackedScene" uid="uid://dxyrlpqny8xd2" path="res://Scenes/Objects/rock.tscn" id="9_upv5t"]
 [ext_resource type="Texture2D" uid="uid://da7i0guaqq2e3" path="res://Sprites/ants1.png" id="10_uaots"]
@@ -15,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://qsvjdj57if2u" path="res://Scenes/Objects/mousetrap.tscn" id="15_gcggf"]
 [ext_resource type="Script" uid="uid://ctlleouhimdnx" path="res://Scripts/Exit.cs" id="16_dumgh"]
 [ext_resource type="PackedScene" uid="uid://cggpma0qvjowe" path="res://Scenes/UI/Counters.tscn" id="17_nfdoo"]
+[ext_resource type="AudioStream" uid="uid://ugn1otk8683g" path="res://Audio/SFX/Waterdrops.mp3" id="17_weqxp"]
+[ext_resource type="AudioStream" uid="uid://c3ah75xk6ytkp" path="res://Audio/Music/Music.mp3" id="18_4tkr0"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8o58s"]
 polygon = PackedVector2Array(-32, -29.360176, -27.271793, -28.377407, -23.586418, -29.114481, -16.338507, -29.114483, -12.038899, -27.394638, -7.2479086, -29.114483, 1.351304, -27.886024, 5.5280657, -29.728714, 20.515268, -30.097248, 26.657562, -26.780409, 28.868792, -20.883804, 29.261053, -14.258804, 27.148949, -10.564748, 28.377407, -7.247909, 27.148949, -0.3685379, 26.166182, 10.441903, 27.763178, 14.495819, 29.114483, 22.60365, 28.991636, 32, -28.745945, 32, -32, 29.237328)
@@ -606,6 +609,11 @@ script = ExtResource("5_hj5x6")
 [node name="GameManager" parent="Managers" unique_id=1156478741 node_paths=PackedStringArray("counters") instance=ExtResource("6_ybsqa")]
 counters = NodePath("../../Counters")
 
+[node name="AudioManager" type="Node" parent="Managers" unique_id=347345018 node_paths=PackedStringArray("_waterDropsSFX", "_music")]
+script = ExtResource("6_md707")
+_waterDropsSFX = NodePath("../../Audios/WaterdropsSFX")
+_music = NodePath("../../Audios/AudioStreamPlayer")
+
 [node name="Maze2" type="Node2D" parent="." unique_id=178975357]
 position = Vector2(-2557, 27)
 
@@ -734,3 +742,15 @@ z_index = 2
 position = Vector2(0, -133)
 
 [node name="Mouse" parent="." unique_id=557865975 instance=ExtResource("2_md707")]
+
+[node name="Audios" type="Node2D" parent="." unique_id=1834735088]
+
+[node name="WaterdropsSFX" type="AudioStreamPlayer2D" parent="Audios" unique_id=1648891218]
+stream = ExtResource("17_weqxp")
+volume_db = -10.015
+bus = &"SFX"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audios" unique_id=935099710]
+stream = ExtResource("18_4tkr0")
+volume_db = -0.5999994
+bus = &"Music"

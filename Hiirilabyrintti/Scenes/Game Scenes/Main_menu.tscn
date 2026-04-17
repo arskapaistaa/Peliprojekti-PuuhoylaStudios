@@ -709,6 +709,7 @@ anchor_bottom = 0.8354167
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
+disabled = true
 action_mode = 0
 text = "
 "
@@ -726,6 +727,7 @@ anchor_bottom = 0.8359375
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_hwbvm")
+disabled = true
 toggle_mode = true
 action_mode = 0
 text = "

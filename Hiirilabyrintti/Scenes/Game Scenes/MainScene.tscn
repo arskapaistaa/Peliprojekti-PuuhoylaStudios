@@ -717,6 +717,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audios/AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-60.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_j0wll"]
 resource_name = "FadeOut"
@@ -747,6 +759,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audios/AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j0wll"]
@@ -846,9 +870,10 @@ position = Vector2(-600, 1466)
 [node name="GameManager" parent="Managers" unique_id=1156478741 node_paths=PackedStringArray("counters") instance=ExtResource("5_j0wll")]
 counters = NodePath("../../Counters")
 
-[node name="AudioManager" type="Node" parent="Managers" unique_id=212365034 node_paths=PackedStringArray("_waterDropsSFX")]
+[node name="AudioManager" type="Node" parent="Managers" unique_id=212365034 node_paths=PackedStringArray("_waterDropsSFX", "_music")]
 script = ExtResource("7_use57")
 _waterDropsSFX = NodePath("../../Audios/WaterdropsSFX")
+_music = NodePath("../../Audios/AudioStreamPlayer")
 
 [node name="Counters" parent="." unique_id=74711613 instance=ExtResource("12_8rmvd")]
 
@@ -1050,6 +1075,7 @@ bus = &"SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audios" unique_id=301004265]
 stream = ExtResource("15_2ngyf")
+bus = &"Music"
 
 [node name="Mousetraps" type="Node" parent="." unique_id=1385367327]
 
