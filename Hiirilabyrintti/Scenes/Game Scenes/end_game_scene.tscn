@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://dddsqiekytqba" path="res://Scripts/QuestionsManager.cs" id="1_xmqa1"]
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="2_7txxy"]
 [ext_resource type="Texture2D" uid="uid://bbfv38hdvc0e6" path="res://Sprites/labrat.png" id="3_burp6"]
+[ext_resource type="AudioStream" uid="uid://ugn1otk8683g" path="res://Audio/SFX/Waterdrops.mp3" id="4_i2nwt"]
 [ext_resource type="PackedScene" uid="uid://il5r6o7medad" path="res://Scenes/Audio/button_down_sfx.tscn" id="4_oqv6m"]
+[ext_resource type="AudioStream" uid="uid://c3ah75xk6ytkp" path="res://Audio/Music/Music.mp3" id="5_v1086"]
+[ext_resource type="Script" uid="uid://dypfsjao3kncs" path="res://Scripts/AudioManager.cs" id="7_v1086"]
 
 [sub_resource type="Animation" id="Animation_7txxy"]
 resource_name = "FadeIn"
@@ -91,6 +94,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Audios/AudioStreamPlayer:bus")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"MusicEffect"]
 }
 
 [sub_resource type="Animation" id="Animation_burp6"]
@@ -222,6 +237,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Audios/AudioStreamPlayer:bus")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Music"]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i2nwt"]
 _data = {
@@ -268,7 +295,7 @@ _etenijaTexts = PackedStringArray("Minulla on tavoite, mutta en aina tiedä, mit
 _etenijaTextsENG = PackedStringArray("I have a goal but I\'m not always sure how to go forward.", "I recognize obstacles and try to find ways to surpass them.", "I know who to depend on but I don\'t always fully utilize my network.", "I have plans and I break them down into steps, though change sometimes takes effort.", "I know my values but they don\'t always show while making choices in my daily life.", "I know myself quite well and I can utilize my strengths.", "I proceed towards my goals though sometimes I need support to keep moving.", "I accept help when offered but don\'t always actively seek it.", "I know my target group but my customer orientation is still developing.", "I want to find ways to progress towards my goal more efficiently and sustainably.")
 _edistajaTexts = PackedStringArray("Tiedän tarkalleen, mitä haluan rakentaa ja kenelle.", "Näen esteet oppimismahdollisuuksina ja käännän ne voimavaraksi.", "Verkostoni on keskeinen osa toimintaani, autan muita ja saan apua.", "Rakennan toimintasuunnitelmia järjestelmällisesti ja priorisoin ajankäyttöni.", "Arvoni ja intohimoni ohjaavat vahvasti kaikkea tekemistäni.", "Vahva itsetuntemus on perustani, tiedän osaamiseni ja kehityskohteeni.", "Etenen systemaattisesti ja pidän huolta omasta jaksamisestani matkan varrella.", "Hyödynnän aktiivisesti verkostoja, mentoreita ja kumppaneita osana toimintaani.", "Asiakkaani arvot ja tarpeet ovat toimintani keskiössä.", "Haluan kehittää toimintaani, laajentaa verkostojani ja viedä ideani pidemmälle.")
 _edistajaTextsENG = PackedStringArray("I know precisely what I want to build and for whom.", "I see obstacles as a learning oppoturnity and turn them into resources.", "My network is a central part of my operations. I help others and I receive help.", "I build action plans methodically and prioritize my use of time.", "My values and passions strongly lead everything I do.", "A strong self-knowledge is my foundation. I know my skills and targets of development.", "I proceed systematically and take care of my well-being on the way.", "I actively utilize networks, mentors and partners as part of my operations.", "The needs and values of my customers are at the center of my operations.", "I want to develop my operations, expand my networks and take my idea further.")
-_buttonDownSFX = NodePath("../ButtonDownSFX")
+_buttonDownSFX = NodePath("../Audios/ButtonDownSFX")
 
 [node name="Timer" type="Timer" parent="." unique_id=663026272]
 one_shot = true
@@ -312,7 +339,7 @@ anchor_bottom = 0.507
 offset_left = -266.64
 offset_top = 118.91998
 offset_right = 1312.7131
-offset_bottom = 2096.0918
+offset_bottom = 2096.0894
 scale = Vector2(0.2715219, 0.27152187)
 texture = ExtResource("3_burp6")
 metadata/_edit_use_anchors_ = true
@@ -356,6 +383,7 @@ offset_top = 6.1035156e-05
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_7txxy")
+disabled = true
 action_mode = 0
 text = "En tiiä"
 text_overrun_behavior = 2
@@ -383,9 +411,26 @@ anchor_right = 0.8717355
 anchor_bottom = 0.875
 offset_right = -1.4743652
 scale = Vector2(1.001843, 1)
+disabled = true
 action_mode = 0
 text = "Töihin"
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="ButtonDownSFX" parent="." unique_id=919058289 instance=ExtResource("4_oqv6m")]
+[node name="Audios" type="Node2D" parent="." unique_id=467612350]
+
+[node name="WaterdropsSFX" type="AudioStreamPlayer2D" parent="Audios" unique_id=577522022]
+stream = ExtResource("4_i2nwt")
+volume_db = -60.0
+bus = &"SFX"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audios" unique_id=1131510652]
+stream = ExtResource("5_v1086")
+bus = &"Music"
+
+[node name="ButtonDownSFX" parent="Audios" unique_id=919058289 instance=ExtResource("4_oqv6m")]
+
+[node name="AudioManager" type="Node" parent="." unique_id=840293093 node_paths=PackedStringArray("_waterDropsSFX", "_music")]
+script = ExtResource("7_v1086")
+_waterDropsSFX = NodePath("../Audios/WaterdropsSFX")
+_music = NodePath("../Audios/AudioStreamPlayer")
