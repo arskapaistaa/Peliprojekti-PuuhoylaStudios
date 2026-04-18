@@ -4,7 +4,7 @@ using System;
 public partial class ReplayButton : Button
 {
 	[Export] private Button _replay = null;
-	[Export] private AudioStreamPlayer2D _buttonDownSFX = null;
+	[Export] private AudioStreamPlayer _buttonDownSFX = null;
 
 	public override void _Ready()
 	{

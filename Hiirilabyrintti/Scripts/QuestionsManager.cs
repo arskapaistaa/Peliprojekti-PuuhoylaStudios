@@ -21,6 +21,9 @@ public partial class QuestionsManager : Node2D
 	[Export] private Label _dialogLabel;
 	[Export] private String[] _dialogLabelArray = {};
 
+	[Export] private Label _firstDialogLabel;
+	[Export] private String[] _firstDialogLabelArray = {};
+
 	// UI animations
 	[Export] private AnimationPlayer _animations;
 	// Timer for animations
@@ -38,7 +41,7 @@ public partial class QuestionsManager : Node2D
 	[Export] private String[] _edistajaTexts = {};
 	[Export] private String[] _edistajaTextsENG = {};
 
-	[Export] private AudioStreamPlayer2D _buttonDownSFX = null;
+	[Export] private AudioStreamPlayer _buttonDownSFX = null;
 
 	public override void _Ready()
 	{
@@ -49,6 +52,8 @@ public partial class QuestionsManager : Node2D
 
 		// Show first question.
 		NextQuestion();
+
+		_firstDialogLabel.Text = _firstDialogLabelArray[SettingsManager.Instance.Language];
 
 		// When time reaches 0, call TimerTimeout method.
 		_animationTimer.Timeout += TimerTimeout;
@@ -130,7 +135,6 @@ public partial class QuestionsManager : Node2D
 	// Method that triggers after last question.
 	private void LastQuestion()
 	{
-
 		// Load new scene.
 		GetTree().ChangeSceneToFile("res://Scenes/Game Scenes/Final_game_scene.tscn");
 	}

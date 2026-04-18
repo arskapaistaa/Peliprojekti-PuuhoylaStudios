@@ -10,6 +10,7 @@ public partial class Muskrat : CharacterBody2D
 	[Export] public AnimatedSprite2D _drillSprite;
 	public bool _isHired = false;
 	private bool wasJustHired = false;
+	[Export] private AudioStreamPlayer _buttonDownSFX = null;
 
 
 	private Rock _rock;
@@ -59,6 +60,13 @@ public partial class Muskrat : CharacterBody2D
 			PathFollower pathFollower = GetNode<PathFollower>("/root/World/PathFollower");
 			pathFollower._canMove = true;
 		}
+
+		if (SettingsManager.Instance.Volume)
+		{
+			_buttonDownSFX.Play();
+		}
+
+		Input.VibrateHandheld(500);
 	}
 
 	// Method when player enters the area.

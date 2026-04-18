@@ -22,6 +22,8 @@ public partial class Mouse : CharacterBody2D
     [Export] private Label _drillPromptLabel = null;
     [Export] private string[] _drillPrompArray = {};
     [Export] private AudioStreamPlayer2D _walkSFX = null;
+	[Export] private AudioStreamPlayer _buttonDownSFX = null;
+
 
     private int neededToBuildDrill = GameManager.Instance._neededToBuildDrill;
 
@@ -103,12 +105,26 @@ public partial class Mouse : CharacterBody2D
         GameManager.Instance.MouseCanMove = true;
         GameManager.Instance._hasDrill = true;
         GameManager.Instance.counters.BuiltDrill.Visible = true;
+
+        if (SettingsManager.Instance.Volume)
+		{
+			_buttonDownSFX.Play();
+		}
+
+		Input.VibrateHandheld(500);
     }
 
     private void OnNoPressed()
     {
         DrillPrompt.Visible = false;
         GameManager.Instance.MouseCanMove = true;
+
+        if (SettingsManager.Instance.Volume)
+		{
+			_buttonDownSFX.Play();
+		}
+
+		Input.VibrateHandheld(500);
     }
 
     public void StartDrilling()

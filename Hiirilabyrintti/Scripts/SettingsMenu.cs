@@ -7,7 +7,7 @@ public partial class SettingsMenu : Control
 	[Export] private Button _musicButton = null;
 	[Export] private Button _languageButton = null;
 	[Export] private Button _creditsButton = null;
-	[Export] private AudioStreamPlayer2D _buttonDownSFX = null;
+	[Export] private AudioStreamPlayer _buttonDownSFX = null;
 
 	public override void _Ready()
 	{

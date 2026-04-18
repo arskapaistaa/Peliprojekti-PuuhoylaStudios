@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bqywgpymvyko7" path="res://Sprites/kivi3.png" id="1_brjug"]
 [ext_resource type="Texture2D" uid="uid://bhsh1x6aiy4dt" path="res://Sprites/kivi1.png" id="2_l0sgq"]
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="4_brjug"]
+[ext_resource type="PackedScene" uid="uid://il5r6o7medad" path="res://Scenes/Audio/button_down_sfx.tscn" id="5_bk1ij"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nqguc"]
 atlas = ExtResource("1_brjug")
@@ -196,7 +197,7 @@ frame_progress = 1.0
 position = Vector2(8, 21)
 shape = SubResource("ConvexPolygonShape2D_nqguc")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=735239142 node_paths=PackedStringArray("_animations", "rockMessageLabel", "_drillButton", "_rockSprite")]
+[node name="Area2D" type="Area2D" parent="." unique_id=735239142 node_paths=PackedStringArray("_animations", "rockMessageLabel", "_drillButton", "_rockSprite", "_buttonDownSFX")]
 collision_mask = 6
 script = ExtResource("1_8gfo0")
 _animations = NodePath("../Canvas/AnimationPlayer")
@@ -205,6 +206,7 @@ _rockMessageLabelArray = PackedStringArray("Etsi 3 poranosaa jotta voit porata i
 _drillButton = NodePath("../Canvas/Control/DrillThrough")
 _drillButtonArray = PackedStringArray("Poraa", "Drill")
 _rockSprite = NodePath("../AnimatedSprite2D")
+_buttonDownSFX = NodePath("../ButtonDownSFX")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=722016869]
 position = Vector2(0, 41.5)
@@ -285,3 +287,5 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 text = "Drill"
+
+[node name="ButtonDownSFX" parent="." unique_id=2103446994 instance=ExtResource("5_bk1ij")]
