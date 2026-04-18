@@ -58,11 +58,12 @@ _data = {
 &"RESET": SubResource("Animation_mbn5g")
 }
 
-[node name="Counters" type="CanvasLayer" unique_id=74711613 node_paths=PackedStringArray("cheeseCounterLabel", "drillCounterLabel", "BuiltDrill")]
+[node name="Counters" type="CanvasLayer" unique_id=74711613 node_paths=PackedStringArray("cheeseCounterLabel", "drillCounterLabel", "BuiltDrill", "_animations")]
 script = ExtResource("1_vwuvs")
 cheeseCounterLabel = NodePath("HBoxContainer/CheeseLabel")
-drillCounterLabel = NodePath("")
+drillCounterLabel = NodePath("HBoxContainer3/DrillLabel")
 BuiltDrill = NodePath("HBoxContainer2")
+_animations = NodePath("AnimationPlayer")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=774755094]
 anchors_preset = 8
