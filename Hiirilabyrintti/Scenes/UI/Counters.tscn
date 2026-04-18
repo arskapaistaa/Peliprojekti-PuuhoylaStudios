@@ -6,21 +6,76 @@
 [ext_resource type="Texture2D" uid="uid://cpp0t3yur1ih4" path="res://Sprites/poranosa.png" id="4_gninf"]
 [ext_resource type="Texture2D" uid="uid://68d0oqe3d55f" path="res://Sprites/pora.png" id="5_chqfj"]
 
+[sub_resource type="Animation" id="Animation_chqfj"]
+resource_name = "CheeseCollected"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/CheeseLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.8509804, 0.77254903, 0.4745098, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a1rlo"]
+resource_name = "DrillCollected"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer3/DrillLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.4745098, 0.49803922, 0.5176471, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mbn5g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/CheeseLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a1rlo"]
+_data = {
+&"CheeseCollected": SubResource("Animation_chqfj"),
+&"DrillCollected": SubResource("Animation_a1rlo"),
+&"RESET": SubResource("Animation_mbn5g")
+}
+
 [node name="Counters" type="CanvasLayer" unique_id=74711613 node_paths=PackedStringArray("cheeseCounterLabel", "drillCounterLabel", "BuiltDrill")]
 script = ExtResource("1_vwuvs")
 cheeseCounterLabel = NodePath("HBoxContainer/CheeseLabel")
-drillCounterLabel = NodePath("HBoxContainer/DrillLabel")
+drillCounterLabel = NodePath("")
 BuiltDrill = NodePath("HBoxContainer2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=774755094]
-anchors_preset = -1
-anchor_left = 0.57100004
-anchor_right = 1.0
-offset_left = -55.680054
-offset_top = 181.0
-offset_right = -141.0
-offset_bottom = 278.0
-grow_horizontal = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 62.0
+offset_top = -779.0
+offset_right = 221.0
+offset_bottom = -682.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_gninf")
 alignment = 1
 
@@ -36,29 +91,49 @@ layout_mode = 2
 texture = ExtResource("2_86tgr")
 expand_mode = 2
 
-[node name="DrillLabel" type="Label" parent="HBoxContainer" unique_id=1900705713]
+[node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=168014228]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 239.0
+offset_top = -779.0
+offset_right = 489.0
+offset_bottom = -682.0
+grow_horizontal = 0
+theme = ExtResource("2_gninf")
+alignment = 1
+
+[node name="DrillLabel" type="Label" parent="HBoxContainer3" unique_id=1262948019]
 layout_mode = 2
 theme = ExtResource("2_gninf")
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 80
 text = "0"
 
-[node name="DrillRect" type="TextureRect" parent="HBoxContainer" unique_id=68719560]
+[node name="DrillRect" type="TextureRect" parent="HBoxContainer3" unique_id=1360109264]
 layout_mode = 2
 texture = ExtResource("4_gninf")
 expand_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=930733295]
 anchors_preset = -1
-anchor_left = 0.832
-anchor_right = 1.0
-anchor_bottom = 0.18400002
-offset_left = -55.559998
-offset_top = 294.0
-offset_right = -112.0
-offset_bottom = 97.71997
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 303.0
+offset_top = -666.0
+offset_right = 428.0
+offset_bottom = -509.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer2" unique_id=521088071]
 layout_mode = 2
 texture = ExtResource("5_chqfj")
 expand_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1418387594]
+libraries/ = SubResource("AnimationLibrary_a1rlo")

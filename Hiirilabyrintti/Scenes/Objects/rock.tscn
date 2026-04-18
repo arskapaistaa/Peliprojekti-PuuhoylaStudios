@@ -213,6 +213,7 @@ position = Vector2(0, 41.5)
 shape = SubResource("RectangleShape2D_c7qrd")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1622714118]
+visible = false
 occluder = SubResource("OccluderPolygon2D_c7qrd")
 
 [node name="Drill particles" type="GPUParticles2D" parent="." unique_id=776610269]
