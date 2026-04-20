@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.ComponentModel;
 
 public partial class FinalGameScene : Control
 {
@@ -17,6 +18,7 @@ public partial class FinalGameScene : Control
 	[Export] private Label _edistajaLabel;
 	[Export] private Label _etenijaLabel;
 	[Export] private Label _etsijaLabel;
+	[Export] private Label _PlayerStyle;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -35,5 +37,21 @@ public partial class FinalGameScene : Control
 		_etenijaLabel.Text = _etenija[SettingsManager.Instance.Language] + " " + GameManager.Instance.EtenijaScore + "%";
 		_etsijaLabel.Text = _etsija[SettingsManager.Instance.Language] + " " + GameManager.Instance.EtsijaScore + "%";
 
+		if (!GameManager.Instance._muskratHired && !GameManager.Instance._rockDestroyed)
+		{
+			_PlayerStyle.Text = "Etsijä";
+		}
+		else if (!GameManager.Instance._muskratHired && GameManager.Instance._rockDestroyed)
+		{
+			_PlayerStyle.Text = "Etenijä";
+		}
+		else if (GameManager.Instance._muskratHired && GameManager.Instance._rockDestroyed)
+		{
+			_PlayerStyle.Text = "Edistäjä";
+		}
+		else
+		{
+			_PlayerStyle.Text = "jotain meni pieleen";
+		}
 	}
 }

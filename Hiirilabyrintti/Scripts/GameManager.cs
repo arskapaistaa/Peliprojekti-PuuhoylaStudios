@@ -5,7 +5,8 @@ public partial class GameManager : Node
 {
 	[Signal]
 	public delegate void DrillReadyEventHandler();
-
+	public bool _muskratHired = false;
+	public bool _rockDestroyed = false;
 	public bool _mouseCanMove = true;
 
 	public bool MouseCanMove

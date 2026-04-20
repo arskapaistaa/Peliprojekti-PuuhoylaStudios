@@ -335,7 +335,7 @@ _data = {
 &"RESET": SubResource("Animation_syh1w")
 }
 
-[node name="FinalGameScene" type="Control" unique_id=1398140827 node_paths=PackedStringArray("_firstDialog", "_edistajaBar", "_etenijaBar", "_estijaBar", "_edistajaLabel", "_etenijaLabel", "_etsijaLabel")]
+[node name="FinalGameScene" type="Control" unique_id=1398140827 node_paths=PackedStringArray("_firstDialog", "_edistajaBar", "_etenijaBar", "_estijaBar", "_edistajaLabel", "_etenijaLabel", "_etsijaLabel", "_PlayerStyle")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -354,6 +354,7 @@ _estijaBar = NodePath("Control/Etsijä/EtsijäBar")
 _edistajaLabel = NodePath("Control/Edistäjä/EdistäjäLabel")
 _etenijaLabel = NodePath("Control/Etenijä/EtejinaLabel")
 _etsijaLabel = NodePath("Control/Etsijä/EtsijäLabel")
+_PlayerStyle = NodePath("PlayerStyle")
 
 [node name="Timer" type="Timer" parent="." unique_id=658071523]
 one_shot = true

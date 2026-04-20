@@ -8,7 +8,6 @@ public partial class Muskrat : CharacterBody2D
 	[Export] private Label _dialogueLabel;
 	[Export] private Button _hireButton;
 	[Export] public AnimatedSprite2D _drillSprite;
-	public bool _isHired = false;
 	private bool wasJustHired = false;
 
 
@@ -53,7 +52,7 @@ public partial class Muskrat : CharacterBody2D
 
 			_hireButton.Visible = false;
 
-			_isHired = true;
+			GameManager.Instance._muskratHired = true;
 			wasJustHired = true;
 
 			PathFollower pathFollower = GetNode<PathFollower>("/root/World/PathFollower");
@@ -64,7 +63,7 @@ public partial class Muskrat : CharacterBody2D
 	// Method when player enters the area.
 	private void OnBodyEntered(Node2D body)
 	{
-		if (body is Mouse && !_isHired)
+		if (body is Mouse && !GameManager.Instance._muskratHired)
 		{
 			GD.Print("Player Entered");
 			_animations.Play("PopUp");
@@ -103,7 +102,7 @@ public partial class Muskrat : CharacterBody2D
 	// Method when player exits the area.
 	private void OnBodyExit(Node2D body)
 	{
-		if (body is Mouse && (!_isHired || wasJustHired))
+		if (body is Mouse && (!GameManager.Instance._muskratHired || wasJustHired))
 		{
 			GD.Print("Player Exit");
 			_animations.Play("PopOut");
