@@ -11,7 +11,7 @@ public partial class Muskrat : CharacterBody2D
 	public bool _isHired = false;
 	private bool wasJustHired = false;
 	[Export] private AudioStreamPlayer _buttonDownSFX = null;
-
+	[Export] public GpuParticles2D drillParticles;
 
 	private Rock _rock;
 
@@ -33,6 +33,8 @@ public partial class Muskrat : CharacterBody2D
 
 		_drillSprite.Visible = false;
 		_drillSprite.Stop();
+
+		drillParticles.Emitting = false;
 	}
 
 	private void OnHirePressed()

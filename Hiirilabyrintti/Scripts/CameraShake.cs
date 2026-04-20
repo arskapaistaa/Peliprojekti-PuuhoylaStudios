@@ -4,10 +4,10 @@ using System;
 public partial class CameraShake : Camera2D
 {
 	// Intense of shake.
-	private float shakeIntensity = 0.0f;
+	private float _shakeIntensity = 0.0f;
 
 	// How long shake lasts.
-	private float shakeFade = 2.0f;
+	private float _shakeFade = 2.0f;
 
 	// Starting point of camera.
 	private Vector2 defaultOffset;
@@ -21,12 +21,12 @@ public partial class CameraShake : Camera2D
 
 	public override void _Process(double delta)
 	{
-		if (shakeIntensity > 0)
+		if (_shakeIntensity > 0)
 		{
-			shakeIntensity = Mathf.Lerp(shakeIntensity, 0, (float)(shakeFade * delta));
+			_shakeIntensity = Mathf.Lerp(_shakeIntensity, 0, (float)(_shakeFade * delta));
 
-			Offset = defaultOffset + new Vector2((float)GD.RandRange(-shakeIntensity,shakeIntensity),
-												(float)GD.RandRange(-shakeIntensity, shakeIntensity));
+			Offset = defaultOffset + new Vector2((float)GD.RandRange(-_shakeIntensity,_shakeIntensity),
+												(float)GD.RandRange(-_shakeIntensity,_shakeIntensity));
 		}
 		else
 		{
@@ -34,9 +34,9 @@ public partial class CameraShake : Camera2D
 		}
 	}
 
-	// Mehtod to call. Paramater as how intense shake you want.
+	// Mehtod to call. Paramater as how intense shake you want and how long.
 	public void Shake(float intensity)
 	{
-		shakeIntensity = intensity;
+		_shakeIntensity = intensity;
 	}
 }
