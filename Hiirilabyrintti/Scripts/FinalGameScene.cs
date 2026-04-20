@@ -18,7 +18,7 @@ public partial class FinalGameScene : Control
 	[Export] private Label _edistajaLabel;
 	[Export] private Label _etenijaLabel;
 	[Export] private Label _etsijaLabel;
-	[Export] private Label _PlayerStyle;
+	[Export] private Label _PlayerStyleLabel;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -39,19 +39,19 @@ public partial class FinalGameScene : Control
 
 		if (!GameManager.Instance._muskratHired && !GameManager.Instance._rockDestroyed)
 		{
-			_PlayerStyle.Text = "Etsijä";
+			_PlayerStyleLabel.Text = _etsija[SettingsManager.Instance.Language];
 		}
 		else if (!GameManager.Instance._muskratHired && GameManager.Instance._rockDestroyed)
 		{
-			_PlayerStyle.Text = "Etenijä";
+			_PlayerStyleLabel.Text = _etenija[SettingsManager.Instance.Language];
 		}
 		else if (GameManager.Instance._muskratHired && GameManager.Instance._rockDestroyed)
 		{
-			_PlayerStyle.Text = "Edistäjä";
+			_PlayerStyleLabel.Text = _edistaja[SettingsManager.Instance.Language];
 		}
 		else
 		{
-			_PlayerStyle.Text = "jotain meni pieleen";
+			_PlayerStyleLabel.Text = "jotain meni pieleen";
 		}
 	}
 }
