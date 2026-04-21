@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b863fbcmfqa3s" path="res://Sprites/loukku.png" id="1_goqyi"]
 [ext_resource type="Script" uid="uid://dqvasvxqb8s0d" path="res://Scripts/Mousetrap.cs" id="1_ug2qn"]
 [ext_resource type="AudioStream" uid="uid://cviesgek3g6wf" path="res://Audio/SFX/Trap.mp3" id="3_neqh7"]
+[ext_resource type="Texture2D" uid="uid://cunwtmrlplbe6" path="res://Sprites/juusto.png" id="4_c1b08"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ug2qn"]
 atlas = ExtResource("1_goqyi")
@@ -36,11 +37,32 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umikl"]
 size = Vector2(26, 44)
 
-[node name="Mousetrap" type="Area2D" unique_id=2138317421 node_paths=PackedStringArray("_mouseTrap", "_mouseTrapSFX")]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mgenj"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 11.7
+angle_min = 1.0728835e-05
+angle_max = 180.00002
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 19.999998
+linear_accel_max = 29.999996
+radial_accel_min = 47.639996
+radial_accel_max = 99.99999
+damping_min = 10.0
+damping_max = 50.000004
+scale_min = 0.5
+collision_mode = 1
+collision_friction = 0.5
+collision_bounce = 0.5
+
+[node name="Mousetrap" type="Area2D" unique_id=2138317421 node_paths=PackedStringArray("_mouseTrap", "_mouseTrapSFX", "_cheese")]
+z_index = 2
 collision_mask = 3
 script = ExtResource("1_ug2qn")
 _mouseTrap = NodePath("AnimatedSprite2D")
 _mouseTrapSFX = NodePath("TrapSound")
+_cheese = NodePath("GPUParticles2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1871088280]
 sprite_frames = SubResource("SpriteFrames_mgenj")
@@ -51,3 +73,13 @@ shape = SubResource("RectangleShape2D_umikl")
 [node name="TrapSound" type="AudioStreamPlayer2D" parent="." unique_id=1084308127]
 stream = ExtResource("3_neqh7")
 volume_db = -10.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=830205974]
+emitting = false
+amount = 3
+texture = ExtResource("4_c1b08")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_mgenj")

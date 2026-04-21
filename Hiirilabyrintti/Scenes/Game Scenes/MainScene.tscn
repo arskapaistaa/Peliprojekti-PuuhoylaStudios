@@ -798,21 +798,6 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="Environment" id="Environment_2ngyf"]
-background_mode = 3
-tonemap_mode = 2
-glow_enabled = true
-glow_intensity = 1.5
-glow_bloom = 0.1
-fog_light_energy = 1.24
-fog_sun_scatter = 1.1
-fog_density = 2.495
-fog_height = 65.85
-fog_height_density = 33.255
-adjustment_enabled = true
-adjustment_brightness = 0.96
-adjustment_saturation = 1.1
-
 [node name="World" type="Node2D" unique_id=71007616]
 
 [node name="TouchControls" parent="." unique_id=400990887 instance=ExtResource("1_6hmk7")]
@@ -1149,6 +1134,3 @@ rotation = 1.5707964
 position = Vector2(0, -133)
 
 [node name="Mouse" parent="." unique_id=557865975 instance=ExtResource("2_acspe")]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2083275291]
-environment = SubResource("Environment_2ngyf")
