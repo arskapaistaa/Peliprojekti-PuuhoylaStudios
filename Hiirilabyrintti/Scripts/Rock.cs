@@ -15,6 +15,7 @@ public partial class Rock : Area2D
 	[Export] private Button _drillButton;
 	[Export]private string[] _drillButtonArray = {};
 	[Export] private AnimatedSprite2D _rockSprite;
+	[Export] private AudioStreamPlayer _buttonDownSFX = null;
 
 	private Muskrat muskrat;
 	private Mouse _mouse;
@@ -122,6 +123,13 @@ public partial class Rock : Area2D
 		_rockSprite.Play("Drilling");
 		GameManager.Instance._mouseCanMove = false;
 		_animations.Play("PopOut");
+
+		if (SettingsManager.Instance.Volume)
+		{
+			_buttonDownSFX.Play();
+		}
+
+		Input.VibrateHandheld(500);
 		GameManager.Instance._rockDestroyed = true;
 	}
 

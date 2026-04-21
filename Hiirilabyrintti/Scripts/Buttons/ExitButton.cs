@@ -5,7 +5,7 @@ public partial class ExitButton : Button
 {
 	[Export] private Button _exitButton = null;
 	[Export] private AnimationPlayer _animations = null;
-	[Export] private AudioStreamPlayer2D _buttonDownSFX = null;
+	[Export] private AudioStreamPlayer _buttonDownSFX = null;
 
 	public override void _Ready()
 	{

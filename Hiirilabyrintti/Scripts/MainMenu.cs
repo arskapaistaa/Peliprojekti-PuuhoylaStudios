@@ -6,7 +6,7 @@ public partial class MainMenu : Node
 	[Export] private Button _playButton;
 	[Export] private Button _creditsButton = null;
 	[Export] private AnimationPlayer _animations;
-	[Export] private AudioStreamPlayer2D _buttonDownSFX = null;
+	[Export] private AudioStreamPlayer _buttonDownSFX = null;
 
 	public bool _credits = false;
 

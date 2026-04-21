@@ -6,6 +6,7 @@ public partial class Mouse : CharacterBody2D
     [Export] public float speed = 160f;
     [Export] private float _slowedSpeed = 50.0f;
     [Export] private GpuParticles2D _walkParticles;
+     [Export] private GpuParticles2D _drillParticles;
 
     // For animations
     [Export] private AnimatedSprite2D _sprite;
@@ -22,6 +23,8 @@ public partial class Mouse : CharacterBody2D
     [Export] private Label _drillPromptLabel = null;
     [Export] private string[] _drillPrompArray = {};
     [Export] private AudioStreamPlayer2D _walkSFX = null;
+	[Export] private AudioStreamPlayer _buttonDownSFX = null;
+
 
     private int neededToBuildDrill = GameManager.Instance._neededToBuildDrill;
 
@@ -103,12 +106,26 @@ public partial class Mouse : CharacterBody2D
         GameManager.Instance.MouseCanMove = true;
         GameManager.Instance._hasDrill = true;
         GameManager.Instance.counters.BuiltDrill.Visible = true;
+
+        if (SettingsManager.Instance.Volume)
+		{
+			_buttonDownSFX.Play();
+		}
+
+		Input.VibrateHandheld(500);
     }
 
     private void OnNoPressed()
     {
         DrillPrompt.Visible = false;
         GameManager.Instance.MouseCanMove = true;
+
+        if (SettingsManager.Instance.Volume)
+		{
+			_buttonDownSFX.Play();
+		}
+
+		Input.VibrateHandheld(500);
     }
 
     public void StartDrilling()
@@ -116,7 +133,9 @@ public partial class Mouse : CharacterBody2D
         _drill.Visible = true;
         _drill.Play("drill");
 
-        _camera.Shake(4.0f);
+        _drillParticles.Emitting = true;
+
+        _camera.Shake(8.0f);
         Input.VibrateHandheld(3000);
     }
 
@@ -124,5 +143,7 @@ public partial class Mouse : CharacterBody2D
     {
         _drill.Visible = false;
         _drill.Stop();
+
+        _drillParticles.Emitting = false;
     }
 }

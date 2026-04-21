@@ -10,7 +10,7 @@
 
 [sub_resource type="Animation" id="Animation_7txxy"]
 resource_name = "FadeIn"
-length = 5.0
+length = 9.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -18,7 +18,7 @@ tracks/0/path = NodePath("Player:modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(4, 5),
+"times": PackedFloat32Array(8, 9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -30,7 +30,7 @@ tracks/1/path = NodePath("LabraRotta/DialogLabel:modulate:a")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2, 2.2),
+"times": PackedFloat32Array(6, 6.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -42,7 +42,7 @@ tracks/2/path = NodePath("LabraRotta/Labrarotta:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"times": PackedFloat32Array(1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.08726646259971647, 0.0, -0.08726646259971647, 0.0, 0.08726646259971647, 0.0, -0.08726646259971647, 0.0, 0.08726646259971647, 0.0]
@@ -54,10 +54,10 @@ tracks/3/path = NodePath("LabraRotta/Labrarotta:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(1, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(712, 357), Vector2(90.06, 237.75)]
+"values": [Vector2(1100, 357), Vector2(90.06, 237.75)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -66,7 +66,7 @@ tracks/4/path = NodePath("Player/Etsija:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(1, 9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -78,7 +78,7 @@ tracks/5/path = NodePath("Player/Etenija:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(1, 9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -90,7 +90,7 @@ tracks/6/path = NodePath("Player/Edistaja:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(1, 9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -106,6 +106,30 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"MusicEffect"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("LabraRotta/FirstDialogLabel:modulate:a")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2, 2.5, 5.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:modulate:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="Animation" id="Animation_burp6"]
@@ -249,6 +273,30 @@ tracks/5/keys = {
 "update": 1,
 "values": [&"Music"]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LabraRotta/FirstDialogLabel:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i2nwt"]
 _data = {
@@ -278,13 +326,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="QuestionsManager" type="Node2D" parent="." unique_id=2116300117 node_paths=PackedStringArray("_etsijaButton", "_etenijaButton", "_edistajaButton", "_dialogLabel", "_animations", "_animationTimer", "_buttonDownSFX")]
+[node name="QuestionsManager" type="Node2D" parent="." unique_id=2116300117 node_paths=PackedStringArray("_etsijaButton", "_etenijaButton", "_edistajaButton", "_dialogLabel", "_firstDialogLabel", "_animations", "_animationTimer", "_buttonDownSFX")]
 script = ExtResource("1_xmqa1")
 _maxQuestionIndex = 10
 _etsijaButton = NodePath("../Player/Etsija")
 _etenijaButton = NodePath("../Player/Etenija")
 _edistajaButton = NodePath("../Player/Edistaja")
 _dialogLabel = NodePath("../LabraRotta/DialogLabel")
+_firstDialogLabel = NodePath("../LabraRotta/FirstDialogLabel")
+_firstDialogLabelArray = PackedStringArray("Hyvää duunia nr. 0067! Muutama kysymys vielä...", "Great job nr. 0067! I have few questions...")
 _animations = NodePath("../AnimationPlayer")
 _animationTimer = NodePath("../Timer")
 _questionTexts = PackedStringArray("Kun ajattelet tulevaisuuttasi, mikä kuvaa sinua parhaiten?", "Miten suhtaudut esteisiin ja haasteisiin?", "Mikä kuvaa parhaiten suhdettasi verkostoihin?", "Millä tavalla teet suunnitelmia?", "Mitä arvoihin ja motivaatioon liittyy sinun kohdallasi?", "Miten kuvailisit itsetuntemustasi tällä hetkellä?", "Kuinka määrätietoisesti etenet kohti tavoitteitasi arjessa?", "Miten hyödynnät muiden osaamista ja tukea?", "Mikä kuvaa parhaiten suhdettasi asiakkaisiin tai muihin ihmisiin, joita toimintasi koskee?", "Kun katsot eteenpäin, mikä tuntuu tärkeimmältä seuraavalta askeleelta?")
@@ -339,7 +389,7 @@ anchor_bottom = 0.507
 offset_left = -266.64
 offset_top = 118.91998
 offset_right = 1312.7131
-offset_bottom = 2096.0894
+offset_bottom = 2096.0596
 scale = Vector2(0.2715219, 0.27152187)
 texture = ExtResource("3_burp6")
 metadata/_edit_use_anchors_ = true
@@ -363,6 +413,25 @@ text = "Jos olisit rotta ja duunaisit bulia?"
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="FirstDialogLabel" type="Label" parent="LabraRotta" unique_id=734548336]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.46674076
+anchor_top = 0.102000006
+anchor_right = 0.93000007
+anchor_bottom = 0.38390106
+offset_left = -0.08001709
+offset_top = -0.8400116
+offset_right = -0.32507324
+offset_bottom = -0.090026855
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_7txxy")
+theme_override_font_sizes/font_size = 55
+text = "Hyvää duunia"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="Player" type="Control" parent="." unique_id=490532306]
 layout_mode = 1
 anchors_preset = 15
@@ -383,7 +452,6 @@ offset_top = 6.1035156e-05
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_7txxy")
-disabled = true
 action_mode = 0
 text = "En tiiä"
 text_overrun_behavior = 2
@@ -411,7 +479,6 @@ anchor_right = 0.8717355
 anchor_bottom = 0.875
 offset_right = -1.4743652
 scale = Vector2(1.001843, 1)
-disabled = true
 action_mode = 0
 text = "Töihin"
 autowrap_mode = 2

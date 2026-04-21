@@ -2,5 +2,5 @@
 
 [ext_resource type="AudioStream" uid="uid://ox7tw7hwlicr" path="res://Audio/SFX/Button1.mp3" id="1_5ca00"]
 
-[node name="ButtonDownSFX" type="AudioStreamPlayer2D" unique_id=919058289]
+[node name="ButtonDownSFX" type="AudioStreamPlayer" unique_id=2103446994]
 stream = ExtResource("1_5ca00")
