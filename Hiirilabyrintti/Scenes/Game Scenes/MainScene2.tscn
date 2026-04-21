@@ -458,7 +458,7 @@ size = Vector2(150, 64)
 
 [sub_resource type="Curve2D" id="Curve2D_n0f62"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 437, 0, 0, 0, 0, 0, 437, -45)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 400, 0, 0, 0, 0, 0, 400, -45)
 }
 point_count = 3
 
@@ -747,13 +747,13 @@ _movementSpeed = 0.1
 _canMove = false
 
 [node name="Path2D" type="Path2D" parent="PathFollower" unique_id=1043087267]
-position = Vector2(-440, -4)
+position = Vector2(-400.39, -4)
 curve = SubResource("Curve2D_n0f62")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="PathFollower/Path2D" unique_id=879459374]
-position = Vector2(437, -45)
+position = Vector2(400, -45)
 rotation = -1.5707964
-progress = 482.0
+progress = 445.0
 loop = false
 
 [node name="Muskrat" parent="PathFollower/Path2D/PathFollow2D" unique_id=614056375 instance=ExtResource("13_r7erh")]
@@ -773,7 +773,6 @@ rotation = 1.5707964
 position = Vector2(-713, 900)
 
 [node name="Rock" parent="." unique_id=2114008508 instance=ExtResource("9_upv5t")]
-z_index = 2
 position = Vector2(0, -133)
 
 [node name="Mouse" parent="." unique_id=557865975 instance=ExtResource("2_md707")]

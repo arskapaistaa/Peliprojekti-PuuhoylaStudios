@@ -753,9 +753,7 @@ position = Vector2(290, 173)
 curve = SubResource("Curve2D_xqcer")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="PathFollower/Path2D" unique_id=34195054]
-position = Vector2(-290.68497, -233.57)
 rotation = -1.5707964
-progress = 524.25494
 loop = false
 
 [node name="Muskrat" parent="PathFollower/Path2D/PathFollow2D" unique_id=614056375 instance=ExtResource("14_dohcd")]
