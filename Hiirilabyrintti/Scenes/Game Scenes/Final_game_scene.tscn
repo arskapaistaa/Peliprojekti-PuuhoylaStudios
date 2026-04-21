@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwxgkjk3yrgw6" path="res://Scripts/FinalGameScene.cs" id="1_nkp2i"]
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="2_syh1w"]
-[ext_resource type="Script" uid="uid://d1n58s2ogxlyd" path="res://Scripts/Buttons/ReplayButton.cs" id="3_anni1"]
+[ext_resource type="Script" uid="uid://bc725ew3vjf5g" path="res://Scripts/Info.cs" id="3_iuyby"]
 [ext_resource type="Script" uid="uid://ctlmpnrwvnxfs" path="res://Scripts/Buttons/ExitButton.cs" id="4_yifte"]
 [ext_resource type="PackedScene" uid="uid://il5r6o7medad" path="res://Scenes/Audio/button_down_sfx.tscn" id="5_iuyby"]
 
@@ -156,7 +156,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Player/RePlay:disabled")
+tracks/11/path = NodePath("Player/Info:disabled")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -217,6 +217,206 @@ tracks/0/keys = {
 "values": [1.0, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_iuyby"]
+resource_name = "InfoOff"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Edistäjä:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Etenijä:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Etsijä:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FirstDialog:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SecondDialog:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerStyle:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Info:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Info:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0yy1b"]
+resource_name = "InfoOn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Edistäjä:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Etenijä:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Etsijä:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FirstDialog:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SecondDialog:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerStyle:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Info:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Info:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_syh1w"]
 length = 0.001
 tracks/0/type = "value"
@@ -270,7 +470,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Player/RePlay:disabled")
+tracks/4/path = NodePath("Player/Info:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -327,11 +527,49 @@ tracks/8/keys = {
 "update": 1,
 "values": [1.0]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Control/Edistäjä:modulate:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Info:modulate:a")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Info:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_anni1"]
 _data = {
 &"FadeIn": SubResource("Animation_nkp2i"),
 &"FadeOut": SubResource("Animation_yifte"),
+&"InfoOff": SubResource("Animation_iuyby"),
+&"InfoOn": SubResource("Animation_0yy1b"),
 &"RESET": SubResource("Animation_syh1w")
 }
 
@@ -507,11 +745,13 @@ anchor_bottom = 0.48854166
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.9899998, 1)
 size_flags_vertical = 4
 color = Color(0.08627451, 0.2901961, 0.16862746, 0.54901963)
 metadata/_edit_use_anchors_ = true
 
 [node name="EtsijäLabel" type="Label" parent="Control/Etsijä" unique_id=1364223270]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.43148148
@@ -539,6 +779,7 @@ anchor_bottom = 0.48854166
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.9899998, 1)
 size_flags_vertical = 4
 color = Color(0.37254903, 0.5803922, 0.38039216, 1)
 metadata/_edit_use_anchors_ = true
@@ -605,7 +846,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_syh1w")
 
-[node name="RePlay" type="Button" parent="Player" unique_id=1384249196 node_paths=PackedStringArray("_replay", "_buttonDownSFX")]
+[node name="Info" type="Button" parent="Player" unique_id=1384249196 node_paths=PackedStringArray("_buttonDownSFX", "_animations", "_infoLabel")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.32407406
@@ -618,13 +859,14 @@ grow_vertical = 2
 theme = ExtResource("2_syh1w")
 disabled = true
 action_mode = 0
-text = "REPLAY
+text = "INFO
 "
 text_overrun_behavior = 2
 autowrap_mode = 2
-script = ExtResource("3_anni1")
-_replay = NodePath(".")
+script = ExtResource("3_iuyby")
 _buttonDownSFX = NodePath("../../ButtonDownSFX")
+_animations = NodePath("../../AnimationPlayer")
+_infoLabel = NodePath("../../Info/Label")
 metadata/_edit_use_anchors_ = true
 
 [node name="Exit" type="Button" parent="Player" unique_id=68216442 node_paths=PackedStringArray("_exitButton", "_animations", "_buttonDownSFX")]
@@ -645,6 +887,27 @@ script = ExtResource("4_yifte")
 _exitButton = NodePath(".")
 _animations = NodePath("../../AnimationPlayer")
 _buttonDownSFX = NodePath("../../ButtonDownSFX")
+metadata/_edit_use_anchors_ = true
+
+[node name="Info" type="Control" parent="." unique_id=1325419026]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Info" unique_id=1898574958]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12962963
+anchor_top = 0.09375
+anchor_right = 0.8703704
+anchor_bottom = 0.6145833
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonDownSFX" parent="." unique_id=919058289 instance=ExtResource("5_iuyby")]
