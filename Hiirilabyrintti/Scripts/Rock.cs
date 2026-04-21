@@ -110,6 +110,7 @@ public partial class Rock : Area2D
 			muskrat._drillSprite.Play("default");
 
 			_rockSprite.Play("Drilling");
+			GameManager.Instance._rockDestroyed = true;
 		}
 	}
 
@@ -129,6 +130,7 @@ public partial class Rock : Area2D
 		}
 
 		Input.VibrateHandheld(500);
+		GameManager.Instance._rockDestroyed = true;
 	}
 
 	// Method when player exits the area.

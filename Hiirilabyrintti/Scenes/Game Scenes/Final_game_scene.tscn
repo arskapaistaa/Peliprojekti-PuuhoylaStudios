@@ -335,7 +335,7 @@ _data = {
 &"RESET": SubResource("Animation_syh1w")
 }
 
-[node name="FinalGameScene" type="Control" unique_id=1398140827 node_paths=PackedStringArray("_firstDialog", "_edistajaBar", "_etenijaBar", "_estijaBar", "_edistajaLabel", "_etenijaLabel", "_etsijaLabel")]
+[node name="FinalGameScene" type="Control" unique_id=1398140827 node_paths=PackedStringArray("_firstDialog", "_edistajaBar", "_etenijaBar", "_estijaBar", "_edistajaLabel", "_etenijaLabel", "_etsijaLabel", "_PlayerStyleLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -345,15 +345,16 @@ grow_vertical = 2
 script = ExtResource("1_nkp2i")
 _firstDialog = NodePath("FirstDialog")
 _firstDialogArray = PackedStringArray("Vastauksesi kertovat, että olet:", "Your answers tells that you are:")
-_edistaja = PackedStringArray("Edistajä", "Explorer")
+_edistaja = PackedStringArray("Edistajä", "Accelerator")
 _etenija = PackedStringArray("Etenijä", "Advancer")
-_etsija = PackedStringArray("Etsijä", "Accelerator")
+_etsija = PackedStringArray("Etsijä", "Explorer")
 _edistajaBar = NodePath("Control/Edistäjä/EdistäjäBar")
 _etenijaBar = NodePath("Control/Etenijä/EtenijaBar")
 _estijaBar = NodePath("Control/Etsijä/EtsijäBar")
 _edistajaLabel = NodePath("Control/Edistäjä/EdistäjäLabel")
 _etenijaLabel = NodePath("Control/Etenijä/EtejinaLabel")
 _etsijaLabel = NodePath("Control/Etsijä/EtsijäLabel")
+_PlayerStyleLabel = NodePath("PlayerStyle")
 
 [node name="Timer" type="Timer" parent="." unique_id=658071523]
 one_shot = true
@@ -585,7 +586,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_syh1w")
-text = "Edistäjä"
+text = "jos luet tätä ni jotain meni pieleen"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
