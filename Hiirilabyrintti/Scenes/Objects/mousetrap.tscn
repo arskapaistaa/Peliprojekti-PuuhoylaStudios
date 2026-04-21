@@ -56,13 +56,14 @@ collision_mode = 1
 collision_friction = 0.5
 collision_bounce = 0.5
 
-[node name="Mousetrap" type="Area2D" unique_id=2138317421 node_paths=PackedStringArray("_mouseTrap", "_mouseTrapSFX", "_cheese")]
+[node name="Mousetrap" type="Area2D" unique_id=2138317421 node_paths=PackedStringArray("_mouseTrap", "_mouseTrapSFX", "_cheese", "_cooldown")]
 z_index = 2
 collision_mask = 3
 script = ExtResource("1_ug2qn")
 _mouseTrap = NodePath("AnimatedSprite2D")
 _mouseTrapSFX = NodePath("TrapSound")
 _cheese = NodePath("GPUParticles2D")
+_cooldown = NodePath("Timer")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1871088280]
 sprite_frames = SubResource("SpriteFrames_mgenj")
@@ -83,3 +84,6 @@ one_shot = true
 explosiveness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_mgenj")
+
+[node name="Timer" type="Timer" parent="." unique_id=1371560607]
+one_shot = true
