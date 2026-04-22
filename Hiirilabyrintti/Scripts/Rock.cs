@@ -86,7 +86,15 @@ public partial class Rock : Area2D
 			{
 				GD.Print("Player HAS drill");
 
-				rockMessageLabel.Text = "With the drill, you can break\nthrough this rock and escape!";
+				if (SettingsManager.Instance.Language == 0)
+				{
+					rockMessageLabel.Text = "Porallasi, voit rikkoa\ntämän kiven ja paeta!";
+				}
+				else
+				{
+					rockMessageLabel.Text = "With the drill, you can break\nthrough this rock and escape!";
+				}
+				
 				rockMessageLabel.Visible = true;
 
 				_drillButton.Visible = true;
