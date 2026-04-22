@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://ddsq208sig6nx" path="res://Scenes/muskrat.tscn" id="14_dohcd"]
 [ext_resource type="PackedScene" uid="uid://qsvjdj57if2u" path="res://Scenes/Objects/mousetrap.tscn" id="15_dohcd"]
 [ext_resource type="AudioStream" uid="uid://ugn1otk8683g" path="res://Audio/SFX/Waterdrops.mp3" id="17_s4pbe"]
-[ext_resource type="AudioStream" uid="uid://c3ah75xk6ytkp" path="res://Audio/Music/Music.mp3" id="18_246mv"]
+[ext_resource type="AudioStream" uid="uid://cd5dupb73vt5a" path="res://Audio/Music/TrapMouseMusic.mp3" id="18_25xdm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fg7yv"]
 size = Vector2(150, 64)
@@ -753,9 +753,7 @@ position = Vector2(290, 173)
 curve = SubResource("Curve2D_xqcer")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="PathFollower/Path2D" unique_id=34195054]
-position = Vector2(-290.68497, -233.57)
 rotation = -1.5707964
-progress = 524.25494
 loop = false
 
 [node name="Muskrat" parent="PathFollower/Path2D/PathFollow2D" unique_id=614056375 instance=ExtResource("14_dohcd")]
@@ -779,11 +777,11 @@ position = Vector2(-45, 1084)
 
 [node name="WaterdropsSFX" type="AudioStreamPlayer2D" parent="Audios" unique_id=2013054596]
 stream = ExtResource("17_s4pbe")
-volume_db = -10.015
+volume_db = -8.0
 bus = &"SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audios" unique_id=1808292793]
-stream = ExtResource("18_246mv")
+stream = ExtResource("18_25xdm")
 bus = &"Music"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2035909161]

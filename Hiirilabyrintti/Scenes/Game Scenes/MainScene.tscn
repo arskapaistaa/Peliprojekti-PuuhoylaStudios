@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b1supvki2xjbh" path="res://Sprites/tileset-blue.png" id="11_lh3xx"]
 [ext_resource type="PackedScene" uid="uid://cggpma0qvjowe" path="res://Scenes/UI/Counters.tscn" id="12_8rmvd"]
 [ext_resource type="Texture2D" uid="uid://cxs0jjrm54jfo" path="res://Sprites/tileset-purple.png" id="15_0f1ji"]
-[ext_resource type="AudioStream" uid="uid://c3ah75xk6ytkp" path="res://Audio/Music/Music.mp3" id="15_2ngyf"]
+[ext_resource type="AudioStream" uid="uid://cd5dupb73vt5a" path="res://Audio/Music/TrapMouseMusic.mp3" id="15_2ngyf"]
 [ext_resource type="Texture2D" uid="uid://cnostexeg18wc" path="res://Sprites/tileset-orange.png" id="17_2ngyf"]
 [ext_resource type="AudioStream" uid="uid://ugn1otk8683g" path="res://Audio/SFX/Waterdrops.mp3" id="17_8m25g"]
 [ext_resource type="Script" uid="uid://b8chywgava7pr" path="res://Scenes/Game Scenes/PathFollower.cs" id="18_0f1ji"]
@@ -798,21 +798,6 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="Environment" id="Environment_2ngyf"]
-background_mode = 3
-tonemap_mode = 2
-glow_enabled = true
-glow_intensity = 1.5
-glow_bloom = 0.1
-fog_light_energy = 1.24
-fog_sun_scatter = 1.1
-fog_density = 2.495
-fog_height = 65.85
-fog_height_density = 33.255
-adjustment_enabled = true
-adjustment_brightness = 0.96
-adjustment_saturation = 1.1
-
 [node name="World" type="Node2D" unique_id=71007616]
 
 [node name="TouchControls" parent="." unique_id=400990887 instance=ExtResource("1_6hmk7")]
@@ -1097,7 +1082,7 @@ shape = SubResource("RectangleShape2D_fg7yv")
 
 [node name="WaterdropsSFX" type="AudioStreamPlayer2D" parent="Audios" unique_id=191829959]
 stream = ExtResource("17_8m25g")
-volume_db = -10.015
+volume_db = -8.0
 bus = &"SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audios" unique_id=301004265]
@@ -1149,6 +1134,3 @@ rotation = 1.5707964
 position = Vector2(0, -133)
 
 [node name="Mouse" parent="." unique_id=557865975 instance=ExtResource("2_acspe")]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2083275291]
-environment = SubResource("Environment_2ngyf")

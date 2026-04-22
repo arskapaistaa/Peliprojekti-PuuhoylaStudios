@@ -261,6 +261,8 @@ initial_velocity_min = 50.0
 initial_velocity_max = 500.0
 gravity = Vector3(0, 0, 0)
 damping_max = 100.00001
+scale_min = 0.19999999
+scale_max = 3.0
 color = Color(0.87496775, 0.5597425, 0.4478556, 1)
 
 [node name="Muskrat" type="CharacterBody2D" unique_id=614056375 node_paths=PackedStringArray("_animations", "_dialogueLabel", "_hireButton", "_drillSprite", "_buttonDownSFX", "drillParticles")]
@@ -372,10 +374,12 @@ autoplay = &"start"
 
 [node name="ButtonDownSFX" parent="." unique_id=2103446994 instance=ExtResource("5_co6fu")]
 
-[node name="Drill particles" type="GPUParticles2D" parent="." unique_id=1175301660]
-position = Vector2(0, -47)
+[node name="Drill particles" type="GPUParticles2D" parent="." unique_id=1205313744]
+position = Vector2(0, -44)
 emitting = false
 amount = 20
 lifetime = 0.3
 fixed_fps = 60
+trail_enabled = true
+trail_lifetime = 0.03
 process_material = SubResource("ParticleProcessMaterial_co6fu")

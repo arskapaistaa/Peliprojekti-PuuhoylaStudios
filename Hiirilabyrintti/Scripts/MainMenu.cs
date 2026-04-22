@@ -34,7 +34,7 @@ public partial class MainMenu : Node
 			_buttonDownSFX.Play();
 		}
 
-		Input.VibrateHandheld(500);
+		Input.VibrateHandheld(1500);
 	}
 
 	private void CreditsButtonPressed()

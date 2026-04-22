@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://bcd4nudpj7dxb" path="res://Sprites/tiko-logo-en.png" id="13_de22f"]
 [ext_resource type="PackedScene" uid="uid://il5r6o7medad" path="res://Scenes/Audio/button_down_sfx.tscn" id="14_0yo5u"]
 [ext_resource type="AudioStream" uid="uid://1vl8jyabuiia" path="res://Audio/SFX/Button2.mp3" id="15_0yo5u"]
+[ext_resource type="AudioStream" uid="uid://cd5dupb73vt5a" path="res://Audio/Music/TrapMouseMusic.mp3" id="16_de22f"]
+[ext_resource type="Script" uid="uid://bqjjaa41jpmo5" path="res://Scripts/AudioManagerMainMenu.cs" id="17_r4jmg"]
 
 [sub_resource type="Animation" id="Animation_r4jmg"]
 resource_name = "Credits"
@@ -796,3 +798,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ButtonUpSFX" type="AudioStreamPlayer2D" parent="." unique_id=1984113893]
 stream = ExtResource("15_0yo5u")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1313275326]
+stream = ExtResource("16_de22f")
+bus = &"MusicEffect"
+
+[node name="AudioManager" type="Node" parent="." unique_id=267071513 node_paths=PackedStringArray("_music", "_musicButton")]
+script = ExtResource("17_r4jmg")
+_music = NodePath("../AudioStreamPlayer")
+_musicButton = NodePath("../Settings menu/MusicButton")

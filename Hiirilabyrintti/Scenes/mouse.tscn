@@ -8,6 +8,8 @@
 [ext_resource type="Theme" uid="uid://cam30uwftlpxs" path="res://Themes/DefaulTheme.tres" id="6_uwmpi"]
 [ext_resource type="AudioStream" uid="uid://c0kxf77agidqp" path="res://Audio/SFX/Walk.mp3" id="7_ffywo"]
 [ext_resource type="PackedScene" uid="uid://il5r6o7medad" path="res://Scenes/Audio/button_down_sfx.tscn" id="8_erwuk"]
+[ext_resource type="AudioStream" uid="uid://dkwx7ccbsvnh0" path="res://Audio/SFX/Drill.mp3" id="9_dbb7t"]
+[ext_resource type="AudioStream" uid="uid://1vl8jyabuiia" path="res://Audio/SFX/Button2.mp3" id="10_yrs1a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kxv04"]
 radius = 8.0
@@ -297,9 +299,11 @@ initial_velocity_min = 50.0
 initial_velocity_max = 500.0
 gravity = Vector3(0, 0, 0)
 damping_max = 100.00001
+scale_min = 0.19999999
+scale_max = 3.0
 color = Color(0.87496775, 0.5597425, 0.4478556, 1)
 
-[node name="Mouse" type="CharacterBody2D" unique_id=1410733989 node_paths=PackedStringArray("_walkParticles", "_drillParticles", "_sprite", "_camera", "DrillPrompt", "YesButton", "NoButton", "_drill", "_drillPromptLabel", "_walkSFX", "_buttonDownSFX")]
+[node name="Mouse" type="CharacterBody2D" unique_id=1410733989 node_paths=PackedStringArray("_walkParticles", "_drillParticles", "_sprite", "_camera", "DrillPrompt", "YesButton", "NoButton", "_drill", "_drillPromptLabel", "_walkSFX", "_buttonDownSFX", "_drillSFX", "_hitSFX")]
 z_index = 3
 collision_layer = 2
 collision_mask = 5
@@ -319,6 +323,8 @@ _drillPromptLabel = NodePath("CanvasLayer/DrillPrompt/Label")
 _drillPrompArray = PackedStringArray("Sinulla on tapeeksi osia. Haluatko rakentaa poran?", "You have enough parts to build a drill. Do you want to build a drill?")
 _walkSFX = NodePath("WalkSFX")
 _buttonDownSFX = NodePath("ButtonDownSFX")
+_drillSFX = NodePath("DrillSFX")
+_hitSFX = NodePath("HitSFX")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746396471]
 position = Vector2(0, -12)
@@ -481,4 +487,17 @@ emitting = false
 amount = 20
 lifetime = 0.3
 fixed_fps = 60
+trail_enabled = true
+trail_lifetime = 0.03
 process_material = SubResource("ParticleProcessMaterial_erwuk")
+
+[node name="DrillSFX" type="AudioStreamPlayer" parent="." unique_id=285635219]
+stream = ExtResource("9_dbb7t")
+volume_db = -20.0
+bus = &"SFX"
+
+[node name="HitSFX" type="AudioStreamPlayer" parent="." unique_id=1230369117]
+stream = ExtResource("10_yrs1a")
+volume_db = -10.0
+pitch_scale = 2.0
+bus = &"SFX"
