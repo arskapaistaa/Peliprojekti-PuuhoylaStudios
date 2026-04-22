@@ -24,6 +24,8 @@ public partial class Mouse : CharacterBody2D
     [Export] private string[] _drillPrompArray = {};
     [Export] private AudioStreamPlayer2D _walkSFX = null;
 	[Export] private AudioStreamPlayer _buttonDownSFX = null;
+    [Export] private AudioStreamPlayer _drillSFX = null;
+    [Export] private AudioStreamPlayer _hitSFX = null;
 
 
     private int neededToBuildDrill = GameManager.Instance._neededToBuildDrill;
@@ -82,7 +84,12 @@ public partial class Mouse : CharacterBody2D
         if (isOnWall && !wasOnWall)
         {
             _camera.Shake(2.0f);
-            Input.VibrateHandheld(100);
+            Input.VibrateHandheld(200);
+
+            if (SettingsManager.Instance.Volume)
+            {
+                _hitSFX.Play();
+            }
         }
         wasOnWall = isOnWall;
 
@@ -134,6 +141,11 @@ public partial class Mouse : CharacterBody2D
         _drill.Play("drill");
 
         _drillParticles.Emitting = true;
+
+        if (SettingsManager.Instance.Volume)
+		{
+			_drillSFX.Play();
+		}
 
         _camera.Shake(8.0f);
         Input.VibrateHandheld(3000);

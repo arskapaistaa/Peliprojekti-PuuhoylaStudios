@@ -18,8 +18,15 @@ public partial class Info : Button
     {
 		if(SettingsManager.Instance.Language == 0)
 		{
-			_infoLabel.Text = "Edistäjä\nPohdit yrittäjyyttä. Sinulla on idea, tavoite tai kipinä. Kaipaat kumminkin rohkaisua ja tukea jotta pääset tavoitteeseesi.\n \n Etenijä\nOlet tavoitteellinen ja valmis etenemään polullasi. Tiedät suuntasi mutta kaipaat apua päästäksesi tavoitteeseesi. \n \n Etsijä\nOlet oman suuntasi etsijä. Saatat vielä pohtia identiteettiäsi, omia arvojasi ja elämän suuntaa.";
+			_infoLabel.Text =
+							"Edistäjä\nPohdit yrittäjyyttä. Sinulla on idea, tavoite tai kipinä. Kaipaat kumminkin rohkaisua ja tukea jotta pääset tavoitteeseesi.\n\n" +
+							"Etenijä\nOlet tavoitteellinen ja valmis etenemään polullasi. Tiedät suuntasi mutta kaipaat apua päästäksesi tavoitteeseesi.\n\n" +
+							"Etsijä\nOlet oman suuntasi etsijä. Saatat vielä pohtia identiteettiäsi, omia arvojasi ja elämän suuntaa.";
 		}
+		else _infoLabel.Text =
+							"Explorer\nYou are finding your way. You may still be pondering your identity, your values and the general direction of your life.\n\n" +
+							"Advancer\nYou are ambitious and ready to make progress on your path. You know your way, but need help to reach your goals.\n\n" +
+							"Accelerator\nYou are pondering entrepreneurship. You have an idea, a goal or a spark. You still need encouragement and support to reach your goals.";
 
         if(!_info)
 		{

@@ -123,4 +123,9 @@ public partial class Muskrat : CharacterBody2D
 			}
 		}
 	}
+
+	public void DrillParticles()
+	{
+		drillParticles.Emitting = true;
+	}
 }

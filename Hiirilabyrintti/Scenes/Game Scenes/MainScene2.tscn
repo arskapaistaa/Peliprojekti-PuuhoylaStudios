@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://ctlleouhimdnx" path="res://Scripts/Exit.cs" id="16_dumgh"]
 [ext_resource type="PackedScene" uid="uid://cggpma0qvjowe" path="res://Scenes/UI/Counters.tscn" id="17_nfdoo"]
 [ext_resource type="AudioStream" uid="uid://ugn1otk8683g" path="res://Audio/SFX/Waterdrops.mp3" id="17_weqxp"]
-[ext_resource type="AudioStream" uid="uid://c3ah75xk6ytkp" path="res://Audio/Music/Music.mp3" id="18_4tkr0"]
+[ext_resource type="AudioStream" uid="uid://cd5dupb73vt5a" path="res://Audio/Music/TrapMouseMusic.mp3" id="18_md707"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8o58s"]
 polygon = PackedVector2Array(-32, -29.360176, -27.271793, -28.377407, -23.586418, -29.114481, -16.338507, -29.114483, -12.038899, -27.394638, -7.2479086, -29.114483, 1.351304, -27.886024, 5.5280657, -29.728714, 20.515268, -30.097248, 26.657562, -26.780409, 28.868792, -20.883804, 29.261053, -14.258804, 27.148949, -10.564748, 28.377407, -7.247909, 27.148949, -0.3685379, 26.166182, 10.441903, 27.763178, 14.495819, 29.114483, 22.60365, 28.991636, 32, -28.745945, 32, -32, 29.237328)
@@ -781,11 +781,11 @@ position = Vector2(0, -133)
 
 [node name="WaterdropsSFX" type="AudioStreamPlayer2D" parent="Audios" unique_id=1648891218]
 stream = ExtResource("17_weqxp")
-volume_db = -10.015
+volume_db = -8.0
 bus = &"SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audios" unique_id=935099710]
-stream = ExtResource("18_4tkr0")
+stream = ExtResource("18_md707")
 bus = &"Music"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=626220753]

@@ -5,9 +5,11 @@ using System.ComponentModel;
 public partial class FinalGameScene : Control
 {
 	[Export] private Label _firstDialog;
+	[Export] private Label _secondDialog;
 
 	// Arrays are for lanquages.
 	[Export] private String[] _firstDialogArray = {};
+	[Export] private String[] _secondDialogArray = {};
 	[Export] private String[] _edistaja = {};
 	[Export] private String[] _etenija = {};
 	[Export] private String[] _etsija = {};
@@ -25,6 +27,8 @@ public partial class FinalGameScene : Control
 	{
 		// Set First dialog Fin or Eng
 		_firstDialog.Text = _firstDialogArray[SettingsManager.Instance.Language];
+
+		_secondDialog.Text = _secondDialogArray[SettingsManager.Instance.Language];
 
 		// Set color rect sizes to Score * 8. Beacause max width is 800px, and we have currently 10 questions.
 
