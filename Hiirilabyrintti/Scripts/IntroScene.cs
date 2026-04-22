@@ -13,6 +13,7 @@ public partial class IntroScene : Control
 	[Export] private Label _dialogLabel3;
 	[Export] private Label _dialogLabel4;
 	[Export] private AnimationPlayer _animations;
+	[Export] private AudioStreamPlayer2D _labraRat = null;
 	private int _randomMap = 0;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -25,6 +26,15 @@ public partial class IntroScene : Control
 
 		_animations.Play("Start");
 		_animations.AnimationFinished += onAnimationFinished;
+
+		if (SettingsManager.Instance.Volume)
+		{
+			_labraRat.VolumeDb = 0;
+		}
+		else
+		{
+			_labraRat.VolumeDb = -60;
+		}
 
 	}
 

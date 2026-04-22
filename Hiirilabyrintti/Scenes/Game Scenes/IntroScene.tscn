@@ -245,7 +245,7 @@ _data = {
 &"Start": SubResource("Animation_jl0je")
 }
 
-[node name="IntroScene" type="Control" unique_id=790755733 node_paths=PackedStringArray("_dialogLabel", "_dialogLabel2", "_dialogLabel3", "_dialogLabel4", "_animations")]
+[node name="IntroScene" type="Control" unique_id=790755733 node_paths=PackedStringArray("_dialogLabel", "_dialogLabel2", "_dialogLabel3", "_dialogLabel4", "_animations", "_labraRat")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -262,6 +262,7 @@ _dialogLabel2 = NodePath("LabraRotta/DialogLabel2")
 _dialogLabel3 = NodePath("LabraRotta/DialogLabel3")
 _dialogLabel4 = NodePath("LabraRotta/DialogLabel4")
 _animations = NodePath("AnimationPlayer")
+_labraRat = NodePath("LabratVoiceSFX")
 
 [node name="Background" type="Control" parent="." unique_id=92870048]
 layout_mode = 1

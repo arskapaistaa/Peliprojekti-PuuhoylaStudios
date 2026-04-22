@@ -6,7 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://ugn1otk8683g" path="res://Audio/SFX/Waterdrops.mp3" id="4_i2nwt"]
 [ext_resource type="PackedScene" uid="uid://il5r6o7medad" path="res://Scenes/Audio/button_down_sfx.tscn" id="4_oqv6m"]
 [ext_resource type="AudioStream" uid="uid://cd5dupb73vt5a" path="res://Audio/Music/TrapMouseMusic.mp3" id="5_v1086"]
-[ext_resource type="Script" uid="uid://dypfsjao3kncs" path="res://Scripts/AudioManager.cs" id="7_v1086"]
+[ext_resource type="AudioStream" uid="uid://y2y06gu3n6xs" path="res://Audio/SFX/LabraRat.mp3" id="7_ohjkg"]
+[ext_resource type="Script" uid="uid://bg2e1ge0u1ujj" path="res://Scripts/AudioManagerEndGameScene.cs" id="7_v1086"]
 
 [sub_resource type="Animation" id="Animation_7txxy"]
 resource_name = "FadeIn"
@@ -131,6 +132,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Audios/LabratVoiceSFX:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2.5, 6.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
 
 [sub_resource type="Animation" id="Animation_burp6"]
 resource_name = "FadeOut"
@@ -197,6 +210,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Audios/LabratVoiceSFX:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_r6a8p"]
@@ -296,6 +321,18 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Audios/LabratVoiceSFX:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i2nwt"]
@@ -497,7 +534,11 @@ bus = &"Music"
 
 [node name="ButtonDownSFX" parent="Audios" unique_id=919058289 instance=ExtResource("4_oqv6m")]
 
-[node name="AudioManager" type="Node" parent="." unique_id=840293093 node_paths=PackedStringArray("_waterDropsSFX", "_music")]
+[node name="LabratVoiceSFX" type="AudioStreamPlayer2D" parent="Audios" unique_id=367108487]
+stream = ExtResource("7_ohjkg")
+pitch_scale = 2.0
+
+[node name="AudioManager" type="Node" parent="." unique_id=840293093 node_paths=PackedStringArray("_music", "_labraRat")]
 script = ExtResource("7_v1086")
-_waterDropsSFX = NodePath("../Audios/WaterdropsSFX")
 _music = NodePath("../Audios/AudioStreamPlayer")
+_labraRat = NodePath("../Audios/LabratVoiceSFX")
